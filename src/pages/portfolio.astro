@@ -1,24 +1,42 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 
+const featuredProject = {
+	name: "Transitional Objects Surface Structuring",
+	client: "Alyson Shotz / Situ Studio",
+	type: "Computational fabrication",
+	link: "https://www.instagram.com/alysonshotz/p/Bju72klhMKP/?hl=en",
+	summary:
+		"Developed Rhino and Grasshopper software used to structure sculptural surfaces for Alyson Shotz's Transitional Objects work.",
+	points: [
+		"Collaborated with Shotz and the Situ Studio team on the process for translating surface concepts into buildable sculpture systems.",
+		"Built computational workflows that organized surface structure, fabrication logic, and iteration across multiple editions.",
+		"Developed techniques that remained useful to the work after my direct involvement ended.",
+	],
+	details: ["Rhino", "Grasshopper", "Digital fabrication", "Surface logic"],
+};
+
 const projects = [
 	{
-		name: "Featured Project",
-		type: "Case study",
-		summary: "A primary slot for the work you most want visitors to notice first.",
-		details: ["Problem", "Role", "Result"],
+		name: "Rheia HVAC Modeling Engine",
+		type: "Systems architecture",
+		summary:
+			"Domain-driven, graph-capable modeling engine for residential HVAC loads, rooms, duct topology, zoning, and controls logic.",
+		details: ["Modeling engine", "Graph topology", "Controls"],
 	},
 	{
-		name: "Technical Project",
-		type: "Build note",
-		summary: "A compact entry for an app, integration, automation, or engineering write-up.",
-		details: ["Stack", "Constraints", "What changed"],
+		name: "Home Verification Software",
+		type: "Product software",
+		summary:
+			"Software systems used to verify roughly 25,000 home designs for Rheia's residential HVAC platform.",
+		details: ["25K homes", "Validation", "Building systems"],
 	},
 	{
-		name: "Creative Project",
-		type: "Portfolio entry",
-		summary: "A lighter slot for experiments, prototypes, or work that shows your taste.",
-		details: ["Goal", "Process", "Link"],
+		name: "rheia-data Pipeline",
+		type: "Data tooling",
+		summary:
+			"Pipeline for analyzing design instances, field performance, installation consistency, and HVAC system behavior at scale.",
+		details: ["Data pipeline", "Field performance", "Analysis"],
 	},
 ];
 ---
@@ -32,8 +50,42 @@ const projects = [
 		<p class="text-uppercase small text-secondary fw-semibold mb-2">Portfolio</p>
 		<h1 class="display-6 fw-semibold mb-2">Selected Work</h1>
 		<p class="lead text-secondary content-measure mb-0">
-			Short project summaries with enough context to understand the work quickly.
+			A few projects that connect software, physical systems, design intent, and fabrication.
 		</p>
+	</section>
+
+	<section class="mb-4" aria-labelledby="featured-project">
+		<article class="card">
+			<div class="card-body">
+				<div class="row g-4 align-items-start">
+					<div class="col-lg-8">
+						<p class="small text-uppercase text-secondary fw-semibold mb-2">
+							{featuredProject.type}
+						</p>
+						<h2 class="h4 card-title" id="featured-project">{featuredProject.name}</h2>
+						<p class="text-secondary mb-2">{featuredProject.client}</p>
+						<p class="card-text">{featuredProject.summary}</p>
+						<ul class="mb-3">
+							{featuredProject.points.map((point) => (
+								<li>{point}</li>
+							))}
+						</ul>
+						<a href={featuredProject.link} target="_blank" rel="noreferrer">
+							View reference
+						</a>
+					</div>
+					<div class="col-lg-4">
+						<div class="d-flex flex-wrap gap-2">
+							{
+								featuredProject.details.map((detail) => (
+									<span class="badge text-bg-light border">{detail}</span>
+								))
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
 	</section>
 
 	<section class="row g-3" aria-label="Portfolio projects">
