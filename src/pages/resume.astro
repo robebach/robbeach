@@ -1,33 +1,146 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 
+const contactLinks = [
+	{ label: "Email", href: "mailto:robert.k.beach@gmail.com" },
+	{ label: "GitHub", href: "https://github.com/robebach" },
+	{ label: "LinkedIn", href: "https://www.linkedin.com/in/robert-beach-28167b11/" },
+];
+
 const skills = [
-	"Frontend",
-	"Backend",
-	"Automation",
-	"Product thinking",
-	"Technical writing",
-	"Operations",
+	"Physical-digital product architecture",
+	"Modeling engines",
+	"HVAC and building simulation",
+	"Building physics",
+	"Graph-based topology modeling",
+	"Domain-driven design",
+	"Controls architecture",
+	"System-state modeling",
+	"Data pipelines",
+	"Pydantic validation",
+	"Technical systems design",
+	"Parametric workflows",
+	"Rapid prototyping",
+	"Digital fabrication",
+	"Scripting",
+	"Technical documentation",
 ];
 
 const experience = [
 	{
-		role: "Current Role",
-		org: "Organization",
-		time: "2024 - Present",
+		role: "R&D Systems Architect",
+		org: "RHEIA, LLC",
+		time: "Dec 2019 - Present",
+		location: "Phoenix, Arizona",
 		points: [
-			"Summarize the kind of work you do and the impact it has.",
-			"Add one measurable result or concrete responsibility.",
+			"Lead modeling, simulation, and system architecture for Rheia's physical-digital HVAC platform.",
+			"Redesigned the core HVAC modeling engine with domain-driven boundaries across loads, rooms, duct topology, zoning, and controls logic.",
+			"Built graph-based topology modeling for multi-branch airflow, system interactions, and real-world performance variability.",
+			"Developed next-generation controls architecture, including system-state modeling, topology-aware control adjustments, and design-to-runtime pathways.",
+			"Created the rheia-data modeling pipeline to process design instances and analyze field performance, installation consistency, and system behavior at scale.",
+			"Established typed interfaces and Pydantic validation to reduce technical debt and improve long-term maintainability.",
+			"Maintained production compatibility layers, including legacy verify_design_model support, while the new architecture was implemented.",
+			"Translated building physics and HVAC constraints into digital models used by engineering, product, and field operations.",
+			"Designed and prototyped early hardware components, validating airflow behavior, mechanical performance, and installation constraints.",
 		],
 	},
 	{
-		role: "Previous Role",
-		org: "Organization",
-		time: "2021 - 2024",
+		role: "Principal Building Science & Systems Analyst",
+		org: "IBACOS",
+		time: "Sep 2010 - Dec 2019",
+		location: "Pittsburgh, Pennsylvania",
 		points: [
-			"Describe the scope of the role in one readable sentence.",
-			"Use another bullet for tools, teams, or outcomes.",
+			"Modeled airflow, HVAC performance, and building physics for national builder programs and R&D initiatives.",
+			"Analyzed airflow, load behavior, duct performance, and system variability across hundreds of homes.",
+			"Led research on junction boxes and distribution geometries that informed early Rheia system concepts.",
+			"Developed modeling frameworks for system imbalance, energy performance, and field-installation sensitivity.",
+			"Designed field data-collection protocols and reconciled simulation results with real installations.",
+			"Produced technical documentation and builder guidance for engineers, utilities, and building-performance organizations.",
 		],
+	},
+	{
+		role: "Instructor",
+		org: "TechShop, Inc.",
+		time: "Mar 2013 - 2016",
+		location: "Pittsburgh, Pennsylvania",
+		points: [
+			"Taught ShopBot SBU, Adobe Illustrator for CNC, Trotec Laser Cutter, and VCarvePro/Cut3D courses.",
+		],
+	},
+	{
+		role: "Computational Design & Fabrication Engineer",
+		org: "Situ Studio",
+		time: "Jun 2007 - Aug 2010",
+		location: "Brooklyn, New York",
+		points: [
+			"Developed computational design, digital fabrication, and architectural prototyping workflows.",
+			"Designed complex geometric systems for architectural surfaces, sculptural installations, and custom assemblies.",
+			"Built parametric workflows connecting concept models to fabrication-ready outputs.",
+			"Led digital-to-physical prototyping with CNC, 3D printing, and advanced fabrication tools.",
+			"Developed modeling techniques for translating curvature, segmentation, and joinery into manufacturable systems.",
+			"Collaborated with architects, artists, engineers, and fabricators to integrate computational logic with material behavior and installation constraints.",
+			"Contributed to built projects through algorithmic design, hands-on fabrication, and rapid iteration.",
+		],
+	},
+];
+
+const education = [
+	{
+		school: "Pratt Institute",
+		degree: "MArch I, Architecture",
+		time: "2006 - 2008",
+	},
+	{
+		school: "Ball State University",
+		degree: "BS, Architecture",
+		time: "2002 - 2006",
+		details: [
+			"Virginia B. Ball Center Design Research Fellow: interdisciplinary studio focused on integrated design, environmental systems, material exploration, and collaborative research outcomes.",
+			"CapAsia IV: field research across Asian cities studying cultural patterns, spatial systems, climate adaptation, building typologies, and material logic.",
+		],
+	},
+];
+
+const publications = [
+	{
+		title: "A Plug-and-Play Duct System Evaluation",
+		source: "U.S. Department of Energy Office of Energy Efficiency and Renewable Energy",
+		date: "Jul 2017",
+		description:
+			"Evaluated a home-run style residential air distribution system with uniform small-diameter ducts, central manifold distribution, installation reliability, leakage reduction, and code-accepted material alternatives.",
+	},
+	{
+		title: "Computational Fluid Dynamics Analysis of Flexible Duct Junction Box Design",
+		source: "DOE Building Technologies Office",
+		date: "Dec 2013",
+		description:
+			"Assessed airflow behavior and performance sensitivity of residential HVAC junction boxes using measured and simulated data to guide builder programs and product innovation.",
+	},
+];
+
+const patents = [
+	{
+		title: "Fitting and ferrule for connecting to flexible duct",
+		id: "US 12298028",
+		date: "Issued May 13, 2025",
+		description:
+			"Flexible duct fitting and ferrule assembly designed to improve mechanical connection behavior.",
+	},
+	{
+		title: "Environmental control and air distribution system and method of using the same",
+		id: "US 10,962,241 B2",
+		date: "Issued Mar 30, 2021",
+		description:
+			"Modular manifold and sealing assembly for pressure-consistent, leak-resistant residential HVAC duct connections.",
+	},
+];
+
+const volunteering = [
+	{
+		role: "Gleaner",
+		org: "Greater Pittsburgh Community Food Bank",
+		time: "Jun 2014",
+		details: "Volunteer gleaning work supporting food recovery.",
 	},
 ];
 ---
@@ -40,13 +153,34 @@ const experience = [
 	<section class="mb-4">
 		<p class="text-uppercase small text-secondary fw-semibold mb-2">Resume</p>
 		<div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-3">
-			<div>
+			<div class="content-measure">
 				<h1 class="display-6 fw-semibold mb-2">Robert Beach</h1>
-				<p class="lead text-secondary mb-0">Role or headline goes here.</p>
+				<p class="lead text-secondary mb-2">
+					R&D Systems Architect | Physical-Digital Product Architecture, Modeling Engines,
+					HVAC & Building Simulation
+				</p>
+				<p class="text-secondary mb-0">Phoenix, Arizona, United States</p>
 			</div>
-			<a class="btn btn-outline-primary flex-shrink-0" href="mailto:hello@example.com">
+			<a class="btn btn-outline-primary flex-shrink-0" href="mailto:robert.k.beach@gmail.com">
 				Contact
 			</a>
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<div class="card">
+			<div class="card-body">
+				<h2 class="h4 mb-3">Summary</h2>
+				<p class="text-secondary mb-0">
+					I design and build systems at the intersection of building physics,
+					computational modeling, and product architecture. My work turns real-world HVAC
+					behavior into scalable digital frameworks that connect design intent, field
+					conditions, controls, installation constraints, and product behavior. My
+					long-term focus is coherent system design: models, tools, and product
+					frameworks that make complex physical systems intuitive, reliable, and
+					predictable in the real world.
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -60,7 +194,8 @@ const experience = [
 							<div class="d-flex flex-column flex-md-row justify-content-between gap-2">
 								<div>
 									<h3 class="h5 mb-1">{item.role}</h3>
-									<p class="text-secondary mb-2">{item.org}</p>
+									<p class="text-secondary mb-1">{item.org}</p>
+									<p class="small text-secondary mb-2">{item.location}</p>
 								</div>
 								<p class="small text-secondary mb-0">{item.time}</p>
 							</div>
@@ -89,11 +224,101 @@ const experience = [
 
 	<section class="resume-section">
 		<h2 class="h4 mb-3">Education</h2>
-		<div class="card">
-			<div class="card-body">
-				<h3 class="h5 mb-1">School or Program</h3>
-				<p class="text-secondary mb-0">Degree, certificate, or relevant training.</p>
+		<div class="vstack gap-3">
+			{
+				education.map((item) => (
+					<article class="card">
+						<div class="card-body">
+							<div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+									<div>
+										<h3 class="h5 mb-1">{item.school}</h3>
+										<p class="text-secondary mb-1">{item.degree}</p>
+										{
+											item.details && (
+												<ul class="small text-secondary mb-0">
+													{item.details.map((detail) => (
+														<li>{detail}</li>
+													))}
+												</ul>
+											)
+										}
+									</div>
+									<p class="small text-secondary mb-0">{item.time}</p>
+								</div>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<div class="row g-3">
+			<div class="col-lg-6">
+				<h2 class="h4 mb-3">Publications</h2>
+				<div class="list-group">
+					{
+						publications.map((item) => (
+							<div class="list-group-item">
+								<h3 class="h6 mb-1">{item.title}</h3>
+								<p class="small text-secondary mb-0">
+									{item.source} · {item.date}
+								</p>
+								<p class="small text-secondary mt-2 mb-0">{item.description}</p>
+							</div>
+						))
+					}
+				</div>
 			</div>
+			<div class="col-lg-6">
+				<h2 class="h4 mb-3">Patents</h2>
+				<div class="list-group">
+					{
+						patents.map((item) => (
+							<div class="list-group-item">
+								<h3 class="h6 mb-1">{item.title}</h3>
+								<p class="small text-secondary mb-0">
+									{item.id} · {item.date}
+								</p>
+								<p class="small text-secondary mt-2 mb-0">{item.description}</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<h2 class="h4 mb-3">Volunteering</h2>
+		<div class="list-group">
+			{
+				volunteering.map((item) => (
+					<div class="list-group-item">
+						<div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+							<div>
+								<h3 class="h6 mb-1">{item.role}</h3>
+								<p class="small text-secondary mb-1">{item.org}</p>
+								<p class="small text-secondary mb-0">{item.details}</p>
+							</div>
+							<p class="small text-secondary mb-0">{item.time}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<h2 class="h4 mb-3">Contact</h2>
+		<div class="list-group">
+			{
+				contactLinks.map((link) => (
+					<a class="list-group-item list-group-item-action" href={link.href}>
+						{link.label}
+					</a>
+				))
+			}
 		</div>
 	</section>
 </SiteLayout>
