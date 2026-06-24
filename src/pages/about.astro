@@ -1,0 +1,52 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const values = ["Practical systems", "Clear writing", "Simple interfaces", "Reliable delivery"];
+---
+
+<SiteLayout
+	title="About | Robert Beach"
+	description="About Robert Beach."
+	active="about"
+>
+	<section class="mb-4">
+		<p class="text-uppercase small text-secondary fw-semibold mb-2">About</p>
+		<h1 class="display-6 fw-semibold mb-2">About Me</h1>
+		<p class="lead text-secondary content-measure mb-0">
+			A short personal introduction can go here: what you do, what you care about, and
+			what kind of work you want people to associate with you.
+		</p>
+	</section>
+
+	<div class="row g-4">
+		<section class="col-lg-7">
+			<h2 class="h4 mb-3">Working Style</h2>
+			<p class="text-secondary">
+				This page is structured for a clear bio without a big promotional wrapper. Use it
+				for the human context: background, interests, tools, and the way you approach
+				problems.
+			</p>
+			<div class="d-flex flex-wrap gap-2">
+				{
+					values.map((value) => (
+						<span class="badge text-bg-light border">{value}</span>
+					))
+				}
+			</div>
+		</section>
+		<section class="col-lg-5">
+			<h2 class="h4 mb-3">Contact</h2>
+			<div class="list-group">
+				<a class="list-group-item list-group-item-action" href="mailto:hello@example.com">
+					hello@example.com
+				</a>
+				<a class="list-group-item list-group-item-action" href="https://github.com/">
+					GitHub
+				</a>
+				<a class="list-group-item list-group-item-action" href="https://www.linkedin.com/">
+					LinkedIn
+				</a>
+			</div>
+		</section>
+	</div>
+</SiteLayout>

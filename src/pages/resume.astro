@@ -1,0 +1,99 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const skills = [
+	"Frontend",
+	"Backend",
+	"Automation",
+	"Product thinking",
+	"Technical writing",
+	"Operations",
+];
+
+const experience = [
+	{
+		role: "Current Role",
+		org: "Organization",
+		time: "2024 - Present",
+		points: [
+			"Summarize the kind of work you do and the impact it has.",
+			"Add one measurable result or concrete responsibility.",
+		],
+	},
+	{
+		role: "Previous Role",
+		org: "Organization",
+		time: "2021 - 2024",
+		points: [
+			"Describe the scope of the role in one readable sentence.",
+			"Use another bullet for tools, teams, or outcomes.",
+		],
+	},
+];
+---
+
+<SiteLayout
+	title="Resume | Robert Beach"
+	description="Resume for Robert Beach."
+	active="resume"
+>
+	<section class="mb-4">
+		<p class="text-uppercase small text-secondary fw-semibold mb-2">Resume</p>
+		<div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-3">
+			<div>
+				<h1 class="display-6 fw-semibold mb-2">Robert Beach</h1>
+				<p class="lead text-secondary mb-0">Role or headline goes here.</p>
+			</div>
+			<a class="btn btn-outline-primary flex-shrink-0" href="mailto:hello@example.com">
+				Contact
+			</a>
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<h2 class="h4 mb-3">Experience</h2>
+		<div class="vstack gap-3">
+			{
+				experience.map((item) => (
+					<article class="card">
+						<div class="card-body">
+							<div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+								<div>
+									<h3 class="h5 mb-1">{item.role}</h3>
+									<p class="text-secondary mb-2">{item.org}</p>
+								</div>
+								<p class="small text-secondary mb-0">{item.time}</p>
+							</div>
+							<ul class="mb-0">
+								{item.points.map((point) => (
+									<li>{point}</li>
+								))}
+							</ul>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<h2 class="h4 mb-3">Skills</h2>
+		<div class="d-flex flex-wrap gap-2">
+			{
+				skills.map((skill) => (
+					<span class="badge text-bg-light border">{skill}</span>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<h2 class="h4 mb-3">Education</h2>
+		<div class="card">
+			<div class="card-body">
+				<h3 class="h5 mb-1">School or Program</h3>
+				<p class="text-secondary mb-0">Degree, certificate, or relevant training.</p>
+			</div>
+		</div>
+	</section>
+</SiteLayout>

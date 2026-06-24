@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const posts = (await getCollection("blog"))
+	.filter((post) => !post.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const dateFormatter = new Intl.DateTimeFormat("en", {
+	month: "short",
+	day: "numeric",
+	year: "numeric",
+});
+
+const getPostSlug = (post) => {
+	return post.id.replace(/\.mdx?$/, "").replace(/\/index$/, "");
+};
+---
+
+<SiteLayout
+	title="Blog | Robert Beach"
+	description="Blog posts and notes from Robert Beach."
+	active="blog"
+>
+	<section class="mb-4">
+		<p class="text-uppercase small text-secondary fw-semibold mb-2">Blog</p>
+		<h1 class="display-6 fw-semibold mb-2">Writing</h1>
+		<p class="lead text-secondary content-measure mb-0">
+			Notes, drafts, and longer posts in a plain archive.
+		</p>
+	</section>
+
+	<section class="vstack gap-3" aria-label="Blog posts">
+		{
+			posts.length > 0 ? (
+				posts.map((post) => (
+					<article class="card">
+						<div class="card-body">
+							<div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+								<div>
+									<p class="small text-secondary mb-1">
+										{dateFormatter.format(post.data.pubDate)}
+									</p>
+									<h2 class="h5 card-title mb-2">
+										<a class="stretched-link" href={`/blog/${getPostSlug(post)}`}>
+											{post.data.title}
+										</a>
+									</h2>
+									<p class="card-text text-secondary mb-0">
+										{post.data.description}
+									</p>
+								</div>
+								<div class="d-flex flex-wrap gap-2 align-self-md-start">
+									{post.data.tags.map((tag) => (
+										<span class="badge text-bg-light border">{tag}</span>
+									))}
+								</div>
+							</div>
+						</div>
+					</article>
+				))
+			) : (
+				<div class="alert alert-secondary mb-0" role="status">
+					No published posts yet.
+				</div>
+			)
+		}
+	</section>
+</SiteLayout>

@@ -1,0 +1,155 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const {
+	title = "Robert Beach",
+	description = "Personal site for Robert Beach.",
+	active = "home",
+} = Astro.props;
+
+const navItems = [
+	{ key: "home", label: "Home", href: "/" },
+	{ key: "portfolio", label: "Portfolio", href: "/portfolio" },
+	{ key: "blog", label: "Blog", href: "/blog" },
+	{ key: "about", label: "About", href: "/about" },
+	{ key: "resume", label: "Resume", href: "/resume" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="site-shell">
+			<header class="bg-white">
+				<nav class="navbar">
+					<div class="container flex-column flex-md-row align-items-md-center gap-2">
+						<a class="navbar-brand" href="/">Robert Beach</a>
+						<ul class="navbar-nav flex-row flex-wrap justify-content-center gap-1 ms-md-auto">
+							{
+								navItems.map((item) => (
+									<li class="nav-item">
+										<a
+											class:list={[
+												"nav-link px-2",
+												active === item.key && "active fw-semibold",
+											]}
+											href={item.href}
+											aria-current={active === item.key ? "page" : undefined}
+										>
+											{item.label}
+										</a>
+									</li>
+								))
+							}
+						</ul>
+					</div>
+				</nav>
+			</header>
+
+			<main class="main-content">
+				<div class="container py-4 py-md-5">
+					<slot />
+				</div>
+			</main>
+
+			<footer class="border-top bg-white">
+				<div class="container py-3">
+					<p class="small text-secondary mb-0">
+						&copy; {new Date().getFullYear()} Robert Beach. Built with Astro and Bootstrap.
+					</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		color-scheme: light;
+	}
+
+	body {
+		min-height: 100vh;
+		background: #f8f9fa;
+		color: #212529;
+	}
+
+	a {
+		text-underline-offset: 0.18em;
+	}
+
+	.site-shell {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.main-content {
+		flex: 1;
+	}
+
+	.navbar {
+		border-bottom: 1px solid #dee2e6;
+	}
+
+	.navbar-brand,
+	h1,
+	h2,
+	h3,
+	h4 {
+		letter-spacing: 0;
+	}
+
+	.card,
+	.list-group,
+	.alert,
+	.btn {
+		border-radius: 0.375rem;
+	}
+
+	.content-measure {
+		max-width: 760px;
+	}
+
+	.dashboard-card {
+		min-height: 100%;
+	}
+
+	.resume-section + .resume-section {
+		margin-top: 2rem;
+	}
+
+	.badge {
+		border-radius: 0.25rem;
+	}
+
+	.post-content > * + * {
+		margin-top: 1rem;
+	}
+
+	.post-content h2,
+	.post-content h3 {
+		margin-top: 2rem;
+	}
+
+	.post-content pre {
+		padding: 1rem;
+		overflow-x: auto;
+		background: #212529;
+		color: #f8f9fa;
+		border-radius: 0.375rem;
+	}
+
+	.post-content code {
+		font-size: 0.95em;
+	}
+</style>

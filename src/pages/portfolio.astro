@@ -1,0 +1,61 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const projects = [
+	{
+		name: "Featured Project",
+		type: "Case study",
+		summary: "A primary slot for the work you most want visitors to notice first.",
+		details: ["Problem", "Role", "Result"],
+	},
+	{
+		name: "Technical Project",
+		type: "Build note",
+		summary: "A compact entry for an app, integration, automation, or engineering write-up.",
+		details: ["Stack", "Constraints", "What changed"],
+	},
+	{
+		name: "Creative Project",
+		type: "Portfolio entry",
+		summary: "A lighter slot for experiments, prototypes, or work that shows your taste.",
+		details: ["Goal", "Process", "Link"],
+	},
+];
+---
+
+<SiteLayout
+	title="Portfolio | Robert Beach"
+	description="Selected portfolio work from Robert Beach."
+	active="portfolio"
+>
+	<section class="mb-4">
+		<p class="text-uppercase small text-secondary fw-semibold mb-2">Portfolio</p>
+		<h1 class="display-6 fw-semibold mb-2">Selected Work</h1>
+		<p class="lead text-secondary content-measure mb-0">
+			Short project summaries with enough context to understand the work quickly.
+		</p>
+	</section>
+
+	<section class="row g-3" aria-label="Portfolio projects">
+		{
+			projects.map((project) => (
+				<div class="col-lg-4">
+					<article class="card h-100">
+						<div class="card-body">
+							<p class="small text-uppercase text-secondary fw-semibold mb-2">
+								{project.type}
+							</p>
+							<h2 class="h5 card-title">{project.name}</h2>
+							<p class="card-text text-secondary">{project.summary}</p>
+							<div class="d-flex flex-wrap gap-2">
+								{project.details.map((detail) => (
+									<span class="badge text-bg-light border">{detail}</span>
+								))}
+							</div>
+						</div>
+					</article>
+				</div>
+			))
+		}
+	</section>
+</SiteLayout>
