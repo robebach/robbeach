@@ -7,23 +7,81 @@ const contactLinks = [
 	{ label: "LinkedIn", href: "https://www.linkedin.com/in/robert-beach-28167b11/" },
 ];
 
-const skills = [
-	"Physical-digital product architecture",
-	"Modeling engines",
-	"HVAC and building simulation",
-	"Building physics",
-	"Graph-based topology modeling",
-	"Domain-driven design",
-	"Controls architecture",
-	"System-state modeling",
-	"Data pipelines",
-	"Pydantic validation",
-	"Technical systems design",
-	"Parametric workflows",
-	"Rapid prototyping",
-	"Digital fabrication",
-	"Scripting",
-	"Technical documentation",
+const highlights = [
+	"Verified roughly 25,000 homes through Rheia software systems",
+	"Named inventor on 2 US patents for residential HVAC distribution systems",
+	"Published DOE-backed research on plug-and-play duct systems and junction box performance",
+	"15+ years across HVAC simulation, building science, computational design, and fabrication",
+];
+
+const skillGroups = [
+	{
+		name: "Modeling & Simulation",
+		skills: [
+			"HVAC simulation",
+			"Building physics",
+			"Airflow modeling",
+			"Graph topology",
+			"System-state modeling",
+			"Controls logic",
+		],
+	},
+	{
+		name: "Software & Data",
+		skills: [
+			"Modeling engines",
+			"Data pipelines",
+			"Domain-driven design",
+			"Typed interfaces",
+			"Pydantic validation",
+			"Scripting",
+		],
+	},
+	{
+		name: "Product & Systems",
+		skills: [
+			"Physical-digital product architecture",
+			"Technical systems design",
+			"Installation constraints",
+			"Field-performance analysis",
+			"Product R&D",
+			"Technical documentation",
+		],
+	},
+	{
+		name: "Design & Fabrication",
+		skills: [
+			"Parametric workflows",
+			"Digital fabrication",
+			"Rapid prototyping",
+			"CNC workflows",
+			"Geometric systems",
+			"Material behavior",
+		],
+	},
+];
+
+const selectedWork = [
+	{
+		title: "Rheia HVAC Modeling Engine",
+		description:
+			"Redesigned Rheia's core modeling engine into a domain-driven, graph-capable system that separates loads, rooms, duct topology, zoning, and controls logic.",
+	},
+	{
+		title: "Home Verification Software",
+		description:
+			"Built and maintained modeling systems used to verify roughly 25,000 home designs for Rheia's residential HVAC platform.",
+	},
+	{
+		title: "rheia-data Pipeline",
+		description:
+			"Created a data pipeline for processing design instances and analyzing field performance, installation consistency, and system behavior at scale.",
+	},
+	{
+		title: "Design-to-Runtime Controls Architecture",
+		description:
+			"Developed system-state modeling, topology-aware control adjustments, and pathways connecting design-time assumptions to runtime behavior.",
+	},
 ];
 
 const experience = [
@@ -34,14 +92,14 @@ const experience = [
 		location: "Phoenix, Arizona",
 		points: [
 			"Lead modeling, simulation, and system architecture for Rheia's physical-digital HVAC platform.",
-			"Redesigned the core HVAC modeling engine with domain-driven boundaries across loads, rooms, duct topology, zoning, and controls logic.",
-			"Built graph-based topology modeling for multi-branch airflow, system interactions, and real-world performance variability.",
-			"Developed next-generation controls architecture, including system-state modeling, topology-aware control adjustments, and design-to-runtime pathways.",
-			"Created the rheia-data modeling pipeline to process design instances and analyze field performance, installation consistency, and system behavior at scale.",
-			"Established typed interfaces and Pydantic validation to reduce technical debt and improve long-term maintainability.",
-			"Maintained production compatibility layers, including legacy verify_design_model support, while the new architecture was implemented.",
-			"Translated building physics and HVAC constraints into digital models used by engineering, product, and field operations.",
-			"Designed and prototyped early hardware components, validating airflow behavior, mechanical performance, and installation constraints.",
+			"Built software systems used to verify roughly 25,000 home designs for residential HVAC distribution performance.",
+			"Redesigned the core HVAC modeling engine into a domain-driven, graph-capable architecture spanning loads, rooms, duct topology, zoning, and controls.",
+			"Developed next-generation controls architecture with system-state modeling, topology-aware adjustments, and design-to-runtime pathways.",
+			"Created the rheia-data pipeline for analyzing design instances, field performance, installation consistency, and HVAC system behavior at scale.",
+			"Established typed interfaces and Pydantic validation to reduce technical debt and improve maintainability across modeling workflows.",
+			"Maintained production compatibility layers, including legacy verify_design_model support, while the new architecture was introduced.",
+			"Translated building physics, airflow behavior, product constraints, and installation realities into digital models used by engineering, product, and field teams.",
+			"Prototyped early hardware components and validated airflow behavior, mechanical performance, and installation constraints.",
 		],
 	},
 	{
@@ -51,11 +109,11 @@ const experience = [
 		location: "Pittsburgh, Pennsylvania",
 		points: [
 			"Modeled airflow, HVAC performance, and building physics for national builder programs and R&D initiatives.",
-			"Analyzed airflow, load behavior, duct performance, and system variability across hundreds of homes.",
-			"Led research on junction boxes and distribution geometries that informed early Rheia system concepts.",
-			"Developed modeling frameworks for system imbalance, energy performance, and field-installation sensitivity.",
-			"Designed field data-collection protocols and reconciled simulation results with real installations.",
-			"Produced technical documentation and builder guidance for engineers, utilities, and building-performance organizations.",
+			"Analyzed load behavior, duct performance, system imbalance, and installation sensitivity across hundreds of homes.",
+			"Led research on junction boxes and distribution geometries that revealed systemic airflow issues and informed early Rheia concepts.",
+			"Developed modeling frameworks to evaluate energy performance and real-world HVAC system variability.",
+			"Designed field data-collection protocols and reconciled simulation outputs with installed system performance.",
+			"Produced builder guidance and technical documentation for engineers, utilities, and building-performance organizations.",
 		],
 	},
 	{
@@ -74,11 +132,10 @@ const experience = [
 		location: "Brooklyn, New York",
 		points: [
 			"Developed computational design, digital fabrication, and architectural prototyping workflows.",
-			"Designed complex geometric systems for architectural surfaces, sculptural installations, and custom assemblies.",
-			"Built parametric workflows connecting concept models to fabrication-ready outputs.",
+			"Built parametric systems connecting concept models to fabrication-ready outputs for complex architectural surfaces, installations, and assemblies.",
 			"Led digital-to-physical prototyping with CNC, 3D printing, and advanced fabrication tools.",
-			"Developed modeling techniques for translating curvature, segmentation, and joinery into manufacturable systems.",
-			"Collaborated with architects, artists, engineers, and fabricators to integrate computational logic with material behavior and installation constraints.",
+			"Translated curvature, segmentation, and joinery into manufacturable systems.",
+			"Collaborated with architects, artists, engineers, and fabricators to align computational logic with material behavior and installation constraints.",
 			"Contributed to built projects through algorithmic design, hands-on fabrication, and rapid iteration.",
 		],
 	},
@@ -123,6 +180,7 @@ const patents = [
 		title: "Fitting and ferrule for connecting to flexible duct",
 		id: "US 12298028",
 		date: "Issued May 13, 2025",
+		href: "https://patents.google.com/patent/US12298028B2/en",
 		description:
 			"Flexible duct fitting and ferrule assembly designed to improve mechanical connection behavior.",
 	},
@@ -130,6 +188,7 @@ const patents = [
 		title: "Environmental control and air distribution system and method of using the same",
 		id: "US 10,962,241 B2",
 		date: "Issued Mar 30, 2021",
+		href: "https://patents.google.com/patent/US10962241B2/en",
 		description:
 			"Modular manifold and sealing assembly for pressure-consistent, leak-resistant residential HVAC duct connections.",
 	},
@@ -161,26 +220,64 @@ const volunteering = [
 				</p>
 				<p class="text-secondary mb-0">Phoenix, Arizona, United States</p>
 			</div>
-			<a class="btn btn-outline-primary flex-shrink-0" href="mailto:robert.k.beach@gmail.com">
-				Contact
-			</a>
+			<div class="d-flex flex-wrap gap-2 no-print">
+				<a class="btn btn-outline-primary flex-shrink-0" href="mailto:robert.k.beach@gmail.com">
+					Contact
+				</a>
+				<button class="btn btn-primary flex-shrink-0" type="button" onclick="window.print()">
+					Print / Save PDF
+				</button>
+			</div>
 		</div>
 	</section>
 
 	<section class="resume-section">
 		<div class="card">
 			<div class="card-body">
-				<h2 class="h4 mb-3">Summary</h2>
+				<h2 class="h4 mb-3">Profile</h2>
 				<p class="text-secondary mb-0">
-					I design and build systems at the intersection of building physics,
-					computational modeling, and product architecture. My work turns real-world HVAC
-					behavior into scalable digital frameworks that connect design intent, field
-					conditions, controls, installation constraints, and product behavior. My
-					long-term focus is coherent system design: models, tools, and product
-					frameworks that make complex physical systems intuitive, reliable, and
-					predictable in the real world.
+					Systems architect working at the intersection of building physics,
+					computational modeling, and product architecture. I build modeling engines,
+					data pipelines, and product frameworks that make complex HVAC behavior more
+					predictable, verifiable, and useful across design, field, controls, product,
+					and engineering workflows.
 				</p>
 			</div>
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<h2 class="h4 mb-3">Highlights</h2>
+		<div class="row g-3">
+			{
+				highlights.map((highlight) => (
+					<div class="col-md-6">
+						<div class="card h-100">
+							<div class="card-body py-3">
+								<p class="mb-0">{highlight}</p>
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="resume-section">
+		<h2 class="h4 mb-3">Selected Technical Work</h2>
+		<div class="row g-3">
+			{
+				selectedWork.map((item) => (
+					<div class="col-lg-6">
+						<article class="card h-100">
+							<div class="card-body">
+								<h3 class="h6">{item.title}</h3>
+								<p class="small text-secondary mb-0">{item.description}</p>
+							</div>
+						</article>
+					</div>
+				))
+			}
 		</div>
 	</section>
 
@@ -213,10 +310,21 @@ const volunteering = [
 
 	<section class="resume-section">
 		<h2 class="h4 mb-3">Skills</h2>
-		<div class="d-flex flex-wrap gap-2">
+		<div class="row g-3">
 			{
-				skills.map((skill) => (
-					<span class="badge text-bg-light border">{skill}</span>
+				skillGroups.map((group) => (
+					<div class="col-lg-6">
+						<div class="card h-100">
+							<div class="card-body">
+								<h3 class="h6">{group.name}</h3>
+								<div class="d-flex flex-wrap gap-2">
+									{group.skills.map((skill) => (
+										<span class="badge text-bg-light border">{skill}</span>
+									))}
+								</div>
+							</div>
+						</div>
+					</div>
 				))
 			}
 		</div>
@@ -230,21 +338,21 @@ const volunteering = [
 					<article class="card">
 						<div class="card-body">
 							<div class="d-flex flex-column flex-md-row justify-content-between gap-2">
-									<div>
-										<h3 class="h5 mb-1">{item.school}</h3>
-										<p class="text-secondary mb-1">{item.degree}</p>
-										{
-											item.details && (
-												<ul class="small text-secondary mb-0">
-													{item.details.map((detail) => (
-														<li>{detail}</li>
-													))}
-												</ul>
-											)
-										}
-									</div>
-									<p class="small text-secondary mb-0">{item.time}</p>
+								<div>
+									<h3 class="h5 mb-1">{item.school}</h3>
+									<p class="text-secondary mb-1">{item.degree}</p>
+									{
+										item.details && (
+											<ul class="small text-secondary mb-0">
+												{item.details.map((detail) => (
+													<li>{detail}</li>
+												))}
+											</ul>
+										)
+									}
 								</div>
+								<p class="small text-secondary mb-0">{item.time}</p>
+							</div>
 						</div>
 					</article>
 				))
@@ -276,7 +384,11 @@ const volunteering = [
 					{
 						patents.map((item) => (
 							<div class="list-group-item">
-								<h3 class="h6 mb-1">{item.title}</h3>
+								<h3 class="h6 mb-1">
+									<a href={item.href} target="_blank" rel="noreferrer">
+										{item.title}
+									</a>
+								</h3>
 								<p class="small text-secondary mb-0">
 									{item.id} · {item.date}
 								</p>

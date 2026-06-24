@@ -151,4 +151,45 @@ const navItems = [
 	.post-content code {
 		font-size: 0.95em;
 	}
+
+	@media print {
+		@page {
+			margin: 0.55in;
+		}
+
+		body {
+			background: #fff;
+		}
+
+		header,
+		footer,
+		.no-print {
+			display: none !important;
+		}
+
+		.main-content .container {
+			max-width: none;
+			padding: 0 !important;
+		}
+
+		.card,
+		.list-group-item {
+			border-color: #adb5bd !important;
+			break-inside: avoid;
+		}
+
+		.resume-section {
+			break-inside: avoid;
+		}
+
+		.resume-section + .resume-section {
+			margin-top: 1rem;
+		}
+
+		.badge {
+			border: 1px solid #adb5bd !important;
+			color: #212529 !important;
+			background: #fff !important;
+		}
+	}
 </style>
