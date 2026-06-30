@@ -24,7 +24,8 @@ Aiming for:
     - Read at your own risk
 - About Me
 - Home (login required)
-    - Monitoring for our vivarium, housing our crested gecko Penelope (she doesn't care about being broadcast to the public)
+    - Penelope
+        - Our vivarium, housing our crested gecko Penelope (she doesn't care about being broadcast to the public)
         - Word on the street is Astro can include my plotly.js charts
     - Google home shit./integration
 - Resume

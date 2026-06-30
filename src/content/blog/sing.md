@@ -15,4 +15,4 @@ no time like the present I make my way through switching ideas. No time
 to think, just do. But so far I haven't done what I think is possible. 
 How is it myself gets in the way of myself, preventing me 
 from placing my narrative on teh page or letting other people in on the secret. 
-I must learn to sing.
+I must learn to sing out.

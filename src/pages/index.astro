@@ -4,49 +4,51 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 const dashboardItems = [
 	{
 		label: "Projects",
-		title: "Selected work",
-		text: "A concise place for case studies, side projects, and links to shipped work.",
+		title: "Work",
+		text: "Work, sketches, images, etc.",
 		href: "/projects",
-		linkText: "View work",
+		linkText: "View it",
 	},
 	{
 		label: "Blog",
-		title: "Recent writing",
-		text: "Notes, essays, technical posts, and updates can live here without extra ceremony.",
+		title: "Writing",
+		text: "Not my traditional strong point..read at your own risk.",
 		href: "/blog",
-		linkText: "Read posts",
+		linkText: "Read some",
 	},
 	{
 		label: "Resume",
 		title: "Background",
-		text: "Experience, skills, education, and contact details organized for quick scanning.",
+		text: "My Career in a nutshell",
 		href: "/resume",
-		linkText: "View resume",
+		linkText: "See it",
 	},
 ];
 
-const focusItems = [
-	"Keep the site simple, readable, and easy to update.",
-	"Add portfolio entries as compact case studies.",
-	"Use the blog as a lightweight running notebook.",
-];
+// const focusItems = [
+// 	"Rheia"",
+// 	"Viva-Logger",
+// 	"This site",
+// ];
 ---
 
 <SiteLayout
-	title="Home | Robert Beach"
-	description="Home dashboard for Robert Beach's personal site."
+	title="Beach"
+	description="Robert Beach's personal site."
 	active="landing"
 >
 	<section class="mb-4">
-		<div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-3">
+		<div
+			class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-3"
+		>
 			<div class="content-measure">
-				<p class="text-uppercase small text-secondary fw-semibold mb-2">Personal site</p>
-				<h1 class="display-6 fw-semibold mb-2">Home Dashboard</h1>
-				<p class="lead text-secondary mb-0">
-					A simple index for current work, writing, background, and resume details.
+				<p class="text-uppercase small text-secondary fw-semibold mb-2">
+					Personal site
 				</p>
+				<h1 class="display-6 fw-semibold mb-2">Home</h1>
+				<p class="lead text-secondary mb-0">My personal site.</p>
 			</div>
-			<a class="btn btn-primary flex-shrink-0" href="/resume">View Resume</a>
+			<!-- <a class="btn btn-primary flex-shrink-0" href="/resume">View Resume</a> -->
 		</div>
 	</section>
 
@@ -61,14 +63,16 @@ const focusItems = [
 							</p>
 							<h2 class="h5 card-title">{item.title}</h2>
 							<p class="card-text text-secondary">{item.text}</p>
-							<a class="stretched-link" href={item.href}>{item.linkText}</a>
+							<a class="stretched-link" href={item.href}>
+								{item.linkText}
+							</a>
 						</div>
 					</article>
 				</div>
 			))
 		}
 	</section>
-
+	<!-- 
 	<section class="row g-4">
 		<div class="col-lg-7">
 			<h2 class="h4 mb-3">Current Focus</h2>
@@ -92,5 +96,5 @@ const focusItems = [
 				<a class="list-group-item list-group-item-action" href="/resume">Resume</a>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </SiteLayout>

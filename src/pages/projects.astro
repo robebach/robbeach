@@ -1,35 +1,114 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 
-const featuredProject = {
-	name: "Transitional Objects Surface Structuring",
-	client: "Alyson Shotz / Situ Studio",
-	type: "Computational fabrication",
-	link: "https://www.instagram.com/alysonshotz/p/Bju72klhMKP/?hl=en",
-	summary:
-		"Developed Rhino and Grasshopper software used to structure sculptural surfaces for Alyson Shotz's Transitional Objects work.",
-	points: [
-		"Collaborated with Shotz and the Situ Studio team on the process for translating surface concepts into buildable sculpture systems.",
-		"Built computational workflows that organized surface structure, fabrication logic, and iteration across multiple editions.",
-		"Developed techniques that remained useful to the work after my direct involvement ended.",
-	],
-	details: ["Rhino", "Grasshopper", "Digital fabrication", "Surface logic"],
-};
+const featuredProjects = [
+	{
+		name: "Transitional Objects Surface Structuring",
+		client: "Alyson Shotz / Situ Studio",
+		type: "Computational fabrication",
+		link: "https://www.instagram.com/alysonshotz/p/Bju72klhMKP/?hl=en",
+		summary:
+			"Developed Rhino and Grasshopper software used to structure sculptural surfaces for Alyson Shotz's Transitional Objects work.",
+		points: [
+			"Collaborated with Shotz while at Situ Studio on the process for translating surface concepts into buildable sculpture systems.",
+			"Built computational workflows that organized surface structure, fabrication logic, and iteration across multiple editions.",
+			"Developed techniques that remained useful to the work after my direct involvement ended.",
+		],
+		details: [
+			"Rhino",
+			"Grasshopper",
+			"Digital fabrication",
+			"Surface logic",
+		],
+	},
+	{
+		name: "Rheia Components",
+		client: "Rheia, LLC",
+		type: "Product design & engineering",
+		link: "https://patents.google.com/patent/US12298028B2/en",
+		summary:
+			"Contributed heavily to the development, prototyping, and mechanical optimization of modular components and the patented Rheia ferrule for residential HVAC distribution systems.",
+		points: [
+			"Collaborated deeply with Nigel Watts and Andrew Poerschke while at IBACOS, on the hardware development and sealing assemblies.",
+			"Helped design and prototype modular manifold and duct-connection fittings to ensure pressure-consistent, leak-resistant performance.",
+			"Named inventor on utility patents covering the flexible duct connection fittings and ferrule assembly.",
+		],
+		details: [
+			"Product design",
+			"Mechanical design",
+			"Rapid prototyping",
+			"Patents",
+			"HVAC systems",
+		],
+	},
+	{
+		name: "Rheia Software",
+		client: "Rheia, LLC",
+		type: "Systems engineering",
+		summary:
+			"Developed the core software systems and calculation engines that define, verify, and manage Rheia's engineered residential HVAC distribution platform at scale.",
+		points: [
+			"Built the calculation and modeling engine to simulate residential HVAC loads, zoning, duct topology, and airflow physics.",
+			"Developed Rheia Verify and Rheia Manage, the verification and design-management systems used to process and validate roughly 25,000 home designs.",
+			"Integrated building physics and system performance metrics to translate design-time engineering assumptions into predictable runtime performance.",
+		],
+		details: [
+			"Systems engineering",
+			"Modeling engines",
+			"Verify/Manage",
+			"Validation",
+			"Building physics",
+		],
+	},
+	{
+		name: "Trezona Fossil Reconstruction",
+		client: "Adam Maloof / Princeton University",
+		type: "Computational reconstruction",
+		link: "https://doi.org/10.1038/ngeo934",
+		summary:
+			"Developed a computational process in Adobe Suite and Rhino to reconstruct three-dimensional fossil morphology from serial grind and scan sequences, co-authoring research published in Nature Geoscience.",
+		points: [
+			"Collaborated with Adam Maloof and the Princeton research team to translate serial cross-sectional images of South Australian limestone into digital 3D models.",
+			"Built custom image-processing and vector alignment workflows to segment, stack, and align scan datasets.",
+			"Constructed detailed volumetric reconstructions of 650-million-year-old structures, contributing evidence of some of the earliest animal-body fossils.",
+		],
+		details: [
+			"Computational modeling",
+			"3D reconstruction",
+			"Adobe Suite",
+			"Rhino",
+			"Nature Geoscience",
+		],
+	},
+	{
+		name: "Duct Splitter Box CFD Research",
+		client: "U.S. Department of Energy (Building America) / IBACOS",
+		type: "Building science & simulation",
+		link: "https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/fluid_dynamics_flexduct.pdf",
+		summary:
+			"Led computational fluid dynamics (CFD) research to analyze airflow behavior and sensitivity in residential HVAC duct splitter and junction box geometries, identifying systemic issues that later informed early modular manifold concepts.",
+		points: [
+			"Constructed 3D CFD models to simulate turbulence, velocity profiles, and pressure drops across various junction box geometries.",
+			"Correlated simulation outputs with measured physical laboratory data to establish reliable performance guidelines.",
+			"Published DOE-backed findings demonstrating how non-uniform flow and fitting placements cause systemic HVAC performance losses.",
+		],
+		details: [
+			"CFD simulation",
+			"Airflow modeling",
+			"Building science",
+			"Fluid dynamics",
+			"HVAC R&D",
+		],
+	},
+];
 
 const projects = [
 	{
-		name: "Rheia HVAC Modeling Engine",
-		type: "Systems architecture",
+		name: "Design-to-Runtime Controls Architecture",
+		type: "Controls engineering",
 		summary:
-			"Domain-driven, graph-capable modeling engine for residential HVAC loads, rooms, duct topology, zoning, and controls logic.",
-		details: ["Modeling engine", "Graph topology", "Controls"],
-	},
-	{
-		name: "Home Verification Software",
-		type: "Product software",
-		summary:
-			"Software systems used to verify roughly 25,000 home designs for Rheia's residential HVAC platform.",
-		details: ["25K homes", "Validation", "Building systems"],
+			"Developed system-state modeling, topology-aware control adjustments, and pathways connecting design-time assumptions directly to runtime HVAC behavior.",
+		details: ["Controls", "System-state modeling", "Topology"],
 	},
 	{
 		name: "rheia-data Pipeline",
@@ -47,45 +126,67 @@ const projects = [
 	active="projects"
 >
 	<section class="mb-4">
-		<p class="text-uppercase small text-secondary fw-semibold mb-2">Projects</p>
+		<p class="text-uppercase small text-secondary fw-semibold mb-2">
+			Projects
+		</p>
 		<h1 class="display-6 fw-semibold mb-2">Selected Work</h1>
 		<p class="lead text-secondary content-measure mb-0">
-			A few projects that connect software, physical systems, design intent, and fabrication.
+			A few projects that connect software, physical systems, design
+			intent, and fabrication.
 		</p>
 	</section>
 
-	<section class="mb-4" aria-labelledby="featured-project">
-		<article class="card">
-			<div class="card-body">
-				<div class="row g-4 align-items-start">
-					<div class="col-lg-8">
-						<p class="small text-uppercase text-secondary fw-semibold mb-2">
-							{featuredProject.type}
-						</p>
-						<h2 class="h4 card-title" id="featured-project">{featuredProject.name}</h2>
-						<p class="text-secondary mb-2">{featuredProject.client}</p>
-						<p class="card-text">{featuredProject.summary}</p>
-						<ul class="mb-3">
-							{featuredProject.points.map((point) => (
-								<li>{point}</li>
-							))}
-						</ul>
-						<a href={featuredProject.link} target="_blank" rel="noreferrer">
-							View reference
-						</a>
-					</div>
-					<div class="col-lg-4">
-						<div class="d-flex flex-wrap gap-2">
-							{
-								featuredProject.details.map((detail) => (
-									<span class="badge text-bg-light border">{detail}</span>
-								))
-							}
+	<section class="mb-4" aria-label="Featured projects">
+		<div class="vstack gap-4">
+			{
+				featuredProjects.map((project, index) => (
+					<article class="card">
+						<div class="card-body">
+							<div class="row g-4 align-items-start">
+								<div class="col-lg-8">
+									<p class="small text-uppercase text-secondary fw-semibold mb-2">
+										{project.type}
+									</p>
+									<h2
+										class="h4 card-title"
+										id={`featured-project-${index}`}
+									>
+										{project.name}
+									</h2>
+									<p class="text-secondary mb-2">
+										{project.client}
+									</p>
+									<p class="card-text">{project.summary}</p>
+									<ul class="mb-3">
+										{project.points.map((point) => (
+											<li>{point}</li>
+										))}
+									</ul>
+									{project.link && (
+										<a
+											href={project.link}
+											target="_blank"
+											rel="noreferrer"
+										>
+											View reference
+										</a>
+									)}
+								</div>
+								<div class="col-lg-4">
+									<div class="d-flex flex-wrap gap-2">
+										{project.details.map((detail) => (
+											<span class="badge text-bg-light border">
+												{detail}
+											</span>
+										))}
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</article>
+					</article>
+				))
+			}
+		</div>
 	</section>
 
 	<section class="row g-3" aria-label="Portfolio projects">
@@ -98,10 +199,14 @@ const projects = [
 								{project.type}
 							</p>
 							<h2 class="h5 card-title">{project.name}</h2>
-							<p class="card-text text-secondary">{project.summary}</p>
+							<p class="card-text text-secondary">
+								{project.summary}
+							</p>
 							<div class="d-flex flex-wrap gap-2">
 								{project.details.map((detail) => (
-									<span class="badge text-bg-light border">{detail}</span>
+									<span class="badge text-bg-light border">
+										{detail}
+									</span>
 								))}
 							</div>
 						</div>
