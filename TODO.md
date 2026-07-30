@@ -1,8 +1,8 @@
 # Project Roadmap & TODO List
 
 ## 🖼️ Media & Imagery Staging
-- [ ] **Trezona Fossil Gallery**: Stage serial rock slice 3D reconstructions once Dropbox finishes syncing the `Nama/` directory.
-- [ ] **Curated Multi-Image Galleries**: Manually select 3–5 hero images per project gallery (FLW, CitySol, Alyson Shotz, Sci-Fi, Pratt).
+- [x] **Trezona Fossil Gallery**: Stage serial rock slice 3D reconstructions once Dropbox finishes syncing the `Nama/` directory.
+- [x] **Curated Multi-Image Galleries**: Manually select 3–5 hero images per project gallery (FLW, CitySol, Alyson Shotz, Sci-Fi, Pratt).
 - [ ] **Technical Drawing Zoom / Lightbox**: Implement high-res image modal viewer for blueprint vectors and Rhino wireframes.
 - [ ] **Image Captions**: Add technical descriptions and tools used (Rhino, Grasshopper, Processing, Python) as figure captions.
 

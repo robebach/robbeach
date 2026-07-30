@@ -34,6 +34,22 @@ const navItems = [
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap"
 			rel="stylesheet"
 		/>
+
+		{
+			import.meta.env.PROD && (
+				<>
+					<!-- Google tag (gtag.js) -->
+					<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-GE9KG0QTN9"></script>
+					<script is:inline>
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){window.dataLayer.push(arguments);}
+						gtag('js', new Date());
+
+						gtag('config', 'G-GE9KG0QTN9');
+					</script>
+				</>
+			)
+		}
 	</head>
 	<body>
 		<div class="site-shell">
