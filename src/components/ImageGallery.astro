@@ -1,0 +1,530 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+	galleryId: string;
+	aspectRatio?: string; // Optional custom aspect ratio (e.g. "3/1" or "16/9")
+}
+
+const { galleryId, aspectRatio } = Astro.props;
+
+// 1. Dynamic glob patterns must be static in Vite, so we load all potential images in the galleries folder
+const allImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/galleries/**/*.{jpeg,jpg,png,gif,webp,JPG,JPEG,PNG,WEBP}", { eager: true });
+
+// 2. Filter images by the directory name (galleryId)
+const galleryPrefix = `/src/assets/galleries/${galleryId}/`;
+const galleryImages = Object.keys(allImages)
+	.filter((key) => key.startsWith(galleryPrefix))
+	.sort() // Sort alphabetically to maintain order
+	.map((key) => ({
+		src: allImages[key].default,
+		path: key,
+		alt: cleanAltText(key),
+	}));
+
+// Helper to turn a file path (like /src/assets/galleries/transitional-objects/01-surface-structuring.png)
+// into a clean, human-readable title (like "Surface Structuring")
+function cleanAltText(filePath: string) {
+	const parts = filePath.split("/");
+	const fileNameWithExt = parts[parts.length - 1];
+	const fileName = fileNameWithExt.substring(0, fileNameWithExt.lastIndexOf("."));
+	
+	// Clean up leading numbers (e.g. "01-") and replace hyphens/underscores with spaces
+	let cleanName = fileName.replace(/^\d+[-_]*/, "");
+	cleanName = cleanName.replace(/[-_]+/g, " ");
+	
+	// Capitalize words
+	return cleanName.replace(/\b\w/g, (char) => char.toUpperCase());
+}
+---
+
+{
+	galleryImages.length > 0 ? (
+		<div class="gallery-wrapper">
+			<div 
+				class="carousel-container" 
+				style={aspectRatio ? `--gallery-aspect-ratio: ${aspectRatio}` : undefined}
+			>
+				{/* Navigation Buttons */}
+				<button class="nav-btn prev-btn disabled" aria-label="Previous image" type="button">
+					<svg viewBox="0 0 24 24">
+						<path d="M15 18l-6-6 6-6" />
+					</svg>
+				</button>
+				
+				<button class="nav-btn next-btn" aria-label="Next image" type="button">
+					<svg viewBox="0 0 24 24">
+						<path d="M9 18l6-6-6-6" />
+					</svg>
+				</button>
+
+				{/* Image Scroller (Scroll Snap) */}
+				<div class="images-scroll" data-gallery-id={galleryId}>
+					{galleryImages.map((image, index) => (
+						<div 
+							class="image-slide" 
+							data-index={index} 
+							data-alt={image.alt}
+							role="button"
+							tabindex="0"
+							aria-label={`View image: ${image.alt}`}
+						>
+							<Image 
+								src={image.src} 
+								alt={image.alt} 
+								loading={index === 0 ? "eager" : "lazy"}
+								fetchpriority={index === 0 ? "high" : "low"}
+							/>
+							<div class="slide-caption-overlay">
+								<h3 class="h6 mb-0 text-white fw-medium">{image.alt}</h3>
+							</div>
+						</div>
+					))}
+				</div>
+
+				{/* Indicator Dots */}
+				{galleryImages.length > 1 && (
+					<div class="indicators-container">
+						{galleryImages.map((_, index) => (
+							<button 
+								class={`dot ${index === 0 ? "active" : ""}`} 
+								data-index={index} 
+								aria-label={`Go to image ${index + 1}`}
+								type="button"
+							/>
+						))}
+					</div>
+				)}
+			</div>
+
+			{/* Native Lightbox Modal */}
+			<dialog class="lightbox-modal" closedby="any" aria-label="Image Lightbox">
+				<div class="lightbox-content">
+					<button class="lightbox-close" aria-label="Close lightbox" type="button">
+						&times;
+					</button>
+					<img class="lightbox-img" src="" alt="" />
+					<div class="lightbox-caption"></div>
+				</div>
+			</dialog>
+		</div>
+	) : (
+		<div class="alert alert-warning py-3 my-4">
+			<strong>Gallery not found:</strong> No images found in <code>src/assets/galleries/{galleryId}/</code>.
+		</div>
+	)
+}
+
+<style>
+	.gallery-wrapper {
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
+		margin-top: 2rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.carousel-container {
+		position: relative;
+		width: 100%;
+		/* Taller aspect ratio (2:1 desktop, up to 55vh height) */
+		aspect-ratio: var(--gallery-aspect-ratio, 2 / 1);
+		max-height: 55vh;
+		min-height: 380px;
+		overflow: hidden;
+		background: #0f1115;
+	}
+
+	@media (max-width: 768px) {
+		.carousel-container {
+			aspect-ratio: var(--gallery-aspect-ratio, 16 / 9);
+			max-height: 45vh;
+			min-height: 260px;
+		}
+	}
+
+	.images-scroll {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none; /* Hide standard Firefox scrollbar */
+		-ms-overflow-style: none; /* Hide IE scrollbar */
+	}
+
+	.images-scroll::-webkit-scrollbar {
+		display: none; /* Hide Chrome/Safari scrollbar */
+	}
+
+	.image-slide {
+		flex: 0 0 100%;
+		width: 100%;
+		height: 100%;
+		scroll-snap-align: start;
+		position: relative;
+		cursor: zoom-in;
+		overflow: hidden;
+	}
+
+	.image-slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.image-slide:hover img {
+		transform: scale(1.03); /* Soft micro-zoom on hover */
+	}
+
+	.slide-caption-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+		padding: 1.5rem 2rem;
+		opacity: 0;
+		transform: translateY(8px);
+		transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+		pointer-events: none;
+	}
+
+	.image-slide:hover .slide-caption-overlay,
+	.image-slide:focus-visible .slide-caption-overlay {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Navigation controls */
+	.nav-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: rgba(15, 17, 21, 0.45);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		color: rgba(255, 255, 255, 0.85);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 10;
+		transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+		padding: 0;
+	}
+
+	.nav-btn:hover {
+		background: rgba(15, 17, 21, 0.7);
+		border-color: rgba(255, 255, 255, 0.35);
+		color: #fff;
+		transform: translateY(-50%) scale(1.08);
+	}
+
+	.nav-btn.disabled {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.prev-btn {
+		left: 1.5rem;
+	}
+
+	.next-btn {
+		right: 1.5rem;
+	}
+
+	.nav-btn svg {
+		width: 22px;
+		height: 22px;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2.5;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	/* Indicator Dots */
+	.indicators-container {
+		position: absolute;
+		bottom: 1.25rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.5rem;
+		z-index: 10;
+		background: rgba(15, 17, 21, 0.5);
+		padding: 0.4rem 0.8rem;
+		border-radius: 20px;
+		backdrop-filter: blur(6px);
+		-webkit-backdrop-filter: blur(6px);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	.dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 3px;
+		background: rgba(255, 255, 255, 0.35);
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.dot:hover {
+		background: rgba(255, 255, 255, 0.75);
+	}
+
+	.dot.active {
+		width: 20px; /* Expands into active pill shape */
+		background: #fff;
+	}
+
+	/* Lightbox dialog */
+	.lightbox-modal {
+		border: none;
+		background: transparent;
+		padding: 0;
+		max-width: 90vw;
+		max-height: 90vh;
+		outline: none;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.lightbox-modal::backdrop {
+		background: rgba(10, 11, 15, 0.88);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+	}
+
+	.lightbox-content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	.lightbox-img {
+		max-width: 100%;
+		max-height: 80vh;
+		object-fit: contain;
+		border-radius: 6px;
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+		animation: zoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	@keyframes zoomIn {
+		from {
+			transform: scale(0.96);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		background: rgba(15, 17, 21, 0.65);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		color: #fff;
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: all 0.25s ease;
+		z-index: 12;
+		padding: 0;
+		line-height: 1;
+	}
+
+	.lightbox-close:hover {
+		background: rgba(255, 255, 255, 0.2);
+		transform: scale(1.05);
+		color: #fff;
+	}
+
+	.lightbox-caption {
+		margin-top: 1.25rem;
+		color: rgba(255, 255, 255, 0.85);
+		font-size: 0.95rem;
+		text-align: center;
+		max-width: 80%;
+		font-weight: 500;
+	}
+</style>
+
+<script>
+	// Run client-side scripts when DOM is loaded and on page transition (Astro View Transitions compatibility)
+	function initGalleries() {
+		const wrappers = document.querySelectorAll('.gallery-wrapper');
+		
+		wrappers.forEach((wrapper) => {
+			const scroller = wrapper.querySelector('.images-scroll') as HTMLElement;
+			const prevBtn = wrapper.querySelector('.prev-btn') as HTMLButtonElement;
+			const nextBtn = wrapper.querySelector('.next-btn') as HTMLButtonElement;
+			const dots = wrapper.querySelectorAll('.dot') as NodeListOf<HTMLButtonElement>;
+			const slides = wrapper.querySelectorAll('.image-slide') as NodeListOf<HTMLElement>;
+			const lightbox = wrapper.querySelector('.lightbox-modal') as HTMLDialogElement;
+			const lightboxImg = wrapper.querySelector('.lightbox-img') as HTMLImageElement;
+			const lightboxCaption = wrapper.querySelector('.lightbox-caption') as HTMLElement;
+			const lightboxClose = wrapper.querySelector('.lightbox-close') as HTMLButtonElement;
+
+			if (!scroller || slides.length === 0) return;
+
+			const totalSlides = slides.length;
+			let activeIndex = 0;
+
+			// --- 1. Carousel Arrow Clicking ---
+			if (prevBtn && nextBtn) {
+				prevBtn.addEventListener('click', () => {
+					const scrollWidth = scroller.clientWidth;
+					scroller.scrollBy({ left: -scrollWidth, behavior: 'smooth' });
+				});
+
+				nextBtn.addEventListener('click', () => {
+					const scrollWidth = scroller.clientWidth;
+					scroller.scrollBy({ left: scrollWidth, behavior: 'smooth' });
+				});
+			}
+
+			// --- 2. Indicators (Dots) Click ---
+			dots.forEach((dot) => {
+				dot.addEventListener('click', () => {
+					const index = parseInt(dot.dataset.index || '0', 10);
+					const targetSlide = slides[index];
+					if (targetSlide) {
+						targetSlide.scrollIntoView({
+							behavior: 'smooth',
+							block: 'nearest',
+							inline: 'start',
+						});
+					}
+				});
+			});
+
+			// --- 3. IntersectionObserver for Active Index Tracking ---
+			const updateState = (index: number) => {
+				activeIndex = index;
+				
+				// Update dot states
+				dots.forEach((dot, i) => {
+					if (i === index) {
+						dot.classList.add('active');
+					} else {
+						dot.classList.remove('active');
+					}
+				});
+
+				// Update arrow disabled classes
+				if (prevBtn && nextBtn) {
+					if (index === 0) {
+						prevBtn.classList.add('disabled');
+					} else {
+						prevBtn.classList.remove('disabled');
+					}
+
+					if (index === totalSlides - 1) {
+						nextBtn.classList.add('disabled');
+					} else {
+						nextBtn.classList.remove('disabled');
+					}
+				}
+			};
+
+			const observerOptions = {
+				root: scroller,
+				threshold: 0.6, // Fire when slide is 60% in view
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const slide = entry.target as HTMLElement;
+						const index = parseInt(slide.dataset.index || '0', 10);
+						updateState(index);
+					}
+				});
+			}, observerOptions);
+
+			slides.forEach((slide) => observer.observe(slide));
+
+			// --- 4. Lightbox logic ---
+			if (lightbox && lightboxImg) {
+				slides.forEach((slide) => {
+					const openLightbox = () => {
+						const img = slide.querySelector('img') as HTMLImageElement;
+						if (img) {
+							lightboxImg.src = img.currentSrc || img.src;
+							lightboxImg.alt = img.alt;
+							if (lightboxCaption) {
+								lightboxCaption.textContent = slide.dataset.alt || img.alt;
+							}
+							lightbox.showModal();
+						}
+					};
+
+					slide.addEventListener('click', openLightbox);
+					slide.addEventListener('keydown', (e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							openLightbox();
+						}
+					});
+				});
+
+				// Close Lightbox button
+				if (lightboxClose) {
+					lightboxClose.addEventListener('click', () => lightbox.close());
+				}
+
+				// Fallback for browsers without native <dialog closedby> support (Safari)
+				if (!('closedBy' in HTMLDialogElement.prototype)) {
+					lightbox.addEventListener('click', (event) => {
+						if (event.target !== lightbox) return;
+						
+						const rect = lightbox.getBoundingClientRect();
+						const isInside = (
+							rect.top <= event.clientY &&
+							event.clientY <= rect.top + rect.height &&
+							rect.left <= event.clientX &&
+							event.clientX <= rect.left + rect.width
+						);
+						
+						if (!isInside) {
+							lightbox.close();
+						}
+					});
+				}
+			}
+		});
+	}
+
+	// Initialize on initial page load
+	document.addEventListener('DOMContentLoaded', initGalleries);
+	// Re-run initialization on Astro page navigation if Astro transitions are used
+	document.addEventListener('astro:after-swap', initGalleries);
+</script>

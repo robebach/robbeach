@@ -1,0 +1,343 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import ImageGallery from "../../components/ImageGallery.astro";
+import { projects, type Project } from "../../data/projects";
+
+export async function getStaticPaths() {
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: { project },
+	}));
+}
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+
+const currentIndex = projects.findIndex((p) => p.slug === project.slug);
+const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+const nextProject =
+	currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+---
+
+<SiteLayout
+	title={`${project.name} | Robert Beach`}
+	description={project.summary}
+	active="projects"
+>
+	{/* Breadcrumb */}
+	<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+		<a href="/projects" class="breadcrumb-back">
+			<span aria-hidden="true">&larr;</span> Work
+		</a>
+	</nav>
+
+	{/* Project header */}
+	<header class="project-header content-measure">
+		<div class="project-header-meta">
+			<span class="project-type">{project.type}</span>
+			{project.period && <span class="project-sep">·</span>}
+			{project.period && <span class="project-period">{project.period}</span>}
+		</div>
+		<h1 class="project-title">{project.name}</h1>
+		<p class="project-client">{project.client}</p>
+
+		{
+			project.details.length > 0 && (
+				<ul class="tag-list mt-3" aria-label="Tags">
+					{project.details.map((d) => (
+						<li class="tag">{d}</li>
+					))}
+				</ul>
+			)
+		}
+
+		{
+			project.link && (
+				<div class="project-ext-link">
+					<a
+						href={project.link}
+						target="_blank"
+						rel="noreferrer"
+						class="ext-link"
+					>
+						{project.linkText || "View Reference"}&nbsp;&nearr;
+					</a>
+				</div>
+			)
+		}
+	</header>
+
+	{/* Gallery */}
+	{
+		project.galleryId && (
+			<section class="gallery-section" aria-label="Project gallery">
+				<ImageGallery galleryId={project.galleryId} />
+			</section>
+		)
+	}
+
+	{/* Article */}
+	<article class="project-article content-measure">
+		<p class="project-lead">{project.summary}</p>
+
+		<div class="project-body">
+			{project.fullDescription.map((para) => <p>{para}</p>)}
+		</div>
+
+		{
+			project.points.length > 0 && (
+				<aside class="project-points">
+					<ul>
+						{project.points.map((pt) => (
+							<li>{pt}</li>
+						))}
+					</ul>
+				</aside>
+			)
+		}
+	</article>
+
+	{/* Footer nav */}
+	<footer class="project-nav" aria-label="Project navigation">
+		<div class="project-nav-inner">
+			{
+				prevProject ? (
+					<a href={`/projects/${prevProject.slug}`} class="proj-nav-link prev">
+						<span class="proj-nav-dir">&larr; Previous</span>
+						<span class="proj-nav-name">{prevProject.name}</span>
+					</a>
+				) : (
+					<span />
+				)
+			}
+			<a href="/projects" class="proj-nav-index">All work</a>
+			{
+				nextProject ? (
+					<a href={`/projects/${nextProject.slug}`} class="proj-nav-link next">
+						<span class="proj-nav-dir">Next &rarr;</span>
+						<span class="proj-nav-name">{nextProject.name}</span>
+					</a>
+				) : (
+					<span />
+				)
+			}
+		</div>
+	</footer>
+</SiteLayout>
+
+<style>
+	/* ─── Breadcrumb ──────────────────────────────────────────── */
+	.breadcrumb-nav {
+		margin-bottom: 2.5rem;
+	}
+
+	.breadcrumb-back {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+		text-decoration: none;
+		transition: color 0.12s;
+	}
+
+	.breadcrumb-back:hover {
+		color: var(--ink);
+		opacity: 1;
+	}
+
+	/* ─── Project header ──────────────────────────────────────── */
+	.project-header {
+		margin-bottom: 2rem;
+	}
+
+	.project-header-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.875rem;
+	}
+
+	.project-type {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+	}
+
+	.project-sep {
+		color: var(--rule);
+	}
+
+	.project-period {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		color: var(--ink-3);
+	}
+
+	.project-title {
+		font-size: clamp(1.5rem, 4vw, 2.25rem);
+		font-weight: 300;
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		color: var(--ink);
+		margin: 0 0 0.375rem;
+	}
+
+	.project-client {
+		font-size: 0.875rem;
+		color: var(--ink-3);
+		margin: 0;
+	}
+
+	.project-ext-link {
+		margin-top: 1rem;
+	}
+
+	.ext-link {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.04em;
+		color: var(--ink-2);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.ext-link:hover {
+		color: var(--ink);
+		opacity: 1;
+	}
+
+	/* ─── Gallery ─────────────────────────────────────────────── */
+	.gallery-section {
+		margin: 2rem 0;
+	}
+
+	/* ─── Article ─────────────────────────────────────────────── */
+	.project-article {
+		margin-top: 2.5rem;
+		margin-bottom: 4rem;
+	}
+
+	.project-lead {
+		font-size: 1.125rem;
+		line-height: 1.7;
+		color: var(--ink-2);
+		margin: 0 0 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--rule);
+	}
+
+	.project-body {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.project-body p {
+		font-size: 0.9375rem;
+		line-height: 1.75;
+		color: var(--ink-2);
+		margin: 0;
+	}
+
+	/* ─── Points aside ────────────────────────────────────────── */
+	.project-points {
+		background: var(--surface-2);
+		border-left: 3px solid var(--surface-3);
+		padding: 1.25rem 1.5rem;
+		border-radius: 0 4px 4px 0;
+		margin-top: 2rem;
+	}
+
+	.project-points ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.625rem;
+	}
+
+	.project-points li {
+		font-size: 0.875rem;
+		line-height: 1.6;
+		color: var(--ink-2);
+		padding-left: 1.25rem;
+		position: relative;
+	}
+
+	.project-points li::before {
+		content: "—";
+		position: absolute;
+		left: 0;
+		color: var(--ink-3);
+		font-family: var(--font-mono);
+	}
+
+	/* ─── Footer nav ──────────────────────────────────────────── */
+	.project-nav {
+		border-top: 1px solid var(--rule);
+		padding-top: 2rem;
+		margin-top: 4rem;
+	}
+
+	.project-nav-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.proj-nav-link {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		text-decoration: none;
+		max-width: 40%;
+	}
+
+	.proj-nav-link.next {
+		align-items: flex-end;
+		text-align: right;
+	}
+
+	.proj-nav-dir {
+		font-family: var(--font-mono);
+		font-size: 0.65rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+	}
+
+	.proj-nav-name {
+		font-size: 0.8125rem;
+		color: var(--ink-2);
+		transition: color 0.12s;
+	}
+
+	.proj-nav-link:hover .proj-nav-name {
+		color: var(--ink);
+	}
+
+	.proj-nav-index {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+		text-decoration: none;
+		transition: color 0.12s;
+	}
+
+	.proj-nav-index:hover {
+		color: var(--ink);
+		opacity: 1;
+	}
+</style>

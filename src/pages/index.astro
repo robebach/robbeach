@@ -1,100 +1,197 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-
-const dashboardItems = [
-	{
-		label: "Projects",
-		title: "Work",
-		text: "Work, sketches, images, etc.",
-		href: "/projects",
-		linkText: "View it",
-	},
-	{
-		label: "Blog",
-		title: "Writing",
-		text: "Not my traditional strong point..read at your own risk.",
-		href: "/blog",
-		linkText: "Read some",
-	},
-	{
-		label: "Resume",
-		title: "Background",
-		text: "My Career in a nutshell",
-		href: "/resume",
-		linkText: "See it",
-	},
-];
-
-// const focusItems = [
-// 	"Rheia"",
-// 	"Viva-Logger",
-// 	"This site",
-// ];
 ---
 
 <SiteLayout
-	title="Beach"
-	description="Robert Beach's personal site."
-	active="landing"
+	title="Robert Beach"
+	description="Personal site and portfolio for Robert Beach — architect, engineer, software developer."
+	active="about"
 >
-	<section class="mb-4">
-		<div
-			class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-3"
-		>
-			<div class="content-measure">
-				<p class="text-uppercase small text-secondary fw-semibold mb-2">
-					Personal site
-				</p>
-				<h1 class="display-6 fw-semibold mb-2">Home</h1>
-				<p class="lead text-secondary mb-0">My personal site.</p>
-			</div>
-			<!-- <a class="btn btn-primary flex-shrink-0" href="/resume">View Resume</a> -->
-		</div>
+	<section class="about-hero content-measure mb-5">
+		<p class="about-label">Robert Beach</p>
+		<h1 class="about-title">
+			Architect, engineer,<br />software developer.
+		</h1>
+		<p class="about-body">
+			Trained as an architect and grown into building science, data analytics,
+			product design, and software development. My work asks how the discipline
+			of software — its rigor, its modularity, its feedback loops — can improve
+			how we design and build physical systems.
+		</p>
+		<p class="about-body">
+			Currently at <strong>Rheia</strong>, where I architect the simulation
+			engines, data pipelines, automated controls, and patented hardware behind
+			a residential HVAC platform operating in 25,000+ homes. Before that:
+			Situ Studio, the Guggenheim, Princeton, and a graduate degree in
+			architecture from Pratt Institute.
+		</p>
+		<p class="about-body">
+			Live in Phoenix with my wife, two boys, a dog, a cat, and a gecko — the
+			gecko being the reason one of the projects on this site exists.
+		</p>
 	</section>
 
-	<section class="row g-3 mb-4" aria-label="Site sections">
-		{
-			dashboardItems.map((item) => (
-				<div class="col-md-4">
-					<article class="card dashboard-card border">
-						<div class="card-body">
-							<p class="small text-uppercase text-secondary fw-semibold mb-2">
-								{item.label}
-							</p>
-							<h2 class="h5 card-title">{item.title}</h2>
-							<p class="card-text text-secondary">{item.text}</p>
-							<a class="stretched-link" href={item.href}>
-								{item.linkText}
-							</a>
-						</div>
-					</article>
-				</div>
-			))
-		}
-	</section>
-	<!-- 
-	<section class="row g-4">
-		<div class="col-lg-7">
-			<h2 class="h4 mb-3">Current Focus</h2>
-			<ul class="list-group">
-				{
-					focusItems.map((item) => (
-						<li class="list-group-item d-flex align-items-start gap-2">
-							<span class="badge text-bg-primary mt-1">Now</span>
-							<span>{item}</span>
-						</li>
-					))
-				}
-			</ul>
-		</div>
-		<div class="col-lg-5">
-			<h2 class="h4 mb-3">Quick Links</h2>
-			<div class="list-group">
-				<a class="list-group-item list-group-item-action" href="/about">About me</a>
-				<a class="list-group-item list-group-item-action" href="/projects">Projects</a>
-				<a class="list-group-item list-group-item-action" href="/blog">Blog archive</a>
-				<a class="list-group-item list-group-item-action" href="/resume">Resume</a>
-			</div>
-		</div>
-	</section> -->
+	<div class="about-cols">
+		<section class="about-links-col">
+			<h2 class="col-label">Contact & Links</h2>
+			<nav class="link-stack" aria-label="External links">
+				<a class="link-row" href="mailto:robert.k.beach@gmail.com">
+					<span>robert.k.beach@gmail.com</span>
+					<span class="link-arrow">&nearr;</span>
+				</a>
+				<a
+					class="link-row"
+					href="https://github.com/robebach"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<span>GitHub / robebach</span>
+					<span class="link-arrow">&nearr;</span>
+				</a>
+				<a
+					class="link-row"
+					href="https://www.linkedin.com/in/robert-beach-28167b11/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<span>LinkedIn</span>
+					<span class="link-arrow">&nearr;</span>
+				</a>
+				<a class="link-row" href="/resume">
+					<span>CV / Résumé</span>
+					<span class="link-arrow">&rarr;</span>
+				</a>
+			</nav>
+		</section>
+
+		<section class="about-facts-col">
+			<h2 class="col-label">Currently</h2>
+			<dl class="fact-list">
+				<dt>Role</dt>
+				<dd>Staff Engineer, Rheia LLC</dd>
+				<dt>Focus</dt>
+				<dd>Building science · HVAC controls · Software architecture</dd>
+				<dt>Location</dt>
+				<dd>Phoenix, AZ</dd>
+				<dt>Education</dt>
+				<dd>M.Arch, Pratt Institute</dd>
+			</dl>
+		</section>
+	</div>
 </SiteLayout>
+
+<style>
+	.about-label {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+		margin: 0 0 1.5rem;
+	}
+
+	.about-title {
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 300;
+		line-height: 1.15;
+		color: var(--ink);
+		margin: 0 0 2rem;
+		letter-spacing: -0.02em;
+	}
+
+	.about-body {
+		font-size: 1.0625rem;
+		line-height: 1.72;
+		color: var(--ink-2);
+		margin: 0 0 1.125rem;
+	}
+
+	.about-body:last-child {
+		margin-bottom: 0;
+	}
+
+	.about-cols {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		margin-top: 3.5rem;
+		padding-top: 2.5rem;
+		border-top: 1px solid var(--rule);
+		max-width: var(--measure);
+	}
+
+	@media (max-width: 640px) {
+		.about-cols {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+	}
+
+	.col-label {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+		margin: 0 0 1.25rem;
+	}
+
+	/* Links column */
+	.link-stack {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.link-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.7rem 0;
+		border-bottom: 1px solid var(--rule);
+		font-size: 0.9rem;
+		color: var(--ink-2);
+		text-decoration: none;
+		transition: color 0.12s ease;
+	}
+
+	.link-row:first-child {
+		border-top: 1px solid var(--rule);
+	}
+
+	.link-row:hover {
+		color: var(--ink);
+		opacity: 1;
+	}
+
+	.link-arrow {
+		color: var(--ink-3);
+		font-size: 0.85rem;
+	}
+
+	/* Facts column */
+	.fact-list {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.5rem 1.5rem;
+		margin: 0;
+	}
+
+	.fact-list dt {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+		padding-top: 0.1em;
+		white-space: nowrap;
+	}
+
+	.fact-list dd {
+		font-size: 0.875rem;
+		color: var(--ink-2);
+		margin: 0;
+	}
+</style>

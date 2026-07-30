@@ -1,218 +1,194 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import { projects } from "../data/projects";
 
-const featuredProjects = [
-	{
-		name: "Transitional Objects Surface Structuring",
-		client: "Alyson Shotz / Situ Studio",
-		type: "Computational fabrication",
-		link: "https://www.instagram.com/alysonshotz/p/Bju72klhMKP/?hl=en",
-		summary:
-			"Developed Rhino and Grasshopper software used to structure sculptural surfaces for Alyson Shotz's Transitional Objects work.",
-		points: [
-			"Collaborated with Shotz while at Situ Studio on the process for translating surface concepts into buildable sculpture systems.",
-			"Built computational workflows that organized surface structure, fabrication logic, and iteration across multiple editions.",
-			"Developed techniques that remained useful to the work after my direct involvement ended.",
-		],
-		details: [
-			"Rhino",
-			"Grasshopper",
-			"Digital fabrication",
-			"Surface logic",
-		],
-	},
-	{
-		name: "Rheia Components",
-		client: "Rheia, LLC",
-		type: "Product design & engineering",
-		link: "https://patents.google.com/patent/US12298028B2/en",
-		summary:
-			"Contributed heavily to the development, prototyping, and mechanical optimization of modular components and the patented Rheia ferrule for residential HVAC distribution systems.",
-		points: [
-			"Collaborated deeply with Nigel Watts and Andrew Poerschke while at IBACOS, on the hardware development and sealing assemblies.",
-			"Helped design and prototype modular manifold and duct-connection fittings to ensure pressure-consistent, leak-resistant performance.",
-			"Named inventor on utility patents covering the flexible duct connection fittings and ferrule assembly.",
-		],
-		details: [
-			"Product design",
-			"Mechanical design",
-			"Rapid prototyping",
-			"Patents",
-			"HVAC systems",
-		],
-	},
-	{
-		name: "Rheia Software",
-		client: "Rheia, LLC",
-		type: "Systems engineering",
-		summary:
-			"Developed the core software systems and calculation engines that define, verify, and manage Rheia's engineered residential HVAC distribution platform at scale.",
-		points: [
-			"Built the calculation and modeling engine to simulate residential HVAC loads, zoning, duct topology, and airflow physics.",
-			"Developed Rheia Verify and Rheia Manage, the verification and design-management systems used to process and validate roughly 25,000 home designs.",
-			"Integrated building physics and system performance metrics to translate design-time engineering assumptions into predictable runtime performance.",
-		],
-		details: [
-			"Systems engineering",
-			"Modeling engines",
-			"Verify/Manage",
-			"Validation",
-			"Building physics",
-		],
-	},
-	{
-		name: "Trezona Fossil Reconstruction",
-		client: "Adam Maloof / Princeton University",
-		type: "Computational reconstruction",
-		link: "https://doi.org/10.1038/ngeo934",
-		summary:
-			"Developed a computational process in Adobe Suite and Rhino to reconstruct three-dimensional fossil morphology from serial grind and scan sequences, co-authoring research published in Nature Geoscience.",
-		points: [
-			"Collaborated with Adam Maloof and the Princeton research team to translate serial cross-sectional images of South Australian limestone into digital 3D models.",
-			"Built custom image-processing and vector alignment workflows to segment, stack, and align scan datasets.",
-			"Constructed detailed volumetric reconstructions of 650-million-year-old structures, contributing evidence of some of the earliest animal-body fossils.",
-		],
-		details: [
-			"Computational modeling",
-			"3D reconstruction",
-			"Adobe Suite",
-			"Rhino",
-			"Nature Geoscience",
-		],
-	},
-	{
-		name: "Duct Splitter Box CFD Research",
-		client: "U.S. Department of Energy (Building America) / IBACOS",
-		type: "Building science & simulation",
-		link: "https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/fluid_dynamics_flexduct.pdf",
-		summary:
-			"Led computational fluid dynamics (CFD) research to analyze airflow behavior and sensitivity in residential HVAC duct splitter and junction box geometries, identifying systemic issues that later informed early modular manifold concepts.",
-		points: [
-			"Constructed 3D CFD models to simulate turbulence, velocity profiles, and pressure drops across various junction box geometries.",
-			"Correlated simulation outputs with measured physical laboratory data to establish reliable performance guidelines.",
-			"Published DOE-backed findings demonstrating how non-uniform flow and fitting placements cause systemic HVAC performance losses.",
-		],
-		details: [
-			"CFD simulation",
-			"Airflow modeling",
-			"Building science",
-			"Fluid dynamics",
-			"HVAC R&D",
-		],
-	},
-];
-
-const projects = [
-	{
-		name: "Design-to-Runtime Controls Architecture",
-		type: "Controls engineering",
-		summary:
-			"Developed system-state modeling, topology-aware control adjustments, and pathways connecting design-time assumptions directly to runtime HVAC behavior.",
-		details: ["Controls", "System-state modeling", "Topology"],
-	},
-	{
-		name: "rheia-data Pipeline",
-		type: "Data tooling",
-		summary:
-			"Pipeline for analyzing design instances, field performance, installation consistency, and HVAC system behavior at scale.",
-		details: ["Data pipeline", "Field performance", "Analysis"],
-	},
-];
+const pageTitle = "Work | Robert Beach";
+const pageDescription =
+	"Selected projects across software development, building science, data analytics, fabrication, and architectural research.";
 ---
 
-<SiteLayout
-	title="Projects | Robert Beach"
-	description="Selected projects from Robert Beach."
-	active="projects"
->
-	<section class="mb-4">
-		<p class="text-uppercase small text-secondary fw-semibold mb-2">
-			Projects
+<SiteLayout title={pageTitle} description={pageDescription} active="projects">
+	<header class="projects-header content-measure mb-5">
+		<p class="section-label">Selected Work</p>
+		<h1 class="projects-title">
+			Software, hardware, science,<br />architecture.
+		</h1>
+		<p class="projects-intro">
+			A selection of projects spanning the last two decades — from graduate
+			architecture studios to published geoscience research to the engineering
+			systems running in tens of thousands of homes.
 		</p>
-		<h1 class="display-6 fw-semibold mb-2">Selected Work</h1>
-		<p class="lead text-secondary content-measure mb-0">
-			A few projects that connect software, physical systems, design
-			intent, and fabrication.
-		</p>
-	</section>
+	</header>
 
-	<section class="mb-4" aria-label="Featured projects">
-		<div class="vstack gap-4">
+	<section aria-label="Project list">
+		<ol class="project-list" role="list">
 			{
-				featuredProjects.map((project, index) => (
-					<article class="card">
-						<div class="card-body">
-							<div class="row g-4 align-items-start">
-								<div class="col-lg-8">
-									<p class="small text-uppercase text-secondary fw-semibold mb-2">
-										{project.type}
-									</p>
-									<h2
-										class="h4 card-title"
-										id={`featured-project-${index}`}
-									>
-										{project.name}
-									</h2>
-									<p class="text-secondary mb-2">
-										{project.client}
-									</p>
-									<p class="card-text">{project.summary}</p>
-									<ul class="mb-3">
-										{project.points.map((point) => (
-											<li>{point}</li>
-										))}
-									</ul>
-									{project.link && (
-										<a
-											href={project.link}
-											target="_blank"
-											rel="noreferrer"
-										>
-											View reference
-										</a>
-									)}
-								</div>
-								<div class="col-lg-4">
-									<div class="d-flex flex-wrap gap-2">
-										{project.details.map((detail) => (
-											<span class="badge text-bg-light border">
-												{detail}
-											</span>
-										))}
-									</div>
-								</div>
+				projects.map((project, i) => (
+					<li class="project-item">
+						<a
+							class="project-link"
+							href={`/projects/${project.slug}`}
+							aria-label={project.name}
+						>
+							<div class="project-meta">
+								<span class="project-index">{String(i + 1).padStart(2, "0")}</span>
+								<span class="project-period">{project.period ?? "—"}</span>
 							</div>
-						</div>
-					</article>
+							<div class="project-body">
+								<h2 class="project-name">{project.name}</h2>
+								<p class="project-summary">{project.summary}</p>
+								<ul class="tag-list" aria-label="Tags">
+									{project.details.slice(0, 5).map((d) => (
+										<li class="tag">{d}</li>
+									))}
+								</ul>
+							</div>
+							<span class="project-arrow" aria-hidden="true">&rarr;</span>
+						</a>
+					</li>
 				))
 			}
-		</div>
-	</section>
-
-	<section class="row g-3" aria-label="Portfolio projects">
-		{
-			projects.map((project) => (
-				<div class="col-lg-4">
-					<article class="card h-100">
-						<div class="card-body">
-							<p class="small text-uppercase text-secondary fw-semibold mb-2">
-								{project.type}
-							</p>
-							<h2 class="h5 card-title">{project.name}</h2>
-							<p class="card-text text-secondary">
-								{project.summary}
-							</p>
-							<div class="d-flex flex-wrap gap-2">
-								{project.details.map((detail) => (
-									<span class="badge text-bg-light border">
-										{detail}
-									</span>
-								))}
-							</div>
-						</div>
-					</article>
-				</div>
-			))
-		}
+		</ol>
 	</section>
 </SiteLayout>
+
+<style>
+	.section-label {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--ink-3);
+		margin: 0 0 1.25rem;
+	}
+
+	.projects-title {
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-weight: 300;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		color: var(--ink);
+		margin: 0 0 1.25rem;
+	}
+
+	.projects-intro {
+		font-size: 1rem;
+		line-height: 1.7;
+		color: var(--ink-2);
+		margin: 0;
+	}
+
+	/* ─── Project list ───────────────────────────────────────── */
+	.project-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		border-top: 1px solid var(--rule);
+	}
+
+	.project-item {
+		border-bottom: 1px solid var(--rule);
+	}
+
+	.project-link {
+		display: grid;
+		grid-template-columns: 6rem 1fr auto;
+		gap: 1.5rem;
+		align-items: start;
+		padding: 1.75rem 0;
+		text-decoration: none;
+		color: inherit;
+		transition: background 0.12s ease;
+	}
+
+	.project-link:hover {
+		opacity: 1;
+	}
+
+	.project-link:hover .project-name {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.project-link:hover .project-arrow {
+		transform: translateX(4px);
+		color: var(--ink);
+	}
+
+	@media (max-width: 640px) {
+		.project-link {
+			grid-template-columns: 1fr auto;
+			grid-template-rows: auto auto;
+		}
+
+		.project-meta {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.project-body {
+			grid-column: 1 / -1;
+			grid-row: 2;
+		}
+
+		.project-arrow {
+			grid-column: 2;
+			grid-row: 1;
+		}
+	}
+
+	/* Meta column */
+	.project-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		padding-top: 0.2rem;
+	}
+
+	.project-index {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 500;
+		color: var(--ink-3);
+		letter-spacing: 0.05em;
+	}
+
+	.project-period {
+		font-family: var(--font-mono);
+		font-size: 0.675rem;
+		color: var(--ink-3);
+		white-space: nowrap;
+	}
+
+	/* Body column */
+	.project-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.project-name {
+		font-size: 1rem;
+		font-weight: 500;
+		letter-spacing: -0.005em;
+		color: var(--ink);
+		margin: 0;
+		line-height: 1.3;
+	}
+
+	.project-summary {
+		font-size: 0.875rem;
+		line-height: 1.6;
+		color: var(--ink-2);
+		margin: 0;
+	}
+
+	/* Arrow */
+	.project-arrow {
+		font-size: 1rem;
+		color: var(--ink-3);
+		padding-top: 0.2rem;
+		transition: transform 0.15s ease, color 0.15s ease;
+	}
+</style>

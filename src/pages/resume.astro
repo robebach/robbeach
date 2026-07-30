@@ -21,71 +21,69 @@ const skillGroups = [
 			"HVAC simulation",
 			"Building physics",
 			"Airflow modeling",
-			"Graph topology",
-			"System-state modeling",
+			"System pressure dynamics",
 			"Controls logic",
+			"Manual J load integration",
 		],
 	},
 	{
 		name: "Software & Data",
 		skills: [
-			"Modeling engines",
-			"Data pipelines",
-			"Domain-driven design",
-			"Typed interfaces",
-			"Pydantic validation",
-			"Scripting",
+			"Python",
+			"Pandas / Data Pipelines",
+			"TypeScript / Astro",
+			"Pydantic data validation",
+			"SQL & Ingestion",
+			"Git & Web Tooling",
 		],
 	},
 	{
-		name: "Product & Systems",
+		name: "Product & Hardware R&D",
 		skills: [
-			"Physical-digital product architecture",
-			"Technical systems design",
-			"Installation constraints",
-			"Field-performance analysis",
-			"Product R&D",
+			"Physical product design",
+			"3D printing & prototyping",
+			"Injection molding design",
+			"Lab pressure testing",
 			"Technical documentation",
 		],
 	},
 	{
-		name: "Design & Fabrication",
+		name: "3D & Fabrication",
 		skills: [
-			"Parametric workflows",
+			"Rhino 3D",
+			"Grasshopper (Parametric)",
 			"Digital fabrication",
-			"Rapid prototyping",
-			"CNC workflows",
-			"Geometric systems",
-			"Material behavior",
+			"CNC machining workflows",
+			"Geometric modeling",
 		],
 	},
 ];
 
 const selectedWork = [
 	{
-		title: "Rheia HVAC Modeling Engine",
+		title: "Duct System Simulation Engine",
 		description:
-			"Redesigned Rheia's core modeling engine into a domain-driven, graph-capable system that separates loads, rooms, duct topology, zoning, and controls logic.",
+			"Built Rheia's calculation engine in Python/TypeScript, converting Manual J heating/cooling loads into airflow, pressure drop, and acoustic simulations.",
 	},
 	{
-		title: "Home Verification Software",
+		title: "Home Verification Systems",
 		description:
-			"Built and maintained modeling systems used to verify roughly 25,000 home designs for Rheia's residential HVAC platform.",
+			"Built and maintained verification software used to model and validate over 25,000 residential HVAC duct designs across national homebuilders.",
 	},
 	{
-		title: "rheia-data Pipeline",
+		title: "Field Performance Analytics Pipeline",
 		description:
-			"Created a data pipeline for processing design instances and analyzing field performance, installation consistency, and system behavior at scale.",
+			"Created automated Python pipelines to process installer logs, pressure signatures, and field telemetry at scale for quality control.",
 	},
 	{
-		title: "Design-to-Runtime Controls Architecture",
+		title: "Automated Balancing & HVAC Controls",
 		description:
-			"Developed system-state modeling, topology-aware control adjustments, and pathways connecting design-time assumptions to runtime behavior.",
+			"Developed dynamic damper control logic that translates duct pressure physics into live room-by-room airflow balancing.",
 	},
 	{
-		title: "Alyson Shotz Transitional Objects",
+		title: "Parametric Sculpture Surface Modeling",
 		description:
-			"Developed Rhino and Grasshopper software at Situ Studio for structuring sculptural surfaces, fabrication logic, and iteration across editions.",
+			"Created Rhino and Grasshopper scripts at Situ Studio for artist Alyson Shotz to turn curved sculpture surfaces into 2D CNC fabrication files.",
 	},
 ];
 
@@ -229,18 +227,17 @@ const volunteering = [
 		<p class="text-uppercase small text-secondary fw-semibold mb-2">Resume</p>
 		<div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-3">
 			<div class="content-measure">
-				<h1 class="display-6 fw-semibold mb-2">Robert Beach</h1>
+				<h1 class="display-6 fw-normal text-dark mb-2">Robert Beach</h1>
 				<p class="lead text-secondary mb-2">
-					R&D Systems Architect | Physical-Digital Product Architecture, Modeling Engines,
-					HVAC & Building Simulation
+					Software Developer & Systems Specialist | Simulation Engines, Data Pipelines, Building Science & Hardware R&D
 				</p>
 				<p class="text-secondary mb-0">Phoenix, Arizona, United States</p>
 			</div>
 			<div class="d-flex flex-wrap gap-2 no-print">
-				<a class="btn btn-outline-primary flex-shrink-0" href="mailto:robert.k.beach@gmail.com">
+				<a class="btn btn-outline-dark flex-shrink-0" href="mailto:robert.k.beach@gmail.com">
 					Contact
 				</a>
-				<button class="btn btn-primary flex-shrink-0" type="button" onclick="window.print()">
+				<button class="btn btn-dark flex-shrink-0" type="button" onclick="window.print()">
 					Print / Save PDF
 				</button>
 			</div>
@@ -250,13 +247,9 @@ const volunteering = [
 	<section class="resume-section">
 		<div class="card">
 			<div class="card-body">
-				<h2 class="h4 mb-3">Profile</h2>
+				<h2 class="h5 fw-medium text-dark mb-3">Profile</h2>
 				<p class="text-secondary mb-0">
-					Systems architect working at the intersection of building physics,
-					computational modeling, and product architecture. I build modeling engines,
-					data pipelines, and product frameworks that make complex HVAC behavior more
-					predictable, verifiable, and useful across design, field, controls, product,
-					and engineering workflows.
+					Systems specialist working at the intersection of building physics, simulation software, and product development. I build calculation engines, data pipelines, and control logic that make physical HVAC systems predictable, verifiable, and efficient across design, field, and manufacturing workflows.
 				</p>
 			</div>
 		</div>

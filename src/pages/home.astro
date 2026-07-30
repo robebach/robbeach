@@ -1,5 +1,9 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+
+if (!import.meta.env.DEV) {
+	return Astro.redirect("/");
+}
 ---
 
 <SiteLayout
