@@ -1,5 +1,23 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+import heroImg1 from "../assets/galleries/transitional-objects/01-alyson-shotz-transitional-objects-gallery-installation.jpg";
+import heroImg2 from "../assets/galleries/pratt-venetian-vagabond/12-vector-field-growth-iteration-a5.jpg";
+import heroImg3 from "../assets/galleries/situ-textures/07-procedural-noise-modulation.jpg";
+import heroImg4 from "../assets/galleries/trezona-fossil/11-specimen-b-subd-surface-reconstruction.jpg";
+import heroImg5 from "../assets/galleries/space-filling-structures/01-space-filling-structure-rhino-viewcapture.png";
+import heroImg6 from "../assets/galleries/pratt-venetian-vagabond/10-generative-swarm-field-simulation-d4.jpg";
+import heroImg7 from "../assets/galleries/pratt-venetian-vagabond/13-bathymetric-attractor-swarm-mesh.jpg";
+import heroImg8 from "../assets/galleries/situ-textures/04-3d-heightfield-texture.jpg";
+import heroImg9 from "../assets/galleries/situ-textures/08-topography-render-milled-model.jpg";
+import heroImg10 from "../assets/galleries/pratt-film-study/01-aerial-cinematic-scape.jpg";
+import heroImg11 from "../assets/galleries/wood-texture-panels/04-parametric-panel-rendering-02.jpg";
+import heroImg12 from "../assets/galleries/trezona-fossil/07-specimen-a-shaded-volumetric-model.jpg";
+
+const heroImages = [
+	heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6,
+	heroImg7, heroImg8, heroImg9, heroImg10, heroImg11, heroImg12
+];
+const initialHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 ---
 
 <SiteLayout
@@ -7,80 +25,141 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 	description="Personal site and portfolio for Robert Beach — architect, engineer, software developer."
 	active="about"
 >
-	<section class="about-hero content-measure mb-5">
-		<p class="about-label">Robert Beach</p>
-		<h1 class="about-title">
-			Architect, engineer,<br />software developer.
-		</h1>
-		<p class="about-body">
-			Trained as an architect and grown into building science, data analytics,
-			product design, and software development. My work asks how the discipline
-			of software — its rigor, its modularity, its feedback loops — can improve
-			how we design and build physical systems.
-		</p>
-		<p class="about-body">
-			Currently at <strong>Rheia</strong>, where I architect the simulation
-			engines, data pipelines, automated controls, and patented hardware behind
-			a residential HVAC platform operating in 25,000+ homes. Before that:
-			Situ Studio, the Guggenheim, Princeton, and a graduate degree in
-			architecture from Pratt Institute.
-		</p>
-		<p class="about-body">
-			Live in Phoenix with my wife, two boys, a dog, a cat, and a gecko — the
-			gecko being the reason one of the projects on this site exists.
-		</p>
-	</section>
+	<!-- Outer wrapper breaks out of the container's right edge -->
+	<div class="about-page-layout">
+		<!-- Left column: full about text unchanged -->
+		<div class="about-left-col">
+			<section class="about-hero mb-5">
+				<p class="about-label">Robert Beach</p>
+				<h1 class="about-title">
+					Architect, engineer,<br />software developer.
+				</h1>
+				<p class="about-body">
+					Trained as an architect and grown into building science, data analytics,
+					product design, and software development. My work asks how the discipline
+					of software — its rigor, its modularity, its feedback loops — can improve
+					how we design and build physical systems.
+				</p>
+				<p class="about-body">
+					Currently at <strong>Rheia</strong>, where I architect the simulation
+					engines, data pipelines, automated controls, and patented hardware behind
+					a residential HVAC platform operating in 25,000+ homes. Before that:
+					Situ Studio, the Guggenheim, Princeton, and a graduate degree in
+					architecture from Pratt Institute.
+				</p>
+				<p class="about-body">
+					Live in Phoenix with my wife, two boys, a dog, a cat, and a gecko — the
+					gecko being the reason one of the projects on this site exists.
+				</p>
+			</section>
 
-	<div class="about-cols">
-		<section class="about-links-col">
-			<h2 class="col-label">Contact & Links</h2>
-			<nav class="link-stack" aria-label="External links">
-				<a class="link-row" href="mailto:robert.k.beach@gmail.com">
-					<span>robert.k.beach@gmail.com</span>
-					<span class="link-arrow">&nearr;</span>
-				</a>
-				<a
-					class="link-row"
-					href="https://github.com/robebach"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<span>GitHub / robebach</span>
-					<span class="link-arrow">&nearr;</span>
-				</a>
-				<a
-					class="link-row"
-					href="https://www.linkedin.com/in/robert-beach-28167b11/"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<span>LinkedIn</span>
-					<span class="link-arrow">&nearr;</span>
-				</a>
-				<a class="link-row" href="/resume">
-					<span>CV / Résumé</span>
-					<span class="link-arrow">&rarr;</span>
-				</a>
-			</nav>
-		</section>
+			<div class="about-cols">
+				<section>
+					<h2 class="col-label">Contact & Links</h2>
+					<nav class="link-stack" aria-label="External links">
+						<a class="link-row" href="mailto:robert.k.beach@gmail.com">
+							<span>robert.k.beach@gmail.com</span>
+							<span class="link-arrow">&nearr;</span>
+						</a>
+						<a class="link-row" href="https://github.com/robebach" target="_blank" rel="noreferrer">
+							<span>GitHub / robebach</span>
+							<span class="link-arrow">&nearr;</span>
+						</a>
+						<a class="link-row" href="https://www.linkedin.com/in/robert-beach-28167b11/" target="_blank" rel="noreferrer">
+							<span>LinkedIn</span>
+							<span class="link-arrow">&nearr;</span>
+						</a>
+						<a class="link-row" href="/resume">
+							<span>CV / Résumé</span>
+							<span class="link-arrow">&rarr;</span>
+						</a>
+					</nav>
+				</section>
 
-		<section class="about-facts-col">
-			<h2 class="col-label">Currently</h2>
-			<dl class="fact-list">
-				<dt>Role</dt>
-				<dd>Staff Engineer, Rheia LLC</dd>
-				<dt>Focus</dt>
-				<dd>Building science · HVAC controls · Software architecture</dd>
-				<dt>Location</dt>
-				<dd>Phoenix, AZ</dd>
-				<dt>Education</dt>
-				<dd>M.Arch, Pratt Institute</dd>
-			</dl>
-		</section>
+				<section>
+					<h2 class="col-label">Currently</h2>
+					<dl class="fact-list">
+						<dt>Role</dt>
+						<dd>Staff Engineer, Rheia LLC</dd>
+						<dt>Focus</dt>
+						<dd>Building science · HVAC controls · Software architecture</dd>
+						<dt>Location</dt>
+						<dd>Phoenix, AZ</dd>
+						<dt>Education</dt>
+						<dd>M.Arch, Pratt Institute</dd>
+					</dl>
+				</section>
+			</div>
+		</div>
+
+		<!-- Right column: image bleeds to screen edge -->
+		<div class="about-right-col" aria-hidden="true">
+			<img
+				id="about-hero-img"
+				src={initialHeroImg.src}
+				alt=""
+				loading="eager"
+				decoding="async"
+			/>
+		</div>
 	</div>
 </SiteLayout>
 
+<script define:vars={{ heroImagesSrcs: heroImages.map((img) => img.src) }}>
+	const heroImgEl = document.getElementById("about-hero-img");
+	if (heroImgEl && heroImagesSrcs.length > 0) {
+		heroImgEl.src = heroImagesSrcs[Math.floor(Math.random() * heroImagesSrcs.length)];
+	}
+</script>
+
 <style>
+	/* ── Page layout: left col in normal flow, right col breaks out to screen edge ── */
+	.about-page-layout {
+		/* Establish stacking context so right col can position relative to this */
+		position: relative;
+		/* Give the layout row enough height to contain both columns */
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: flex-start;
+		gap: 0;
+	}
+
+	/* ── Left column: exactly the measure width ── */
+	.about-left-col {
+		flex: 0 0 var(--measure);
+		max-width: var(--measure);
+		min-width: 0;
+	}
+
+	/* ── Right column: precisely sized to bleed to screen edge ── */
+	.about-right-col {
+		flex: 0 0 auto;
+		/* Exact width to reach the right edge of the viewport:
+		   50vw + 50% (half container) - measure (left col) - 3.5rem (gap) */
+		width: calc(50vw + 50% - var(--measure) - 3.5rem);
+		/* Gap between text and image */
+		margin-left: 3.5rem;
+		/* Golden ratio portrait: width 1, height 1.618 */
+		aspect-ratio: 1 / 1.618;
+		padding-right: 0;
+		overflow: hidden;
+		/* Align top of image with top of h1 — label is ~0.75rem font + 1.5rem margin-bottom */
+		margin-top: calc(0.75rem * 1.2 + 1.5rem);
+	}
+
+	.about-right-col img {
+		display: block;
+		/* Width fills the column; height is set via JS to match the text block */
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center left;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+
+	/* ── Typography ── */
 	.about-label {
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
@@ -111,6 +190,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 		margin-bottom: 0;
 	}
 
+	/* ── Contact / Currently columns ── */
 	.about-cols {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -119,13 +199,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 		padding-top: 2.5rem;
 		border-top: 1px solid var(--rule);
 		max-width: var(--measure);
-	}
-
-	@media (max-width: 640px) {
-		.about-cols {
-			grid-template-columns: 1fr;
-			gap: 2.5rem;
-		}
 	}
 
 	.col-label {
@@ -138,7 +211,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 		margin: 0 0 1.25rem;
 	}
 
-	/* Links column */
 	.link-stack {
 		display: flex;
 		flex-direction: column;
@@ -171,7 +243,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 		font-size: 0.85rem;
 	}
 
-	/* Facts column */
 	.fact-list {
 		display: grid;
 		grid-template-columns: auto 1fr;
@@ -193,5 +264,33 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 		font-size: 0.875rem;
 		color: var(--ink-2);
 		margin: 0;
+	}
+
+	/* ── Mobile: stack everything ── */
+	@media (max-width: 768px) {
+		.about-page-layout {
+			flex-direction: column;
+		}
+
+		.about-right-col {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 2rem;
+			/* Golden ratio landscape on mobile so it's not massively tall */
+			aspect-ratio: 1.618 / 1;
+			overflow: hidden;
+			border-radius: 4px;
+		}
+
+		.about-right-col img {
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.about-cols {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
 	}
 </style>

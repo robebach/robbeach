@@ -111,6 +111,180 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "space-filling-structures",
+    name: "Generative Space-Filling Structures & Modular Furniture",
+    client: "Personal Passion Project",
+    type: "Generative Software & Modular Hardware R&D",
+    period: "2018 – Present",
+    galleryId: "space-filling-structures",
+    summary:
+      "An ongoing personal R&D passion project exploring generative algorithms in Python to calculate 3D space-filling structural networks, custom 3D-printed nodal joints, and stock tube assemblies for furniture, fixtures, and sculpture.",
+    fullDescription: [
+      "GENERATIVE SPACE-FILLING ALGORITHMS: Developed custom Python simulation engines (make_net.py, log_gen.py) in Rhino to calculate 3D space-filling vector networks. The algorithm uses attractor fields, branching level logic, and collision-avoidance proximity functions to populate volume envelopes with expressive structural webs.",
+      "CUSTOM 3D-PRINTED NODAL JOINTS: The software automatically evaluates complex multi-branch intersections, generating custom 3D-printable nodal joint geometry (.stl) with shoulder tabs, wall thicknesses, and angle tolerances tailored for off-the-shelf stock tubing.",
+      "FURNITURE & SCULPTURAL MANIFESTATIONS: Applied the computational system to ergonomic furniture design (such as lounge chairs and table bases), lighting fixtures, and large-scale room-filling sculptures. The long-term vision is to commercialize the software engine as a platform for custom spatial furniture and sculptural installations.",
+    ],
+    points: [
+      "Authored Python generative space-filling simulation engines in Rhino 3D.",
+      "Programmed automated 3D-printable STL joint generation for stock tubing assemblies.",
+      "Mapped ergonomic envelopes and structural loads to drive variable branching density.",
+      "Ongoing passion project bridging computational design, 3D printing, and modular furniture.",
+    ],
+    details: [
+      "Personal R&D",
+      "Python",
+      "Rhino 3D",
+      "RhinoCommon",
+      "Generative Algorithms",
+      "3D Printing (STL)",
+      "Modular Furniture",
+      "Space-Filling Networks",
+    ],
+    metrics: [
+      { label: "Status", value: "Active Personal Passion Project" },
+      { label: "Software", value: "Custom Python Generative Engine" },
+      { label: "Hardware", value: "3D-Printed Nodal Joints + Stock Tubing" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Ergonomic Envelopes / Attractors -> Python Space-Filling Engine -> 3D Printed Joint STL -> Tube Assembly",
+      keyInnovation:
+        "Automating custom 3D-printed nodal connectors for arbitrary space-filling tube networks",
+      impact:
+        "Created a scalable design-to-production platform for custom parametric furniture and sculpture.",
+    },
+  },
+  {
+    slug: "shope-residence",
+    name: "The Shope Residence",
+    client: "John & Shelly Shope",
+    type: "Residential Architectural Design",
+    period: "2017 – 2019",
+    galleryId: "shope-residence",
+    summary:
+      "Custom architectural schematic design for a family home in Indiana, preserving the original chimney footprint and adapting during COVID lumber price spikes to an ICF build finished with extraordinary owner craftsmanship.",
+    fullDescription: [
+      "SCHEMATIC DESIGN & SITE INTEGRATION: Developed the architectural schematic design, site topography mapping, floor plans, sections, and 3D massing models for close family friends, the Shope family, in Indiana.",
+      "HISTORICAL FOOTPRINT & MASONRY ANCHOR: Designed the house to fit the exact footprint of the original home that was demolished on the site, preserving the original central fireplace chimney as an anchor between past and present.",
+      "COVID ADAPTATION TO ICF CONSTRUCTION: When COVID supply chain disruptions caused lumber prices to spike, the structural strategy pivoted from standard wood framing to Insulated Concrete Forms (ICF)—creating an incredibly quiet, high-efficiency concrete envelope.",
+      "JOHN SHOPE'S CRAFTSMANSHIP & CREATIVE FINISHING: While Rob provided the initial schematic framework remotely, owner John Shope took the project over the finish line as an amazingly creative finisher. John conceived, detailed, and fabricated the home's stand-out industrial features: a custom welded steel staircase, a massive warehouse sliding metal barn door, reclaimed structural steel beams, and reclaimed timber flooring harvested directly from the demolished original house.",
+    ],
+    points: [
+      "Developed schematic architectural plans, sections, elevations, and detailed site topography.",
+      "Preserved original home footprint and central fireplace chimney structure.",
+      "Adapted structural envelope to ICF (Insulated Concrete Forms) amidst COVID material shifts.",
+      "John Shope led construction detailing & finishing: custom steel staircase, sliding barn door, reclaimed steel beams, and reclaimed wood flooring.",
+    ],
+    details: [
+      "Schematic Architecture",
+      "Residential Design",
+      "Site Topography",
+      "ICF Construction",
+      "Rhino 3D",
+      "Reclaimed Steel & Wood",
+      "Indiana",
+    ],
+    metrics: [
+      { label: "Design Phase", value: "Schematic Architecture & Topography" },
+      { label: "Construction", value: "ICF Concrete & Preserved Masonry" },
+      { label: "Finishes", value: "Reclaimed Steel Beams, Timber & Barn Door" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Schematic Design & Topography -> COVID ICF Pivot -> Custom Finish & Construction Detailing by John Shope",
+      keyInnovation:
+        "Schematic spatial framework adapted by owner craftsmanship with reclaimed industrial materials",
+      impact:
+        "Collaborative realization of a unique, high-performance custom home in Indiana.",
+    },
+  },
+  {
+    slug: "wood-texture-panels",
+    name: "Parametric Wood Texture Panels",
+    client: "Personal Project",
+    type: "Digital Fabrication & Woodworking R&D",
+    period: "2013",
+    galleryId: "wood-texture-panels",
+    summary:
+      "Designed and CNC-milled a series of parametric wood wall panels to explore algorithmic surface texturing, toolpath dynamics, and physical material depth.",
+    fullDescription: [
+      "PARAMETRIC TEXTURE EXPLORATION: Created a series of physical wood wall panels exploring algorithmic surface relief and organic tactile depth. Developed Grasshopper parametric scripts (panel_000.gh) in Rhino 3D to generate continuous mathematical surface modulations.",
+      "TOOLPATH & CAM GENERATION: Translated 3D surface meshes into custom ShopBot CNC toolpaths (.sbp g-code), balancing roughing passes with high-precision ball-nose finishing passes to carve fluid, undulating grooves directly into solid wood stock.",
+      "MATERIALITY & TACTILE FINISH: Milled physical prototypes to test how light, shadow, and natural wood grain interact with digital toolpath trajectories, bridging digital algorithmic design with tactile woodworking craftsmanship.",
+    ],
+    points: [
+      "Engineered Grasshopper scripts to generate 3D mathematical surface reliefs.",
+      "Generated custom ShopBot CNC milling toolpaths (.sbp) for roughing and finishing passes.",
+      "Fabricated physical solid wood panels exploring light, shadow, and tactile surface texture.",
+      "Studied the interaction between digital toolpaths and natural wood grain orientation.",
+    ],
+    details: [
+      "Personal Project",
+      "Rhino 3D",
+      "Grasshopper",
+      "CNC Milling",
+      "ShopBot SBP",
+      "Woodworking",
+      "Surface Relief",
+    ],
+    metrics: [
+      { label: "Medium", value: "Solid Wood & CNC Milling" },
+      { label: "Tools", value: "Rhino / Grasshopper / ShopBot" },
+      { label: "Focus", value: "Parametric Surface Texture & Material R&D" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Grasshopper Script -> 3D Mesh -> ShopBot Toolpath -> CNC Milled Wood Panel",
+      keyInnovation:
+        "Translating continuous mathematical surfaces into tactile CNC toolpath trajectories in hardwood",
+      impact:
+        "Explored the boundary between computational geometry and physical woodworking craftsmanship.",
+    },
+  },
+  {
+    slug: "textured-picture-frame",
+    name: "Parametric Wave Frame Generator",
+    client: "Situ Studio R&D / Personal Project",
+    type: "Parametric Modeling & CNC Fabrication",
+    period: "2012",
+    galleryId: "textured-picture-frame",
+    summary:
+      "Developed custom Grasshopper parametric scripts to generate continuous sine-wave textured picture frames engineered for 3-axis CNC milling, initially initiated for Brad Samuels at Situ and expanded into a personal design system.",
+    fullDescription: [
+      "PARAMETRIC SINE-WAVE GENERATOR: Authored parametric Grasshopper scripts (frame_011_rkb.gh, frame_sine_2pt_rkb.gh) in Rhino to calculate fluid 3D sine-wave surface relief along 4-sided mitered frame geometry.",
+      "SITU STUDIO R&D & PERSONAL EVOLUTION: Originally initiated as a digital design exploration with Brad Samuels at Situ Studio, then expanded independently into a complete parametric frame generation toolkit with adjustable wave frequencies, depths, and miter joint corner matching.",
+      "CNC MILLING TOOLPATH OPTIMIZATION: Structured the 3D surface geometry to ensure seamless toolpath motion for 3-axis CNC milling, eliminating undercuts and maintaining continuous texture flow around 45-degree corner miters.",
+    ],
+    points: [
+      "Wrote custom Grasshopper scripts to generate continuous 3D sine-wave surface textures on picture frames.",
+      "Collaborated on initial R&D with Brad Samuels at Situ Studio, expanding the software independently.",
+      "Engineered miter corner joint matching to maintain texture continuity across 45-degree seams.",
+      "Optimized 3D surface geometry for smooth 3-axis CNC ball-nose milling toolpaths.",
+    ],
+    details: [
+      "Situ Studio R&D",
+      "Brad Samuels Collaboration",
+      "Rhino 3D",
+      "Grasshopper",
+      "Parametric Surface Relief",
+      "CNC Milling",
+      "Woodworking R&D",
+    ],
+    metrics: [
+      { label: "Origin", value: "Situ Studio R&D / Brad Samuels" },
+      { label: "Software", value: "Rhino 3D & Grasshopper" },
+      { label: "Fabrication", value: "3-Axis CNC Milling" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Frame Dimensions & Wave Inputs -> Grasshopper Script -> 3D Mitered Mesh -> CNC Milling Toolpath",
+      keyInnovation:
+        "Maintaining continuous mathematical sine-wave texture alignment across 45-degree miter joints",
+      impact:
+        "Created an automated parametric workflow for custom textured architectural frames.",
+    },
+  },
+  {
     slug: "transitional-objects",
     name: "Alyson Shotz: Transitional Objects",
     client: "Alyson Shotz / Situ Studio",
@@ -120,35 +294,38 @@ export const projects: Project[] = [
     linkText: "View Reference",
     galleryId: "transitional-objects",
     summary:
-      "Created Rhino and Grasshopper parametric 3D models to turn complex curved surfaces into buildable dichroic acrylic sculpture panels.",
+      "Created Rhino and Grasshopper parametric 3D models to turn complex curved surfaces into buildable dichroic acrylic sculpture panels and structural rib systems for artist Alyson Shotz.",
     fullDescription: [
-      "Worked with artist Alyson Shotz and Situ Studio to translate intricate surface concepts into fabricated physical sculptures for the 'Transitional Objects' series.",
-      "Wrote custom Grasshopper scripts in Rhino to solve panel layouts, structural joints, and CNC machining files across multiple art pieces.",
-      "Developed digital modeling techniques that remained part of the artist's fabrication process for subsequent works.",
+      "PARAMETRIC SURFACE & RIB GEOMETRY: Collaborated with artist Alyson Shotz and Situ Studio to translate intricate mathematical surface concepts into physical, buildable sculptures for the 'Transitional Objects' series. Wrote custom Grasshopper scripts (longTube4B_2.ghx) and Rhino 3D models (longTube4_5.3dm) to calculate curved panel subdivisions and structural rib layouts (RibsA, RibsB).",
+      "DICHROIC LIGHT REFRACTION: Engineered joint connections and panel mounts for dichroic acrylic components, allowing light passing through the translucent curved surface to refract and reflect dynamic iridescent spectrums of gold, cyan, and violet across gallery interiors.",
+      "FABRICATION & STUDIO MOCKUPS: Built physical scale mockups and automated 2D CNC cutting toolpaths, establishing computational modeling methodologies that remained part of the artist's fabrication workflow for subsequent major installations.",
     ],
     points: [
-      "Designed parametric panel layouts and connections for curved sculpture surfaces.",
-      "Automated 2D fabrication layouts and CNC cutting files for acrylic and aluminum parts.",
-      "Ensured structural strength while keeping the sculptures looking light and delicate.",
+      "Engineered Grasshopper scripts to generate 3D curved panel subdivisions and structural rib geometries.",
+      "Designed physical joint connections for dichroic acrylic panels to maximize light refraction.",
+      "Automated 2D fabrication layouts and CNC cutting files for acrylic and aluminum structural components.",
+      "Built physical studio mockups and 1:1 prototype joint assemblies.",
     ],
     details: [
       "Rhino 3D",
-      "Grasshopper",
+      "Grasshopper (GHX)",
       "Digital Fabrication",
       "Parametric Modeling",
-      "Sculpture",
+      "Dichroic Acrylic",
+      "Fine Art Sculpture",
+      "Alyson Shotz / Situ Studio",
     ],
     metrics: [
-      { label: "Project Type", value: "Fine Art Sculptures" },
-      { label: "Software", value: "Rhino / Grasshopper" },
-      { label: "Material", value: "Dichroic Acrylic" },
+      { label: "Artist Lead", value: "Alyson Shotz" },
+      { label: "Studio", value: "Situ Studio" },
+      { label: "Material", value: "Dichroic Acrylic & Aluminum" },
     ],
     notation: {
       systemArchitecture:
-        "Grasshopper Script -> 2D CNC Cutting Files -> Assembly Layout",
-      keyInnovation: "Parametric panel flattening for complex curved artwork",
+        "Mathematical Surface -> Grasshopper Rib Script -> CNC Acrylic Toolpaths -> Iridescent Assembly",
+      keyInnovation: "Parametric panel flattening and structural joint design for curved dichroic acrylic art",
       impact:
-        "Allowed complex geometric sculptures to be cut and assembled accurately.",
+        "Enabled precise fabrication of complex geometric dichroic sculptures exhibited in major art institutions.",
     },
   },
   {
@@ -159,6 +336,7 @@ export const projects: Project[] = [
     period: "2010",
     link: "https://doi.org/10.1038/ngeo934",
     linkText: "Nature Geoscience Paper",
+    galleryId: "trezona-fossil",
     summary:
       "Reconstructed 3D digital models of 650-million-year-old fossils from serial rock slice images, co-authoring a paper in Nature Geoscience.",
     fullDescription: [
@@ -310,6 +488,51 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "situ-3d-textures",
+    name: "Surface Texture & 3D Computational Modeling",
+    client: "Situ Studio",
+    type: "Computational Design & Digital Fabrication",
+    period: "2008 – 2010",
+    galleryId: "situ-textures",
+    summary:
+      "Developed algorithmic workflows in Rhino, Processing, and custom code to translate 2D image gradients, Perlin noise fields, and sphere-packing simulations into physical 3D CNC-milled surface textures.",
+    fullDescription: [
+      "BACKGROUND & GOALS: Situ Studio frequently faced the challenge of translating abstract 2D surface data into tangible 3D physical geometry for large-scale architectural fabrications and landscape models. Rather than relying on simple graphical bump maps for rendering, this initiative focused on generating true volumetric geometry that could be processed directly by CNC toolpathing engines.",
+      "METHOD 1 - HEIGHTFIELD DISPLACEMENT: Built workflows to convert 2D color values and pixel depth maps into multi-layered 3D spatial modulations. By layering topographic heightfields with secondary texture gradient maps, surfaces were generated with multiple degrees of physical depth.",
+      "METHOD 2 - PERLIN NOISE PROCEDURAL TEXTURING: Developed custom Perlin noise implementations applied directly across non-uniform NURBS surfaces and complex 3D meshes. By combining fractal sums of varying noise frequencies, procedural textures eliminated 2D mapping distortion and allowed field geometry to respond dynamically to input curves, point clouds, and environmental vectors.",
+      "METHOD 3 - SPHERE PACKING & INSTANCED GEOMETRY: Created sphere-packing algorithms to instance physical geometry (such as stones, rip-rap rubble, or structural blocks) across terrain meshes. Built parameter controls for density, variable scaling, allowable overlap, and rotational orientation based on input environmental forces.",
+    ],
+    points: [
+      "Engineered 3D surface texturing algorithms for physical CNC digital fabrication.",
+      "Created multi-layered heightfield image displacement workflows in Rhino.",
+      "Developed 3D procedural Perlin noise field functions for complex NURBS geometry.",
+      "Programmed sphere-packing algorithms for instanced 3D terrain & rip-rap modeling.",
+    ],
+    details: [
+      "Situ Studio",
+      "Computational Design",
+      "Rhino 3D",
+      "Grasshopper",
+      "Processing (Java)",
+      "Perlin Noise",
+      "Sphere Packing",
+      "CNC Fabrication",
+    ],
+    metrics: [
+      { label: "Methods", value: "Heightfields, Perlin Noise, Sphere Packing" },
+      { label: "Output", value: "3D CNC Toolpaths & Physical Models" },
+      { label: "Application", value: "Architectural & Landscape Surfaces" },
+    ],
+    notation: {
+      systemArchitecture:
+        "2D Gradients / Procedural Algorithms -> 3D Volumetric Mesh -> CNC Milling Toolpaths",
+      keyInnovation:
+        "Translating algorithmic noise and packing simulations directly into buildable physical surface geometry",
+      impact:
+        "Established the core digital fabrication texturing toolkit used across Situ Studio projects.",
+    },
+  },
+  {
     slug: "situ-citysol",
     name: "CitySol Festival Pavilion",
     client: "Situ Studio / Solar One",
@@ -348,42 +571,172 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "pratt-architecture",
-    name: "Pratt Institute Architecture Studios",
-    client: "Pratt Institute",
-    type: "Academic Architecture",
-    period: "2006 – 2009",
-    galleryId: "pratt",
+    slug: "pratt-venetian-vagabond",
+    name: "Venetian Vagabond: Aquatic Agent Swarms",
+    client: "Pratt Institute (Studio under Alisa Andrasek)",
+    type: "Computational Architecture & Swarm Simulation",
+    period: "2007 – 2008",
+    galleryId: "pratt-venetian-vagabond",
     summary:
-      "A collection of graduate architecture studio projects exploring formal systems, urban infrastructure, and digital fabrication.",
+      "Engineered custom 3D agent-based swarm algorithms in Processing (Java) and RhinoScript (with partner Jason McGee) to grow emergent architectural networks responding to Venice lagoon waterbus pathways and bathymetric data.",
     fullDescription: [
-      "Completed comprehensive architectural studios during graduate studies at Pratt Institute, focusing on experimental form-finding and urban design.",
-      "Projects included the 'CBD Wave System' for dense urban environments and the 'Venetian Vagabond' exploring aquatic infrastructure.",
-      "Heavily utilized early parametric modeling, computational scripts, and physical model making.",
+      "COMPUTATIONAL SWARM ENGINE: Authored object-oriented 3D agent classes (Colony, Strand, Segment, Vector3D) in Processing (Java) to simulate autonomous, self-organizing agent swarms. The algorithm generated emergent 3D spatial tendril structures along complex vector trajectories.",
+      "ENVIRONMENTAL FIELD MAPPING: Integrated 2D scalar fields mapping Venice lagoon bathymetry, waterbus routes, and aquatic traffic density. The scalar fields dynamically steered agent velocity, acceleration, branching frequency, and strand decay across the lagoon.",
+      "RHINO & MAYA GEOMETRY PIPELINE: Exported dynamic 3D agent point clouds and authored custom RhinoScript (.rvb) and Maya (.mel) scripts to construct continuous NURBS meshes, tendril structural ribbing, and floating aquatic infrastructure.",
     ],
     points: [
-      "Designed complex urban architectural interventions.",
-      "Explored parametric form-finding and algorithmic design.",
-      "Produced detailed physical models and digital animations for thesis reviews.",
+      "Wrote custom 3D agent-based swarm simulation engine in Processing (Java).",
+      "Mapped Venice lagoon bathymetry and waterbus traffic to drive emergent spatial growth.",
+      "Authored RhinoScript (.rvb) and Maya MEL scripts to generate 3D NURBS meshes & structural tendrils.",
+      "Partnered with Jason McGee under studio professor Alisa Andrasek.",
     ],
     details: [
-      "Architecture",
-      "Urban Design",
-      "Parametric Modeling",
-      "Physical Modeling",
+      "Processing (Java)",
+      "Swarm Intelligence",
+      "Agent-Based Modeling",
+      "RhinoScript (.rvb)",
+      "Maya MEL",
+      "Pratt Institute",
+      "Alisa Andrasek Studio",
+    ],
+    metrics: [
+      { label: "Studio Professor", value: "Alisa Andrasek" },
+      { label: "Partner", value: "Jason McGee" },
+      { label: "Software Engine", value: "Processing / RhinoScript / MEL" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Lagoon Environmental Data -> Processing Agent Swarm -> RhinoScript / MEL 3D Mesh Generation",
+      keyInnovation:
+        "Autonomous 3D agent swarms driven by real-world aquatic traffic & bathymetric scalar fields",
+      impact:
+        "Pioneered early agent-based algorithmic design for aquatic architectural infrastructure.",
+    },
+  },
+  {
+    slug: "pratt-sierra-studio",
+    name: "Pratt Studio: Form & Scripting",
+    client: "Pratt Institute (Studio under Maria Sierra)",
+    type: "Architectural Design & Algorithmic Form",
+    period: "2006 – 2007",
+    galleryId: "pratt-sierra-studio",
+    summary:
+      "Explored algorithmic script generation, complex spatial form-finding, and detailed architectural drawings during graduate studies at Pratt under Maria Sierra.",
+    fullDescription: [
+      "COMPUTATIONAL FORM-FINDING: Investigated advanced geometric scripting techniques to generate non-standard architectural forms and spatial enclosures.",
+      "ARCHITECTURAL DRAWING SETS: Produced detailed digital elevation drawings, plan sections, and aerial site mappings investigating structural curvature and material continuity.",
+      "PARAMETRIC SCRIPT DEVELOPMENT: Developed custom scripts linking mathematical surfaces with site-specific environmental boundaries.",
+    ],
+    points: [
+      "Developed custom algorithmic scripts for complex architectural form-finding.",
+      "Produced detailed architectural elevation drawings and site plan mappings.",
+      "Studied structural curvature and parametric enclosures under Maria Sierra.",
+    ],
+    details: [
+      "Architectural Design",
+      "Rhino 3D",
+      "Algorithmic Scripting",
+      "Site Mapping",
       "Pratt Institute",
     ],
     metrics: [
-      { label: "Degree", value: "Master of Architecture (M.Arch)" },
-      { label: "Institution", value: "Pratt Institute" },
-      { label: "Focus", value: "Digital Design & Fabrication" },
+      { label: "Studio Professor", value: "Maria Sierra" },
+      { label: "Institution", value: "Pratt Institute M.Arch" },
+      { label: "Focus", value: "Algorithmic Form & Architectural Drawing" },
     ],
     notation: {
-      systemArchitecture: "Concept -> Parametric Model -> Physical Prototype",
-      keyInnovation:
-        "Integrating algorithmic logic into formal architectural design",
+      systemArchitecture:
+        "Algorithmic Scripting -> 3D Surface Geometry -> Architectural Drawing Set",
+      keyInnovation: "Integrating computational code into formal architectural studio drawings",
       impact:
-        "Formed the foundation for a career in computational design and engineering.",
+        "Advanced algorithmic spatial modeling methodologies in graduate architecture design.",
+    },
+  },
+  {
+    slug: "pratt-film-study",
+    name: "Cinematic Spatial Analysis",
+    client: "Pratt Institute (Class under Maria Sierra)",
+    type: "Cinematic Architecture & Motion Analysis",
+    period: "2007",
+    galleryId: "pratt-film-study",
+    summary:
+      "Investigated temporal spatial narratives, camera movement, and filmic perspective sequencing in an architectural film seminar led by Maria Sierra.",
+    fullDescription: [
+      "TEMPORAL SPATIAL MAPPING: Studied the intersection of filmic sequences, spatial perspective, and camera movement to map architectural experience over time.",
+      "FIELD OF VIEW SEQUENCING: Analyzed perspective depth, focal lengths, and camera cones across varying spatial distances (far, close, extreme close-up).",
+      "DIGITAL ANIMATION & AFTER EFFECTS: Produced short filmic animation studies evaluating movement across landscapes and architectural spatial boundaries.",
+    ],
+    points: [
+      "Investigated camera motion, focal lengths, and spatial perspective sequences.",
+      "Analyzed temporal architectural narrative under Maria Sierra.",
+      "Created digital animations and field-of-view spatial diagrams.",
+    ],
+    details: [
+      "Cinematic Architecture",
+      "Motion Graphics",
+      "After Effects",
+      "Spatial Sequencing",
+      "Pratt Institute",
+    ],
+    metrics: [
+      { label: "Course Instructor", value: "Maria Sierra" },
+      { label: "Medium", value: "Digital Film & After Effects" },
+      { label: "Focus", value: "Temporal Spatial Analysis" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Camera Motion -> Perspective Cones -> Filmic Sequence",
+      keyInnovation: "Applying filmic montage techniques to architectural spatial experience",
+      impact:
+        "Expanded design methodologies beyond static drawings into time-based spatial narrative.",
+    },
+  },
+  {
+    slug: "vbbc-calibration-channel",
+    name: "Calibration Channel (Mounds State Park)",
+    client: "Virginia B. Ball Center / Ball State University",
+    type: "Digital Fabrication & Landscape Installation",
+    period: "2006",
+    link: "https://cumincad.architexturez.net/doc/oai-cumincad.org-psw-ed2006_342",
+    linkText: "CumInCAD Research Paper",
+    galleryId: "vbbc-calibration-channel",
+    summary:
+      "Designed, CNC-milled, and fabricated a landscape-responsive timber and limestone viewing pavilion at Mounds State Park as a Virginia B. Ball Center Design Research Fellow under Prof. Kevin Klinger — featured in the journal Architectural Design (AD).",
+    fullDescription: [
+      "IMMERSIVE DESIGN-BUILD RESEARCH: Completed as a semester-long immersive design research fellowship through the Virginia B. Ball Center for Creative Inquiry at Ball State University, under the direction of Prof. Kevin Klinger and Joshua Vermillion.",
+      "DIGITAL FABRICATION FEEDBACK LOOPS: The project investigated digital fabrication feedback loops—linking 3D Rhino parametric models directly to 3-axis CNC router milling toolpaths. The team engineered interlocking timber ribs, unflattened skin boards, and custom Indiana limestone footer anchors.",
+      "LANDSCAPE INSTALLATION AT MOUNDS STATE PARK: Built on-site along the White River at Mounds State Park in Anderson, Indiana. The structure acts as an optical and environmental 'Calibration Channel', orienting visitors toward the river bluff while demonstrating high-precision digital fabrication with local hardwood and limestone.",
+      "FEATURED IN ARCHITECTURAL DESIGN (AD): The project and its digital design-through-production feedback loop research were featured in the prestigious journal Architectural Design (AD, Wiley) as a landmark case study in digital fabrication and material processing.",
+    ],
+    points: [
+      "Featured in the international journal Architectural Design (AD, Wiley) and CumInCAD research literature.",
+      "Selected as Virginia B. Ball Center Design Research Fellow at Ball State University.",
+      "Engineered 3D parametric rib models, CNC milling toolpaths, and unflattened skin panel layouts.",
+      "Fabricated custom Indiana limestone footer mounts and timber structural assemblies.",
+      "Constructed physical viewing pavilion on-site at Mounds State Park in Anderson, IN.",
+    ],
+    details: [
+      "Architectural Design (AD) Journal",
+      "Ball State University",
+      "Virginia B. Ball Center",
+      "Digital Fabrication",
+      "CNC Milling",
+      "Indiana Limestone & Timber",
+      "Mounds State Park",
+      "Kevin Klinger Studio",
+    ],
+    metrics: [
+      { label: "Publication", value: "Architectural Design (AD, Wiley)" },
+      { label: "Fellowship", value: "Virginia B. Ball Center for Creative Inquiry" },
+      { label: "Faculty Lead", value: "Prof. Kevin Klinger & Joshua Vermillion" },
+    ],
+    notation: {
+      systemArchitecture:
+        "3D Parametric Model -> CNC Milling Toolpaths -> Indiana Limestone & Timber Assembly",
+      keyInnovation:
+        "Digital fabrication feedback loops integrating local Indiana limestone and timber in a landscape installation",
+      impact:
+        "Featured in Architectural Design (AD) and constructed a permanent public installation in Mounds State Park.",
     },
   },
 ];
