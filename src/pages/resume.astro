@@ -453,3 +453,25 @@ const volunteering = [
 		</div>
 	</section>
 </SiteLayout>
+
+<style>
+	.resume-section {
+		margin-top: 3.5rem;
+	}
+
+	.resume-section:first-of-type {
+		margin-top: 2.5rem;
+	}
+
+	.resume-section h2 {
+		margin-bottom: 1.25rem;
+		font-weight: 500;
+	}
+
+	@media print {
+		.resume-section {
+			margin-top: 1.5rem;
+			break-inside: avoid;
+		}
+	}
+</style>
