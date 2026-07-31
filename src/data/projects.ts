@@ -470,16 +470,18 @@ export const projects: Project[] = [
       "Developed generative Processing algorithms, terrain textures, and physical topography models for Situ Studio's 'Ungrounding' and Psagot territorial analysis projects.",
     fullDescription: [
       "COMPUTATIONAL PATTERN GENERATION: Developed custom Processing (Java) algorithms to create evolving pattern swatches, simulating topological forces, road networks, footprint growth, and deconstructing landform dynamics across contested geographies.",
-      "CRAFTSMANSHIP & MODEL FABRICATION: Worked closely with Brad Samuels (Art Direction) and Basar Girit at Situ Studio to translate generative 2D algorithm swatches into intricate physical landscape models, developing complex surface topographies, milled textures, and Photoshop presentation graphics.",
+      "AGENT-BASED TEXTURE SIMULATION: Inspired by Mitchel Resnick's 'Turtles, Termites, and Traffic Jams', built procedural agent-based simulations to generate dynamic, evolving textures over time. Seeding these simulations with raw infrastructure data produced animated vector swatches that directly informed the surface topographies of the post-Hague second series of Ungrounding models.",
+      "CRAFTSMANSHIP & MODEL FABRICATION: Worked closely with Brad Samuels (Art Direction & Mentor) and Basar Girit at Situ Studio to translate generative 2D algorithm swatches into intricate physical landscape models, developing complex surface topographies, milled textures, and Photoshop presentation graphics.",
       "UNGROUNDING ARCHITECTURE: Visualized the political and physical forces shaping settlement patterns in the Psagot region, creating high-resolution presentation boards, vector field maps, and physical model fabrications to communicate complex spatial narratives.",
     ],
     points: [
-      "Wrote custom Processing (.pde) algorithms to generate evolving landscape pattern swatches.",
-      "Collaborated with Brad Samuels & Basar Girit (Situ Studio) as primary craftsman for topography & texture model development.",
-      "Produced presentation boards, vector force fields, and physical models for spatial narrative research.",
+      "Wrote custom Processing (.pde) agent-based simulation algorithms inspired by 'Turtles, Termites, and Traffic Jams'.",
+      "Collaborated with mentor Brad Samuels & Basar Girit (Situ Studio) as primary craftsman for topography & texture model development.",
+      "Produced presentation boards, vector force fields, procedural GIFs, and physical models for spatial narrative research.",
     ],
     details: [
       "Processing (Java)",
+      "Agent-Based Modeling",
       "Rhino 3D / CNC",
       "Brad Samuels & Basar Girit",
       "Terrain Texturing",
@@ -493,9 +495,9 @@ export const projects: Project[] = [
     ],
     notation: {
       systemArchitecture:
-        "Geographic Forces -> Processing Generative Swatches -> CNC & Hand-Crafted Topography",
+        "Infrastructure Data -> Agent-Based Processing Swatches -> CNC & Hand-Crafted Topography",
       keyInnovation:
-        "Algorithmic pattern swatch generation translated into 3D physical landscape textures",
+        "Procedurally dynamic agent-based texture generation translated into 3D physical landscape topographies",
       impact:
         "Engineered tangible computational physical models communicating complex spatial narratives.",
     },
@@ -508,12 +510,12 @@ export const projects: Project[] = [
     period: "2008 – 2010",
     galleryId: "situ-textures",
     summary:
-      "Developed algorithmic workflows in Rhino, Processing, and custom code to translate 2D image gradients, Perlin noise fields, and sphere-packing simulations into physical 3D CNC-milled surface textures.",
+      "Developed algorithmic workflows in Rhino, Processing, and custom code to translate 2D image gradients, Perlin noise fields, and agent-based sphere-packing simulations into physical 3D CNC-milled surface textures.",
     fullDescription: [
-      "BACKGROUND & GOALS: Situ Studio frequently faced the challenge of translating abstract 2D surface data into tangible 3D physical geometry for large-scale architectural fabrications and landscape models. Rather than relying on simple graphical bump maps for rendering, this initiative focused on generating true volumetric geometry that could be processed directly by CNC toolpathing engines.",
-      "METHOD 1 - HEIGHTFIELD DISPLACEMENT: Built workflows to convert 2D color values and pixel depth maps into multi-layered 3D spatial modulations. By layering topographic heightfields with secondary texture gradient maps, surfaces were generated with multiple degrees of physical depth.",
-      "METHOD 2 - PERLIN NOISE PROCEDURAL TEXTURING: Developed custom Perlin noise implementations applied directly across non-uniform NURBS surfaces and complex 3D meshes. By combining fractal sums of varying noise frequencies, procedural textures eliminated 2D mapping distortion and allowed field geometry to respond dynamically to input curves, point clouds, and environmental vectors.",
-      "METHOD 3 - SPHERE PACKING & INSTANCED GEOMETRY: Created sphere-packing algorithms to instance physical geometry (such as stones, rip-rap rubble, or structural blocks) across terrain meshes. Built parameter controls for density, variable scaling, allowable overlap, and rotational orientation based on input environmental forces.",
+      "BACKGROUND & GOALS: Under the mentorship of Brad Samuels at Situ Studio, surface texturing evolved into a central meta-theme across multiple architectural and research initiatives. Rather than relying on static graphical bump maps, this effort focused on generating procedural 3D surface geometry that responded dynamically to environmental and topological inputs.",
+      "METHOD 1 - AGENT-BASED PROCEDURAL TEXTURES: Inspired by Mitchel Resnick's work on emergent systems ('Turtles, Termites, and Traffic Jams'), engineered self-organizing agent algorithms in Processing to generate dynamic, evolving surface swatches over time, seeding physical models with data-driven terrain textures.",
+      "METHOD 2 - HEIGHTFIELD DISPLACEMENT & PERLIN NOISE: Built workflows converting pixel depth maps into multi-layered 3D spatial modulations, alongside custom 3D Perlin noise implementations applied directly across NURBS surfaces and complex meshes.",
+      "METHOD 3 - SPHERE PACKING & INSTANCED GEOMETRY: Created sphere-packing algorithms to instance physical geometry across terrain meshes with variable scaling, density controls, and environmental vector responses.",
     ],
     points: [
       "Engineered 3D surface texturing algorithms for physical CNC digital fabrication.",
