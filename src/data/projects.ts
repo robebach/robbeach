@@ -252,6 +252,7 @@ export const projects: Project[] = [
     type: "Parametric Modeling & CNC Fabrication",
     period: "2012",
     galleryId: "textured-picture-frame",
+    hidden: true,
     summary:
       "Developed custom Grasshopper parametric scripts to generate continuous sine-wave textured picture frames engineered for 3-axis CNC milling, initially initiated for Brad Samuels at Situ and expanded into a personal design system.",
     fullDescription: [
