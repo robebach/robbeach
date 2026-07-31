@@ -14,6 +14,6 @@ My mind began to race [honestly it hasn't really stopped, but that could be the 
 
 It's OK became a common reassurance I gave to the person who was mildly freaked out about my honesty.
 
-I'm jumpy when I get a call, under pressure. woke up this morning, made coffee jerked off, drank coffee
+I'm jumpy when I get a call, under pressure. woke up this morning, made coffee, drank coffee
 
 How things break with uncertainty.
