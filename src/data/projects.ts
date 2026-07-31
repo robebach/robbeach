@@ -714,19 +714,19 @@ export const projects: Project[] = [
     linkText: "CumInCAD Research Paper",
     galleryId: "vbbc-calibration-channel",
     summary:
-      "Designed, CNC-milled, and fabricated a landscape-responsive timber and limestone viewing pavilion at Mounds State Park as a Virginia B. Ball Center Design Research Fellow under Prof. Kevin Klinger — featured in the journal Architectural Design (AD).",
+      "A labor of love: CNC-milled and fabricated an ambitious timber and limestone viewing pavilion at Mounds State Park as a Virginia B. Ball Center Fellow under Prof. Kevin Klinger. Served as lead fabricator alongside the project's lead designer, spending long hours on-site along the White River.",
     fullDescription: [
-      "IMMERSIVE DESIGN-BUILD RESEARCH: Completed as a semester-long immersive design research fellowship through the Virginia B. Ball Center for Creative Inquiry at Ball State University, under the direction of Prof. Kevin Klinger and Joshua Vermillion.",
-      "DIGITAL FABRICATION FEEDBACK LOOPS: The project investigated digital fabrication feedback loops—linking 3D Rhino parametric models directly to 3-axis CNC router milling toolpaths. The team engineered interlocking timber ribs, unflattened skin boards, and custom Indiana limestone footer anchors.",
-      "LANDSCAPE INSTALLATION AT MOUNDS STATE PARK: Built on-site along the White River at Mounds State Park in Anderson, Indiana. The structure acts as an optical and environmental 'Calibration Channel', orienting visitors toward the river bluff while demonstrating high-precision digital fabrication with local hardwood and limestone.",
-      "FEATURED IN ARCHITECTURAL DESIGN (AD): The project and its digital design-through-production feedback loop research were featured in the prestigious journal Architectural Design (AD, Wiley) as a landmark case study in digital fabrication and material processing.",
+      "IMMERSIVE DESIGN-BUILD RESEARCH: Completed as a semester-long design research fellowship at the Virginia B. Ball Center for Creative Inquiry (Ball State University), led by Prof. Kevin Klinger and Joshua Vermillion. Served as lead fabricator on the student team, collaborating closely with the project's lead designer to translate complex parametric Rhino models into CNC milling toolpaths, interlocking timber ribs, unflattened skin boards, and Indiana limestone footers.",
+      "ON-SITE FABRICATION AT MOUNDS STATE PARK: Spent long days slogging on-site at Mounds State Park along the White River bluff in Anderson, IN. Hand-assembled the structural ribs and custom timber viewing bench, bridging digital code with physical craftsmanship.",
+      "PUBLISHED CASE STUDY IN ARCHITECTURAL DESIGN (AD): The project and its digital design-to-production feedback loops were published as a case study in the international journal Architectural Design (AD, Wiley) and CumInCAD literature.",
+      "EPILOGUE & FLOOD RECLAMATION: Years after installation, Prof. Kevin Klinger sent a photo showing only the bare Indiana limestone foundation remaining—the timber canal structure and bench had been completely washed away in a White River flood. A fitting epilogue for an ambitious parametric geometry built from porous wood right alongside a flooding river by a passionate team.",
     ],
     points: [
+      "Served as lead fabricator alongside project lead designer, executing CNC milling and on-site assembly.",
       "Featured in the international journal Architectural Design (AD, Wiley) and CumInCAD research literature.",
-      "Selected as Virginia B. Ball Center Design Research Fellow at Ball State University.",
       "Engineered 3D parametric rib models, CNC milling toolpaths, and unflattened skin panel layouts.",
-      "Fabricated custom Indiana limestone footer mounts and timber structural assemblies.",
-      "Constructed physical viewing pavilion on-site at Mounds State Park in Anderson, IN.",
+      "Poured Indiana limestone footer anchors and hand-assembled timber canal bench structure at Mounds State Park.",
+      "Epilogue: The organic timber structure was eventually reclaimed by a White River flood, leaving the limestone footers intact.",
     ],
     details: [
       "Architectural Design (AD) Journal",
