@@ -16,10 +16,11 @@ interface Props {
 
 const { project } = Astro.props;
 
-const currentIndex = projects.findIndex((p) => p.slug === project.slug);
-const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+const visibleProjects = projects.filter((p) => !p.hidden || p.slug === project.slug);
+const currentIndex = visibleProjects.findIndex((p) => p.slug === project.slug);
+const prevProject = currentIndex > 0 ? visibleProjects[currentIndex - 1] : null;
 const nextProject =
-	currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+	currentIndex < visibleProjects.length - 1 ? visibleProjects[currentIndex + 1] : null;
 ---
 
 <SiteLayout
@@ -34,50 +35,53 @@ const nextProject =
 		</a>
 	</nav>
 
-	{/* Project header */}
-	<header class="project-header content-measure">
-		<div class="project-header-meta">
-			<span class="project-type">{project.type}</span>
-			{project.period && <span class="project-sep">·</span>}
-			{project.period && <span class="project-period">{project.period}</span>}
-		</div>
-		<h1 class="project-title">{project.name}</h1>
-		<p class="project-client">{project.client}</p>
+	{/* Project top container (allows reordering gallery to top on mobile) */}
+	<div class="project-top-container">
+		{/* Project header */}
+		<header class="project-header content-measure">
+			<div class="project-header-meta">
+				<span class="project-type">{project.type}</span>
+				{project.period && <span class="project-sep">·</span>}
+				{project.period && <span class="project-period">{project.period}</span>}
+			</div>
+			<h1 class="project-title">{project.name}</h1>
+			<p class="project-client">{project.client}</p>
 
+			{
+				project.details.length > 0 && (
+					<ul class="tag-list mt-3" aria-label="Tags">
+						{project.details.map((d) => (
+							<li class="tag">{d}</li>
+						))}
+					</ul>
+				)
+			}
+
+			{
+				project.link && (
+					<div class="project-ext-link">
+						<a
+							href={project.link}
+							target="_blank"
+							rel="noreferrer"
+							class="ext-link"
+						>
+							{project.linkText || "View Reference"}&nbsp;&nearr;
+						</a>
+					</div>
+				)
+			}
+		</header>
+
+		{/* Gallery */}
 		{
-			project.details.length > 0 && (
-				<ul class="tag-list mt-3" aria-label="Tags">
-					{project.details.map((d) => (
-						<li class="tag">{d}</li>
-					))}
-				</ul>
+			project.galleryId && (
+				<section class="gallery-section" aria-label="Project gallery">
+					<ImageGallery galleryId={project.galleryId} />
+				</section>
 			)
 		}
-
-		{
-			project.link && (
-				<div class="project-ext-link">
-					<a
-						href={project.link}
-						target="_blank"
-						rel="noreferrer"
-						class="ext-link"
-					>
-						{project.linkText || "View Reference"}&nbsp;&nearr;
-					</a>
-				</div>
-			)
-		}
-	</header>
-
-	{/* Gallery */}
-	{
-		project.galleryId && (
-			<section class="gallery-section" aria-label="Project gallery">
-				<ImageGallery galleryId={project.galleryId} />
-			</section>
-		)
-	}
+	</div>
 
 	{/* Article */}
 	<article class="project-article content-measure">
@@ -129,6 +133,23 @@ const nextProject =
 </SiteLayout>
 
 <style>
+	.project-top-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	@media (max-width: 768px) {
+		.project-top-container .gallery-section {
+			order: -1;
+			margin-top: 0;
+			margin-bottom: 1.5rem;
+		}
+
+		.breadcrumb-nav {
+			margin-bottom: 1.25rem;
+		}
+	}
+
 	/* ─── Breadcrumb ──────────────────────────────────────────── */
 	.breadcrumb-nav {
 		margin-bottom: 2.5rem;
@@ -217,6 +238,7 @@ const nextProject =
 	.gallery-section {
 		margin: 2rem 0;
 	}
+
 
 	/* ─── Article ─────────────────────────────────────────────── */
 	.project-article {

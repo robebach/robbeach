@@ -130,19 +130,19 @@ function cleanAltText(filePath: string) {
 	.carousel-container {
 		position: relative;
 		width: 100%;
-		/* Taller aspect ratio (2:1 desktop, up to 55vh height) */
-		aspect-ratio: var(--gallery-aspect-ratio, 2 / 1);
-		max-height: 55vh;
-		min-height: 380px;
+		/* Taller 4:3 (1.33:1) aspect ratio for generous vertical framing */
+		aspect-ratio: var(--gallery-aspect-ratio, 4 / 3);
+		max-height: 75vh;
+		min-height: 480px;
 		overflow: hidden;
 		background: #0f1115;
 	}
 
 	@media (max-width: 768px) {
 		.carousel-container {
-			aspect-ratio: var(--gallery-aspect-ratio, 16 / 9);
-			max-height: 45vh;
-			min-height: 260px;
+			aspect-ratio: var(--gallery-aspect-ratio, 4 / 3);
+			max-height: 62vh;
+			min-height: 320px;
 		}
 	}
 

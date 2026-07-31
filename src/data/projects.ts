@@ -18,6 +18,7 @@ export interface Project {
   link?: string;
   linkText?: string;
   galleryId?: string;
+  hidden?: boolean;
   summary: string;
   fullDescription: string[];
   points: string[];
@@ -33,20 +34,22 @@ export const projects: Project[] = [
     name: "Rheia HVAC Engineering & Systems Architecture",
     client: "Rheia, LLC",
     type: "Software, Hardware & Controls Engineering",
-    period: "2018 – Present",
+    period: "2017 – Present",
+    galleryId: "rheia-engineering",
     summary:
       "Architected the calculation engines, field analytics pipelines, automated control algorithms, and patented hardware powering Rheia's residential HVAC platform across 25,000+ homes.",
     fullDescription: [
       "SOFTWARE ENGINE (Rheia Verify & Manage): Architected the calculation engines that consume Manual J heating and cooling load models to calculate required airflows, pressure drops, and duct sizing for over 25,000 home builds.",
       "DATA PIPELINES & CONTROLS: Constructed Python data pipelines and automated quality checks to analyze field installation records, pressure signatures, and sensor telemetries. Developed automated dynamic balancing control logic that translates duct pressure physics into live room-by-room damper adjustments.",
       "PATENTED HARDWARE: Led hardware development and mechanical sealing design for Rheia's air distribution system. Co-inventor on US Utility Patent 12,298,028 B2 covering flexible duct connection fittings and ferrule assemblies.",
-      "CFD RESEARCH: Ran 3D computational fluid dynamics (CFD) airflow simulations to study turbulence and pressure losses in HVAC junction boxes, published in a U.S. Department of Energy (Building America) research report, which shaped modern manifold designs.",
+      "SYSTEM ORIGINS & DOE RESEARCH: Traced back to early splitter box CFD airflow modeling studies with Rich Lange and a plug-and-play HVAC system evaluation co-developed with Andrew Poerschke at IBACOS. Merged systems-level engineering with simple space conditioning, creating the DOE-funded research foundation that evolved into Rheia.",
     ],
     points: [
       "Built duct distribution simulation engines and automated Python pipelines for field verification metrics.",
       "Designed pressure-compensated control algorithms for motorized room dampers.",
       "Co-invented patented twist-and-lock duct ferrule assembly (US 12,298,028 B2).",
-      "Published U.S. Department of Energy research on duct fitting airflow CFD.",
+      "Co-developed early plug-and-play HVAC system evaluations with Andrew Poerschke for the U.S. Department of Energy.",
+      "Learned advanced CFD airflow modeling under Rich Lange on early HVAC splitter box studies.",
     ],
     details: [
       "Software Architecture",
@@ -77,6 +80,7 @@ export const projects: Project[] = [
     client: "Personal Project",
     type: "Hardware Engineering & IoT",
     period: "Ongoing",
+    galleryId: "viva-logger-terrarium",
     summary:
       "Designed and built an automated environmental controller for a terrarium using Raspberry Pi, LabJack DAQ sensors, and custom Python software.",
     fullDescription: [
@@ -374,39 +378,45 @@ export const projects: Project[] = [
     slug: "guggenheim-flw",
     name: "Frank Lloyd Wright: From Within Outward",
     client: "Situ Studio (for Solomon R. Guggenheim Museum)",
-    type: "Exhibition Design & Research",
+    type: "Exhibition Modeling & Digital Fabrication",
     period: "2009",
     galleryId: "flw",
     summary:
-      "Contributed to architectural mapping and exhibition materials for the landmark Frank Lloyd Wright retrospective at the Guggenheim, while working at Situ Studio.",
+      "Executed 3D digital reconstructions, micro 3D-printed building models, custom milled foam landscape elements, and animated projection mapping for the 50th-anniversary Frank Lloyd Wright retrospective at the Guggenheim Museum.",
     fullDescription: [
-      "While at Situ Studio, contributed to the architectural research and exhibition design materials for 'Frank Lloyd Wright: From Within Outward' — the landmark retrospective celebrating the 50th anniversary of the Guggenheim Museum building.",
-      "Produced detailed plans, diagrams, and physical models to illustrate Wright's philosophy that a building's exterior form should be an expression of its interior space.",
-      "Helped prepare materials showcasing 64 of Wright's projects, including unbuilt urban mega-structures and civic proposals.",
+      "STUDIO-WIDE RETROSPECTIVE FABRICATION: Contributed to the major office-wide model fabrication effort at Situ Studio for 'Frank Lloyd Wright: From Within Outward' — the landmark 50th-anniversary exhibition hosted inside Frank Lloyd Wright's iconic Guggenheim Museum in NYC.",
+      "TALIESIN EAST MODEL & PROJECTION MAPPING: Working under Brad Samuels' direction, modeled scale micro-buildings for the Taliesin East compound directly from scans of original FLW drawings. Thickened ultra-fine geometries (like eaves) to ensure structural integrity at tiny print scales. Co-produced an animated projection slideshow with Brad Samuels projected directly onto the surface of the Taliesin topography to narrate the compound's history.",
+      "GORDON STRONG AUTOMOBILE OBJECTIVE (WALL-MOUNTED): Collaborated with project lead Wes Rosen to produce a complete 3D digital reconstruction in Rhino 3D of Wright's unbuilt 3-dome spiral structure, 3D printed (ZCorp plaster/clear) and mounted directly off the Guggenheim's spiral ramp wall. Developed a custom two-sided CNC foam milling technique to generate a randomized set of miniature trees so no two trees were identical.",
+      "RAPID PROTOTYPING ESTIMATES: Managed model estimations and 3D printing STL file breakdowns to budget and coordinate complex micro-scale additive manufacturing workflows.",
     ],
     points: [
-      "Developed architectural diagrams and mapping for a major museum retrospective.",
-      "Analyzed perspective geometry and compositional structure of unbuilt Frank Lloyd Wright civic and urban projects.",
-      "Contributed to the visual narrative of the Guggenheim's 50th-anniversary exhibition.",
+      "Reconstructed unbuilt FLW projects (Gordon Strong Automobile Objective) in 3D Rhino for wall-mounted Guggenheim display.",
+      "Modeled micro 3D-printed buildings for Taliesin East, adjusting ultra-fine geometries for scale printing.",
+      "Co-produced animated projection slideshow mapped onto the physical Taliesin topography model with Brad Samuels.",
+      "Invented 2-sided CNC foam milling process to generate randomized miniature tree sets for model landscapes.",
+      "Managed early 2009 Taliesin 3D printing STL model estimates and production budgeting.",
     ],
     details: [
-      "Exhibition Design",
-      "Architectural Research",
-      "Frank Lloyd Wright",
-      "Diagramming",
+      "Rhino 3D Reconstruction",
+      "ZCorp / Clear 3D Printing",
+      "Brad Samuels & Wes Rosen",
+      "Projection Mapping",
+      "2-Side CNC Foam Milling",
+      "Guggenheim Museum",
+      "Situ Studio",
     ],
     metrics: [
       { label: "Institution", value: "Solomon R. Guggenheim Museum" },
-      { label: "Exhibition", value: "From Within Outward (2009)" },
-      { label: "Focus", value: "Architectural Retrospective" },
+      { label: "Exhibition", value: "From Within Outward (50th Anniversary)" },
+      { label: "Models", value: "Taliesin East & Gordon Strong Objective" },
     ],
     notation: {
       systemArchitecture:
-        "Archival Research -> Diagrammatic Mapping -> Exhibition Display",
+        "Archival FLW Scans -> 3D Rhino Geometry -> Micro 3D Printing & CNC Foam Milling -> Projection Mapped Exhibition",
       keyInnovation:
-        "Visualizing unbuilt and complex architectural geometries for the public",
+        "Custom 2-side CNC milled randomized tree generation and surface-projected topological animation",
       impact:
-        "Helped narrate the legacy of America's most famous architect in his most famous building.",
+        "Brought unbuilt Frank Lloyd Wright masterpieces to life inside Wright's own Guggenheim Museum rotunda.",
     },
   },
   {
@@ -416,6 +426,7 @@ export const projects: Project[] = [
     type: "Conceptual Architecture",
     period: "2009",
     galleryId: "scifi",
+    hidden: true,
     summary:
       "An exploration of modular, flat-pack structural assemblies drawing on science-fiction aesthetics and deployable geometries.",
     fullDescription: [
@@ -451,40 +462,41 @@ export const projects: Project[] = [
     slug: "computational-landscape",
     name: "Computational Landscape: Psagot & Ungrounding",
     client: "Situ Studio",
-    type: "Computational Architecture",
-    period: "2008",
+    type: "Computational Architecture & Model Craft",
+    period: "2008 – 2011",
     galleryId: "ungrounding",
     summary:
-      "Explored computational landscape analysis and architectural ungrounding using custom Processing scripts and Rhino heightfields.",
+      "Developed generative Processing algorithms, terrain textures, and physical topography models for Situ Studio's 'Ungrounding' and Psagot territorial analysis projects.",
     fullDescription: [
-      "Developed algorithmic models to analyze terrain, settlement patterns, and geographic forces in contested landscapes like the Psagot settlement.",
-      "Wrote custom Processing (Java) scripts to generate simulated growth patterns, mapping forces and property lines over topographical data.",
-      "Translated 2D computational simulations into 3D Rhino heightfields and cracked surface geometries to propose new architectural interventions.",
+      "COMPUTATIONAL PATTERN GENERATION: Developed custom Processing (Java) algorithms to create evolving pattern swatches, simulating topological forces, road networks, footprint growth, and deconstructing landform dynamics across contested geographies.",
+      "CRAFTSMANSHIP & MODEL FABRICATION: Worked closely with Brad Samuels (Art Direction) and Basar Girit at Situ Studio to translate generative 2D algorithm swatches into intricate physical landscape models, developing complex surface topographies, milled textures, and Photoshop presentation graphics.",
+      "UNGROUNDING ARCHITECTURE: Visualized the political and physical forces shaping settlement patterns in the Psagot region, creating high-resolution presentation boards, vector field maps, and physical model fabrications to communicate complex spatial narratives.",
     ],
     points: [
-      "Wrote algorithmic simulations using Processing (.pde) to model terrain forces.",
-      "Generated 3D topographical meshes from 2D data mappings.",
-      "Explored the political and physical implications of 'ungrounding' architecture.",
+      "Wrote custom Processing (.pde) algorithms to generate evolving landscape pattern swatches.",
+      "Collaborated with Brad Samuels & Basar Girit (Situ Studio) as primary craftsman for topography & texture model development.",
+      "Produced presentation boards, vector force fields, and physical models for spatial narrative research.",
     ],
     details: [
       "Processing (Java)",
-      "Rhino 3D",
-      "Algorithmic Design",
-      "Landscape Architecture",
+      "Rhino 3D / CNC",
+      "Brad Samuels & Basar Girit",
+      "Terrain Texturing",
       "Data Visualization",
+      "Physical Model Craft",
     ],
     metrics: [
-      { label: "Focus", value: "Computational Terrain Analysis" },
-      { label: "Tools", value: "Processing / Rhino" },
-      { label: "Output", value: "Algorithms & 3D Topography" },
+      { label: "Collaboration", value: "Situ Studio (Brad Samuels, Basar Girit)" },
+      { label: "Software", value: "Custom Processing (.pde) Engine" },
+      { label: "Medium", value: "Generative Code & Physical Topography" },
     ],
     notation: {
       systemArchitecture:
-        "Geographic Data -> Processing Simulation -> Rhino Heightfield",
+        "Geographic Forces -> Processing Generative Swatches -> CNC & Hand-Crafted Topography",
       keyInnovation:
-        "Algorithmic mapping of abstract terrain forces into physical geometry",
+        "Algorithmic pattern swatch generation translated into 3D physical landscape textures",
       impact:
-        "Demonstrated the use of code to generate landscape-responsive architecture.",
+        "Engineered tangible computational physical models communicating complex spatial narratives.",
     },
   },
   {

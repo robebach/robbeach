@@ -1,23 +1,6 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import heroImg1 from "../assets/galleries/transitional-objects/01-alyson-shotz-transitional-objects-gallery-installation.jpg";
-import heroImg2 from "../assets/galleries/pratt-venetian-vagabond/12-vector-field-growth-iteration-a5.jpg";
-import heroImg3 from "../assets/galleries/situ-textures/07-procedural-noise-modulation.jpg";
-import heroImg4 from "../assets/galleries/trezona-fossil/11-specimen-b-subd-surface-reconstruction.jpg";
-import heroImg5 from "../assets/galleries/space-filling-structures/01-space-filling-structure-rhino-viewcapture.png";
-import heroImg6 from "../assets/galleries/pratt-venetian-vagabond/10-generative-swarm-field-simulation-d4.jpg";
-import heroImg7 from "../assets/galleries/pratt-venetian-vagabond/13-bathymetric-attractor-swarm-mesh.jpg";
-import heroImg8 from "../assets/galleries/situ-textures/04-3d-heightfield-texture.jpg";
-import heroImg9 from "../assets/galleries/situ-textures/08-topography-render-milled-model.jpg";
-import heroImg10 from "../assets/galleries/pratt-film-study/01-aerial-cinematic-scape.jpg";
-import heroImg11 from "../assets/galleries/wood-texture-panels/04-parametric-panel-rendering-02.jpg";
-import heroImg12 from "../assets/galleries/trezona-fossil/07-specimen-a-shaded-volumetric-model.jpg";
-
-const heroImages = [
-	heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6,
-	heroImg7, heroImg8, heroImg9, heroImg10, heroImg11, heroImg12
-];
-const initialHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
+import portraitLensflare from "../assets/portrait/robert-beach-lensflare.jpg";
 ---
 
 <SiteLayout
@@ -92,25 +75,19 @@ const initialHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)]
 			</div>
 		</div>
 
-		<!-- Right column: image bleeds to screen edge -->
+		<!-- Right column: Full height portrait frame -->
 		<div class="about-right-col" aria-hidden="true">
-			<img
-				id="about-hero-img"
-				src={initialHeroImg.src}
-				alt=""
-				loading="eager"
-				decoding="async"
-			/>
+			<div class="hero-portrait-frame">
+				<img
+					src={portraitLensflare.src}
+					alt="Robert Beach"
+					loading="eager"
+					decoding="async"
+				/>
+			</div>
 		</div>
 	</div>
 </SiteLayout>
-
-<script define:vars={{ heroImagesSrcs: heroImages.map((img) => img.src) }}>
-	const heroImgEl = document.getElementById("about-hero-img");
-	if (heroImgEl && heroImagesSrcs.length > 0) {
-		heroImgEl.src = heroImagesSrcs[Math.floor(Math.random() * heroImagesSrcs.length)];
-	}
-</script>
 
 <style>
 	/* ── Page layout: left col in normal flow, right col breaks out to screen edge ── */
@@ -132,7 +109,7 @@ const initialHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)]
 		min-width: 0;
 	}
 
-	/* ── Right column: precisely sized to bleed to screen edge ── */
+	/* ── Right column: Full Portrait Frame ── */
 	.about-right-col {
 		flex: 0 0 auto;
 		/* Exact width to reach the right edge of the viewport:
@@ -140,23 +117,30 @@ const initialHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)]
 		width: calc(50vw + 50% - var(--measure) - 3.5rem);
 		/* Gap between text and image */
 		margin-left: 3.5rem;
-		/* Golden ratio portrait: width 1, height 1.618 */
-		aspect-ratio: 1 / 1.618;
+		aspect-ratio: 1 / 1.5;
 		padding-right: 0;
 		overflow: hidden;
-		/* Align top of image with top of h1 — label is ~0.75rem font + 1.5rem margin-bottom */
+		/* Align top of image with top of h1 */
 		margin-top: calc(0.75rem * 1.2 + 1.5rem);
+		display: flex;
+		flex-direction: column;
 	}
 
-	.about-right-col img {
+	.hero-portrait-frame {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		background: #0f1115;
+	}
+
+	.hero-portrait-frame img {
 		display: block;
-		/* Width fills the column; height is set via JS to match the text block */
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: center left;
-		border-top-left-radius: 4px;
-		border-bottom-left-radius: 4px;
+		object-position: center top;
 	}
 
 	/* ── Typography ── */

@@ -1,10 +1,27 @@
 ---
+import { Image } from "astro:assets";
 import SiteLayout from "../layouts/SiteLayout.astro";
 import { projects } from "../data/projects";
 
 const pageTitle = "Work | Robert Beach";
 const pageDescription =
 	"Selected projects across software development, building science, data analytics, fabrication, and architectural research.";
+
+// Load all potential gallery images eagerly to find first thumbnail for each project
+const allGalleryImages = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/galleries/**/*.{jpeg,jpg,png,gif,webp,JPG,JPEG,PNG,WEBP}",
+	{ eager: true }
+);
+
+function getFirstGalleryImage(galleryId?: string): ImageMetadata | null {
+	if (!galleryId) return null;
+	const prefix = `/src/assets/galleries/${galleryId}/`;
+	const matchingKey = Object.keys(allGalleryImages)
+		.filter((key) => key.startsWith(prefix))
+		.sort()[0];
+	return matchingKey ? allGalleryImages[matchingKey].default : null;
+}
+const visibleProjects = projects.filter((p) => !p.hidden);
 ---
 
 <SiteLayout title={pageTitle} description={pageDescription} active="projects">
@@ -23,30 +40,50 @@ const pageDescription =
 	<section aria-label="Project list">
 		<ol class="project-list" role="list">
 			{
-				projects.map((project, i) => (
-					<li class="project-item">
-						<a
-							class="project-link"
-							href={`/projects/${project.slug}`}
-							aria-label={project.name}
-						>
-							<div class="project-meta">
-								<span class="project-index">{String(i + 1).padStart(2, "0")}</span>
-								<span class="project-period">{project.period ?? "—"}</span>
-							</div>
-							<div class="project-body">
-								<h2 class="project-name">{project.name}</h2>
-								<p class="project-summary">{project.summary}</p>
-								<ul class="tag-list" aria-label="Tags">
-									{project.details.slice(0, 5).map((d) => (
-										<li class="tag">{d}</li>
-									))}
-								</ul>
-							</div>
-							<span class="project-arrow" aria-hidden="true">&rarr;</span>
-						</a>
-					</li>
-				))
+				visibleProjects.map((project, i) => {
+					const thumbImg = getFirstGalleryImage(project.galleryId);
+					return (
+						<li class="project-item">
+							<a
+								class="project-link"
+								href={`/projects/${project.slug}`}
+								aria-label={project.name}
+							>
+								<div class="project-thumb">
+									{thumbImg ? (
+										<Image
+											src={thumbImg}
+											alt={project.name}
+											class="project-thumb-img"
+											width={160}
+											height={259}
+											format="webp"
+											loading="lazy"
+										/>
+									) : (
+										<div class="project-thumb-placeholder">
+											<span class="placeholder-code">{String(i + 1).padStart(2, "0")}</span>
+										</div>
+									)}
+								</div>
+								<div class="project-meta">
+									<span class="project-index">{String(i + 1).padStart(2, "0")}</span>
+									<span class="project-period">{project.period ?? "—"}</span>
+								</div>
+								<div class="project-body">
+									<h2 class="project-name">{project.name}</h2>
+									<p class="project-summary">{project.summary}</p>
+									<ul class="tag-list" aria-label="Tags">
+										{project.details.slice(0, 5).map((d) => (
+											<li class="tag">{d}</li>
+										))}
+									</ul>
+								</div>
+								<span class="project-arrow" aria-hidden="true">&rarr;</span>
+							</a>
+						</li>
+					);
+				})
 			}
 		</ol>
 	</section>
@@ -93,13 +130,31 @@ const pageDescription =
 
 	.project-link {
 		display: grid;
-		grid-template-columns: 6rem 1fr auto;
-		gap: 1.5rem;
+		grid-template-columns: 4.5rem 2.25rem 1fr auto;
+		gap: 1.25rem;
 		align-items: start;
 		padding: 1.75rem 0;
 		text-decoration: none;
 		color: inherit;
 		transition: background 0.12s ease;
+	}
+
+	@media (min-width: 768px) {
+		.project-link {
+			padding-right: 3rem;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.project-link {
+			padding-right: 6rem;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.project-link {
+			padding-right: 10rem;
+		}
 	}
 
 	.project-link:hover {
@@ -116,14 +171,70 @@ const pageDescription =
 		color: var(--ink);
 	}
 
+	/* Thumbnail Column (Golden Ratio Vertical: 1 : 1.618) */
+	.project-thumb {
+		width: 4.5rem;
+		aspect-ratio: 1 / 1.618;
+		border-radius: 4px;
+		overflow: hidden;
+		background: var(--surface-2);
+		border: 1px solid var(--rule);
+		flex-shrink: 0;
+	}
+
+	.project-thumb-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.project-link:hover .project-thumb-img {
+		transform: scale(1.08);
+	}
+
+	.project-thumb-placeholder {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--surface-2);
+		color: var(--ink-3);
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.05em;
+	}
+
 	@media (max-width: 640px) {
 		.project-link {
-			grid-template-columns: 1fr auto;
+			grid-template-columns: 3.75rem 1fr auto;
 			grid-template-rows: auto auto;
+			gap: 1rem;
+		}
+
+		.project-thumb {
+			grid-column: 1;
+			grid-row: 1;
+			width: 3.75rem;
 		}
 
 		.project-meta {
-			grid-column: 1;
+			grid-column: 2;
+			grid-row: 1;
+			flex-direction: row !important;
+			align-items: center !important;
+			gap: 0.75rem !important;
+		}
+
+		.project-period {
+			writing-mode: horizontal-tb !important;
+			transform: none !important;
+		}
+
+		.project-arrow {
+			grid-column: 3;
 			grid-row: 1;
 		}
 
@@ -131,19 +242,15 @@ const pageDescription =
 			grid-column: 1 / -1;
 			grid-row: 2;
 		}
-
-		.project-arrow {
-			grid-column: 2;
-			grid-row: 1;
-		}
 	}
 
 	/* Meta column */
 	.project-meta {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
-		padding-top: 0.2rem;
+		align-items: flex-start;
+		gap: 0.5rem;
+		padding-top: 0.15rem;
 	}
 
 	.project-index {
@@ -152,13 +259,18 @@ const pageDescription =
 		font-weight: 500;
 		color: var(--ink-3);
 		letter-spacing: 0.05em;
+		line-height: 1;
 	}
 
 	.project-period {
 		font-family: var(--font-mono);
-		font-size: 0.675rem;
+		font-size: 0.625rem;
 		color: var(--ink-3);
 		white-space: nowrap;
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+		letter-spacing: 0.08em;
+		opacity: 0.8;
 	}
 
 	/* Body column */
@@ -192,3 +304,4 @@ const pageDescription =
 		transition: transform 0.15s ease, color 0.15s ease;
 	}
 </style>
+
