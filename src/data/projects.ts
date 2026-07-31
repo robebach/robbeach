@@ -512,19 +512,21 @@ export const projects: Project[] = [
     summary:
       "Developed algorithmic workflows in Rhino, Processing, and custom code to translate 2D image gradients, Perlin noise fields, and agent-based sphere-packing simulations into physical 3D CNC-milled surface textures.",
     fullDescription: [
-      "BACKGROUND & GOALS: Under the mentorship of Brad Samuels at Situ Studio, surface texturing evolved into a central meta-theme across multiple architectural and research initiatives. Rather than relying on static graphical bump maps, this effort focused on generating procedural 3D surface geometry that responded dynamically to environmental and topological inputs.",
+      "BACKGROUND & PEDAGOGY: Directly inspired and enabled by studio coursework at Pratt Institute with Alisa Andrasek (Biothing) and Gil Akos (Mode Lab), who introduced foundational concepts of generative computational design and emergent systems. Under the mentorship of Brad Samuels at Situ Studio, surface texturing evolved into a central meta-theme across multiple architectural and research initiatives.",
       "METHOD 1 - DUAL-POPULATION AGENT PROCEDURAL TEXTURES: Inspired by Mitchel Resnick's work on emergent systems ('Turtles, Termites, and Traffic Jams'), engineered self-organizing agent algorithms in Processing. By introducing competing 'negative eater' agents that fought the primary territory generators, the resulting population dynamics created emergent, chaotic boundary textures that were sampled and mapped into physical surface topographies.",
       "METHOD 2 - HEIGHTFIELD DISPLACEMENT & PERLIN NOISE: Built workflows converting pixel depth maps into multi-layered 3D spatial modulations, alongside custom 3D Perlin noise implementations applied directly across NURBS surfaces and complex meshes.",
       "METHOD 3 - SPHERE PACKING & INSTANCED GEOMETRY: Created sphere-packing algorithms to instance physical geometry across terrain meshes with variable scaling, density controls, and environmental vector responses.",
     ],
     points: [
       "Engineered 3D surface texturing algorithms for physical CNC digital fabrication.",
+      "Rooted in computational design studio training at Pratt Institute under Alisa Andrasek & Gil Akos.",
       "Created multi-layered heightfield image displacement workflows in Rhino.",
       "Developed 3D procedural Perlin noise field functions for complex NURBS geometry.",
       "Programmed sphere-packing algorithms for instanced 3D terrain & rip-rap modeling.",
     ],
     details: [
       "Situ Studio",
+      "Alisa Andrasek & Gil Akos (Pratt)",
       "Computational Design",
       "Rhino 3D",
       "Grasshopper",
@@ -534,6 +536,7 @@ export const projects: Project[] = [
       "CNC Fabrication",
     ],
     metrics: [
+      { label: "Pedagogy", value: "Pratt Institute (Alisa Andrasek, Gil Akos)" },
       { label: "Methods", value: "Heightfields, Perlin Noise, Sphere Packing" },
       { label: "Output", value: "3D CNC Toolpaths & Physical Models" },
       { label: "Application", value: "Architectural & Landscape Surfaces" },
