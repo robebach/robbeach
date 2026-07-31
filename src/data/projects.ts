@@ -596,17 +596,19 @@ export const projects: Project[] = [
     period: "2007 – 2008",
     galleryId: "pratt-venetian-vagabond",
     summary:
-      "Engineered custom 3D agent-based swarm algorithms in Processing (Java) and RhinoScript (with partner Jason McGee) to grow emergent architectural networks responding to Venice lagoon waterbus pathways and bathymetric data.",
+      "Engineered custom 3D agent-based swarm algorithms in Processing (Java) and RhinoScript (with partner Jason McGee) under studio professor Alisa Andrasek, with scripting instruction from Gil Akos and Ezio Blasetti.",
     fullDescription: [
+      "STUDIO PEDAGOGY & MENTORSHIP: Developed as an advanced design studio project at Pratt Institute led by studio professor Alisa Andrasek (Biothing). Computational scripting foundations were tutored by Gil Akos (Processing & RhinoScript .rvb) and Ezio Blasetti (Rhino scripting & algorithmic logic). Created in partnership with Jason McGee.",
       "COMPUTATIONAL SWARM ENGINE: Authored object-oriented 3D agent classes (Colony, Strand, Segment, Vector3D) in Processing (Java) to simulate autonomous, self-organizing agent swarms. The algorithm generated emergent 3D spatial tendril structures along complex vector trajectories.",
       "ENVIRONMENTAL FIELD MAPPING: Integrated 2D scalar fields mapping Venice lagoon bathymetry, waterbus routes, and aquatic traffic density. The scalar fields dynamically steered agent velocity, acceleration, branching frequency, and strand decay across the lagoon.",
       "RHINO & MAYA GEOMETRY PIPELINE: Exported dynamic 3D agent point clouds and authored custom RhinoScript (.rvb) and Maya (.mel) scripts to construct continuous NURBS meshes, tendril structural ribbing, and floating aquatic infrastructure.",
     ],
     points: [
+      "Studio project led by professor Alisa Andrasek; partnered with Jason McGee at Pratt Institute.",
+      "Received computational scripting instruction & tutorials from Gil Akos (Processing & .rvb) and Ezio Blasetti (Rhino scripting).",
       "Wrote custom 3D agent-based swarm simulation engine in Processing (Java).",
       "Mapped Venice lagoon bathymetry and waterbus traffic to drive emergent spatial growth.",
       "Authored RhinoScript (.rvb) and Maya MEL scripts to generate 3D NURBS meshes & structural tendrils.",
-      "Partnered with Jason McGee under studio professor Alisa Andrasek.",
     ],
     details: [
       "Processing (Java)",
@@ -614,13 +616,16 @@ export const projects: Project[] = [
       "Agent-Based Modeling",
       "RhinoScript (.rvb)",
       "Maya MEL",
-      "Pratt Institute",
-      "Alisa Andrasek Studio",
+      "Alisa Andrasek (Studio)",
+      "Gil Akos (Scripting)",
+      "Ezio Blasetti (Scripting)",
+      "Jason McGee (Partner)",
     ],
     metrics: [
       { label: "Studio Professor", value: "Alisa Andrasek" },
-      { label: "Partner", value: "Jason McGee" },
-      { label: "Software Engine", value: "Processing / RhinoScript / MEL" },
+      { label: "Scripting Instructors", value: "Gil Akos & Ezio Blasetti" },
+      { label: "Design Partner", value: "Jason McGee" },
+      { label: "Software Engine", value: "Processing / RhinoScript (.rvb) / MEL" },
     ],
     notation: {
       systemArchitecture:
