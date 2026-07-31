@@ -470,12 +470,12 @@ export const projects: Project[] = [
       "Developed generative Processing algorithms, terrain textures, and physical topography models for Situ Studio's 'Ungrounding' and Psagot territorial analysis projects.",
     fullDescription: [
       "COMPUTATIONAL PATTERN GENERATION: Developed custom Processing (Java) algorithms to create evolving pattern swatches, simulating topological forces, road networks, footprint growth, and deconstructing landform dynamics across contested geographies.",
-      "AGENT-BASED TEXTURE SIMULATION: Inspired by Mitchel Resnick's 'Turtles, Termites, and Traffic Jams', built procedural agent-based simulations to generate dynamic, evolving textures over time. Seeding these simulations with raw infrastructure data produced animated vector swatches that directly informed the surface topographies of the post-Hague second series of Ungrounding models.",
+      "COMPETING AGENT-BASED SIMULATION: Inspired by Mitchel Resnick's 'Turtles, Termites, and Traffic Jams', extended classic agent-based models by introducing a competing 'negative eater' population opposing the primary generator agents. The interaction and emergent chaos as the two populations fought and consumed territory generated dynamic, organic boundary swatches. Seeding these simulations with raw infrastructure data produced the animated textures that directly informed the surface topographies of the post-Hague second series of Ungrounding models.",
       "CRAFTSMANSHIP & MODEL FABRICATION: Worked closely with Brad Samuels (Art Direction & Mentor) and Basar Girit at Situ Studio to translate generative 2D algorithm swatches into intricate physical landscape models, developing complex surface topographies, milled textures, and Photoshop presentation graphics.",
       "UNGROUNDING ARCHITECTURE: Visualized the political and physical forces shaping settlement patterns in the Psagot region, creating high-resolution presentation boards, vector field maps, and physical model fabrications to communicate complex spatial narratives.",
     ],
     points: [
-      "Wrote custom Processing (.pde) agent-based simulation algorithms inspired by 'Turtles, Termites, and Traffic Jams'.",
+      "Extended 'Turtles, Termites, and Traffic Jams' agent models in Processing (.pde) with competing 'negative eater' populations.",
       "Collaborated with mentor Brad Samuels & Basar Girit (Situ Studio) as primary craftsman for topography & texture model development.",
       "Produced presentation boards, vector force fields, procedural GIFs, and physical models for spatial narrative research.",
     ],
@@ -495,9 +495,9 @@ export const projects: Project[] = [
     ],
     notation: {
       systemArchitecture:
-        "Infrastructure Data -> Agent-Based Processing Swatches -> CNC & Hand-Crafted Topography",
+        "Infrastructure Data -> Competing Dual-Agent Processing Swatches -> CNC & Hand-Crafted Topography",
       keyInnovation:
-        "Procedurally dynamic agent-based texture generation translated into 3D physical landscape topographies",
+        "Emergent dual-population agent dynamics (generators vs. negative-eaters) translated into 3D physical landscape topographies",
       impact:
         "Engineered tangible computational physical models communicating complex spatial narratives.",
     },
@@ -513,7 +513,7 @@ export const projects: Project[] = [
       "Developed algorithmic workflows in Rhino, Processing, and custom code to translate 2D image gradients, Perlin noise fields, and agent-based sphere-packing simulations into physical 3D CNC-milled surface textures.",
     fullDescription: [
       "BACKGROUND & GOALS: Under the mentorship of Brad Samuels at Situ Studio, surface texturing evolved into a central meta-theme across multiple architectural and research initiatives. Rather than relying on static graphical bump maps, this effort focused on generating procedural 3D surface geometry that responded dynamically to environmental and topological inputs.",
-      "METHOD 1 - AGENT-BASED PROCEDURAL TEXTURES: Inspired by Mitchel Resnick's work on emergent systems ('Turtles, Termites, and Traffic Jams'), engineered self-organizing agent algorithms in Processing to generate dynamic, evolving surface swatches over time, seeding physical models with data-driven terrain textures.",
+      "METHOD 1 - DUAL-POPULATION AGENT PROCEDURAL TEXTURES: Inspired by Mitchel Resnick's work on emergent systems ('Turtles, Termites, and Traffic Jams'), engineered self-organizing agent algorithms in Processing. By introducing competing 'negative eater' agents that fought the primary territory generators, the resulting population dynamics created emergent, chaotic boundary textures that were sampled and mapped into physical surface topographies.",
       "METHOD 2 - HEIGHTFIELD DISPLACEMENT & PERLIN NOISE: Built workflows converting pixel depth maps into multi-layered 3D spatial modulations, alongside custom 3D Perlin noise implementations applied directly across NURBS surfaces and complex meshes.",
       "METHOD 3 - SPHERE PACKING & INSTANCED GEOMETRY: Created sphere-packing algorithms to instance physical geometry across terrain meshes with variable scaling, density controls, and environmental vector responses.",
     ],
