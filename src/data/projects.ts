@@ -714,15 +714,15 @@ export const projects: Project[] = [
     linkText: "CumInCAD Research Paper",
     galleryId: "vbbc-calibration-channel",
     summary:
-      "A labor of love: CNC-milled and fabricated an ambitious timber and limestone viewing pavilion at Mounds State Park as a Virginia B. Ball Center Fellow under Prof. Kevin Klinger. Served as lead fabricator alongside the project's lead designer, spending long hours on-site along the White River.",
+      "A labor of love: CNC-milled and fabricated an ambitious timber and limestone viewing pavilion at Mounds State Park as a Virginia B. Ball Center Fellow under Prof. Kevin Klinger. Served as lead fabricator alongside lead designer Rob Horner, spending long hours on-site along the White River.",
     fullDescription: [
-      "IMMERSIVE DESIGN-BUILD RESEARCH: Completed as a semester-long design research fellowship at the Virginia B. Ball Center for Creative Inquiry (Ball State University), led by Prof. Kevin Klinger and Joshua Vermillion. Served as lead fabricator on the student team, collaborating closely with the project's lead designer to translate complex parametric Rhino models into CNC milling toolpaths, interlocking timber ribs, unflattened skin boards, and Indiana limestone footers.",
-      "ON-SITE FABRICATION AT MOUNDS STATE PARK: Spent long days slogging on-site at Mounds State Park along the White River bluff in Anderson, IN. Hand-assembled the structural ribs and custom timber viewing bench, bridging digital code with physical craftsmanship.",
+      "IMMERSIVE DESIGN-BUILD RESEARCH: Completed as a semester-long design research fellowship at the Virginia B. Ball Center for Creative Inquiry (Ball State University), led by Prof. Kevin Klinger and Joshua Vermillion. Served as lead fabricator on the student team, collaborating closely with lead designer Rob Horner to translate complex parametric Rhino models into CNC milling toolpaths, interlocking timber ribs, unflattened skin boards, and Indiana limestone footers.",
+      "ON-SITE FABRICATION AT MOUNDS STATE PARK: Spent long days slogging on-site at Mounds State Park along the White River bluff in Anderson, IN. Hand-assembled the structural ribs and custom timber viewing bench alongside Rob Horner, bridging digital code with physical craftsmanship.",
       "PUBLISHED CASE STUDY IN ARCHITECTURAL DESIGN (AD): The project and its digital design-to-production feedback loops were published as a case study in the international journal Architectural Design (AD, Wiley) and CumInCAD literature.",
       "EPILOGUE & FLOOD RECLAMATION: Years after installation, Prof. Kevin Klinger sent a photo showing only the bare Indiana limestone foundation remaining—the timber canal structure and bench had been completely washed away in a White River flood. A fitting epilogue for an ambitious parametric geometry built from porous wood right alongside a flooding river by a passionate team.",
     ],
     points: [
-      "Served as lead fabricator alongside project lead designer, executing CNC milling and on-site assembly.",
+      "Served as lead fabricator alongside lead designer Rob Horner, executing CNC milling and on-site assembly.",
       "Featured in the international journal Architectural Design (AD, Wiley) and CumInCAD research literature.",
       "Engineered 3D parametric rib models, CNC milling toolpaths, and unflattened skin panel layouts.",
       "Poured Indiana limestone footer anchors and hand-assembled timber canal bench structure at Mounds State Park.",
@@ -732,6 +732,7 @@ export const projects: Project[] = [
       "Architectural Design (AD) Journal",
       "Ball State University",
       "Virginia B. Ball Center",
+      "Rob Horner Collaboration",
       "Digital Fabrication",
       "CNC Milling",
       "Indiana Limestone & Timber",
@@ -740,7 +741,8 @@ export const projects: Project[] = [
     ],
     metrics: [
       { label: "Publication", value: "Architectural Design (AD, Wiley)" },
-      { label: "Fellowship", value: "Virginia B. Ball Center for Creative Inquiry" },
+      { label: "Lead Designer", value: "Rob Horner" },
+      { label: "Lead Fabricator", value: "Robert Beach" },
       { label: "Faculty Lead", value: "Prof. Kevin Klinger & Joshua Vermillion" },
     ],
     notation: {
