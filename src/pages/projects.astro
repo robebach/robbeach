@@ -22,21 +22,7 @@ function getFirstGalleryImage(galleryId?: string): ImageMetadata | null {
 	return matchingKey ? allGalleryImages[matchingKey].default : null;
 }
 
-function getSortValue(p: (typeof projects)[0]): number {
-	if (typeof p.sortYear === "number") return p.sortYear;
-	if (!p.period) return 0;
-	if (/present|ongoing/i.test(p.period)) return 9999;
-	const years = p.period.match(/\b\d{4}\b/g);
-	if (years && years.length > 0) {
-		return Math.max(...years.map(Number));
-	}
-	return 0;
-}
-
-// Auto-sort projects by date (newest first)
-const sortedProjects = projects
-	.filter((p) => !p.hidden)
-	.sort((a, b) => getSortValue(b) - getSortValue(a));
+const visibleProjects = projects.filter((p) => !p.hidden);
 ---
 
 <SiteLayout title={pageTitle} description={pageDescription} active="projects">
@@ -55,7 +41,7 @@ const sortedProjects = projects
 	<section aria-label="Project list">
 		<ol class="project-list" role="list">
 			{
-				sortedProjects.map((project, i) => {
+				visibleProjects.map((project, i) => {
 					const thumbImg = getFirstGalleryImage(project.galleryId);
 					return (
 						<li class="project-item">

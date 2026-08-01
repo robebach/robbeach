@@ -21,10 +21,7 @@ export interface Project {
   name: string;
   client: string;
   type: string;
-  period?: string;
-  sortYear?: number;
-  sortYear?: number;
-  categories?: CategoryKey[];
+  period?: string;  categories?: CategoryKey[];
   link?: string;
   linkText?: string;
   galleryId?: string;
@@ -41,8 +38,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "rheia-engineering",
-    sortYear: 2026.0,
-    sortYear: 2026,
+
     categories: ["building-science", "software-computation", "scientific-research"],
     name: "Rheia HVAC Engineering & Systems Architecture",
     client: "Rheia, LLC",
@@ -88,51 +84,7 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "viva-logger-terrarium",
-    sortYear: 2024.0,
-    sortYear: 2024,
-    categories: ["software-computation", "scientific-research"],
-    name: "Automated Vivarium & Hardware Controller",
-    client: "Personal Project",
-    type: "Hardware Engineering & IoT",
-    period: "Ongoing",
-    galleryId: "viva-logger-terrarium",
-    summary:
-      "Designed and built an automated environmental controller for a terrarium using Raspberry Pi, LabJack DAQ sensors, and custom Python software.",
-    fullDescription: [
-      "Engineered a fully automated control system for a live vivarium environment to maintain precise temperature, humidity, and lighting cycles.",
-      "Wrote custom Python software (open-sourced as viva-logger) running on a Raspberry Pi to interface with a LabJack data acquisition device.",
-      "Wired and integrated physical sensors, relays, and environmental hardware to create a closed-loop feedback system.",
-    ],
-    points: [
-      "Built custom IoT hardware stack using Raspberry Pi and LabJack.",
-      "Programmed Python feedback loops for temperature and humidity control.",
-      "Open-sourced the underlying control software architecture on GitHub.",
-    ],
-    details: [
-      "Hardware Engineering",
-      "IoT",
-      "Raspberry Pi",
-      "LabJack DAQ",
-      "Python",
-    ],
-    metrics: [
-      { label: "Hardware", value: "Raspberry Pi + LabJack" },
-      { label: "Software", value: "Python viva-logger" },
-      { label: "Application", value: "Environmental Automation" },
-    ],
-    notation: {
-      systemArchitecture:
-        "Sensors -> LabJack -> Raspberry Pi -> Python Logic -> Relays",
-      keyInnovation:
-        "High-precision laboratory hardware applied to personal terrarium automation",
-      impact:
-        "Created a robust, open-source template for local environmental control.",
-    },
-  },
-  {
     slug: "space-filling-structures",
-    sortYear: 2025,
     categories: ["software-computation", "fabrication"],
     name: "Generative Space-Filling Structures & Modular Furniture",
     client: "Personal Passion Project",
@@ -178,14 +130,51 @@ export const projects: Project[] = [
         "Spatial Volume / Attractors -> Collision-Free Cylinder Engine -> Cross-Bracing Pass -> Adaptive Nodal STL -> Monotonic Assembly",
       keyInnovation:
         "Guaranteed physical assemblability via directional volume growth, eliminating geometric entrapment in complex 3D space-frames",
-      impact:
-        "Created a scalable design-to-production platform for custom parametric furniture, lighting, and architectural sculpture.",
+    },
+  },
+  {
+    slug: "viva-logger-terrarium",
+
+    categories: ["software-computation", "scientific-research"],
+    name: "Automated Vivarium & Hardware Controller",
+    client: "Personal Project",
+    type: "Hardware Engineering & IoT",
+    period: "Ongoing",
+    galleryId: "viva-logger-terrarium",
+    summary:
+      "Designed and built an automated environmental controller for a terrarium using Raspberry Pi, LabJack DAQ sensors, and custom Python software.",
+    fullDescription: [
+      "Engineered a fully automated control system for a live vivarium environment to maintain precise temperature, humidity, and lighting cycles.",
+      "Wrote custom Python software (open-sourced as viva-logger) running on a Raspberry Pi to interface with a LabJack data acquisition device.",
+      "Wired and integrated physical sensors, relays, and environmental hardware to create a closed-loop feedback system.",
+    ],
+    points: [
+      "Built custom IoT hardware stack using Raspberry Pi and LabJack.",
+      "Programmed Python feedback loops for temperature and humidity control.",
+      "Open-sourced the underlying control software architecture on GitHub.",
+    ],
+    details: [
+      "Hardware Engineering",
+      "IoT",
+      "Raspberry Pi",
+      "LabJack DAQ",
+      "Python",
+    ],
+    metrics: [
+      { label: "Hardware", value: "Raspberry Pi + LabJack" },
+      { label: "Software", value: "Python viva-logger" },
+      { label: "Application", value: "Environmental Automation" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Sensors -> LabJack -> Raspberry Pi -> Python Logic -> Relays",
+      keyInnovation:
+        "High-precision laboratory hardware applied to personal terrarium automation",
     },
   },
   {
     slug: "shope-residence",
-    sortYear: 2019.0,
-    sortYear: 2019,
+
     categories: ["architecture", "building-science", "fabrication"],
     name: "The Shope Residence",
     client: "John & Shelly Shope",
@@ -230,9 +219,57 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "black-oak-pierced-slab-shelf",
+
+    categories: ["fabrication"],
+    name: "Black Oak Pierced Slab Shelving System",
+    client: "Personal Furniture Design / Fabricated in Brooklyn",
+    type: "Digital Woodworking, CNC Milling & Custom Welding",
+    period: "2014–2015",
+    galleryId: "black-oak-pierced-slab-shelf",
+    summary:
+      "Designed, CNC-milled, and hand-fabricated a massive 6-slab black oak media unit featuring inverted pyramid pockets pierced by compound-angle steel legs, finished with raw tung oil and custom welded footings.",
+    fullDescription: [
+      "PENNSYLVANIA BLACK OAK SLABS: Sourced 6 to 7 thick, heavy black oak slabs from Matthew Schaffer (acquired from an Amish mill near Oil City, PA). Prepped the lumber by registering a straight reference edge on each board to maximize usable width while preserving raw, unrefined edges and natural iron-stain weathering.",
+      "CNC-MILLED INVERTED PYRAMID POCKETS: Wrote 3D surface toolpaths (mechC_rough_375.sbp, mechC_finish_250_passB.sbp, mechB_finish_250.sbp) for 3-axis ShopBot CNC milling. Engineered compound-angle inverted pyramid pocket holes directly into the oak slabs to receive angled structural steel legs, creating a rigid 'pierced slab' structural joint.",
+      "INTEGRATED MEDIA NOOK & WELDED LEGS: Formed an asymmetrical structural lower-left nook sized specifically for a television. Self-taught TIG/MIG steel welding to fabricate custom heavy steel feet to stabilize the compound-angle leg assembly.",
+      "IMPERFECTIONISM & RAW FINISH: Finished minimalistically with a rich coating of natural tung oil. Preserved rough-sawn front edges, natural iron-reaction black streaks, and roughly cut end-grain sides as an embrace of imperfectionism in physical craft. Designed as a fully modular, disassemblable structure so large it barely cleared the doorway upon moving.",
+    ],
+    points: [
+      "CNC-milled compound-angle inverted pyramid pocket holes into thick Pennsylvania black oak slabs.",
+      "Designed asymmetrical lower-left media nook for television housing.",
+      "Learned steel welding to fabricate custom ground feet for compound-angle leg assemblies.",
+      "Engineered fully disassemblable modular joint architecture for large-scale architectural furniture.",
+      "Finished with natural tung oil, preserving rough-sawn edges and dark iron-stain weathering.",
+    ],
+    details: [
+      "Amish Mill Black Oak (PA)",
+      "Matthew Schaffer Sourcing",
+      "Rhino 3D CAD (.3dm)",
+      "ShopBot CNC Router",
+      "VCarve Toolpath Design",
+      "Compound Angle Pockets",
+      "Steel Welding & Fabrication",
+      "Tung Oil Finish",
+      "Modular Disassembly",
+    ],
+    metrics: [
+      { label: "Material", value: "PA Black Oak & Steel Tube" },
+      { label: "Machining", value: "3-Axis ShopBot CNC Milling" },
+      { label: "Joint Type", value: "Inverted Pyramid Pierced Pockets" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Slab Registration -> VCarve 3D Pockets -> ShopBot CNC Toolpath -> Steel Tube Assembly -> Welded Footings",
+      keyInnovation:
+        "Engineered CNC-milled 3D inverted pyramid pockets receiving compound-angle steel legs through solid thick oak slabs",
+      impact:
+        "Created a massive, modular, disassemblable architectural media console bridging computational joinery with raw physical craftsmanship.",
+    },
+  },
+  {
     slug: "wood-texture-panels",
-    sortYear: 2013.3,
-    sortYear: 2013.3,
+
     categories: ["fabrication", "software-computation"],
     name: "Parametric Wood Texture Panels",
     client: "Personal Project",
@@ -277,8 +314,7 @@ export const projects: Project[] = [
   },
   {
     slug: "textured-picture-frame",
-    sortYear: 2012.9,
-    sortYear: 2013.2,
+
     categories: ["fabrication", "software-computation"],
     name: "Parametric Wave Frame Generator",
     client: "Situ Studio R&D / Personal Project",
@@ -324,8 +360,7 @@ export const projects: Project[] = [
   },
   {
     slug: "transitional-objects",
-    sortYear: 2012.0,
-    sortYear: 2012.3,
+
     categories: ["fabrication", "architecture"],
     name: "Alyson Shotz: Transitional Objects",
     client: "Alyson Shotz / Situ Studio",
@@ -371,8 +406,7 @@ export const projects: Project[] = [
   },
   {
     slug: "trezona-fossil",
-    sortYear: 2010.5,
-    sortYear: 2010.3,
+
     categories: ["scientific-research", "software-computation"],
     name: "3D Fossil Reconstruction (Nature Geoscience)",
     client: "Adam Maloof / Princeton University",
@@ -416,7 +450,6 @@ export const projects: Project[] = [
   },
   {
     slug: "guggenheim-flw",
-    sortYear: 2009.5,
     name: "Frank Lloyd Wright: From Within Outward",
     client: "Situ Studio (for Solomon R. Guggenheim Museum)",
     type: "Exhibition Modeling & Digital Fabrication",
@@ -462,7 +495,6 @@ export const projects: Project[] = [
   },
   {
     slug: "scifi-flatpack",
-    sortYear: 2009.1,
     name: "Sci-Fi Flatpack Structures",
     client: "Situ Studio",
     type: "Conceptual Architecture",
@@ -501,139 +533,8 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "computational-landscape",
-    name: "Computational Landscape: Psagot & Ungrounding",
-    client: "Situ Studio",
-    type: "Computational Architecture & Model Craft",
-    period: "2008 – 2011",
-    galleryId: "ungrounding",
-    summary:
-      "Developed generative Processing algorithms, terrain textures, and physical topography models for Situ Studio's 'Ungrounding' and Psagot territorial analysis projects.",
-    fullDescription: [
-      "COMPUTATIONAL PATTERN GENERATION: Developed custom Processing (Java) algorithms to create evolving pattern swatches, simulating topological forces, road networks, footprint growth, and deconstructing landform dynamics across contested geographies.",
-      "COMPETING AGENT-BASED SIMULATION: Inspired by Mitchel Resnick's 'Turtles, Termites, and Traffic Jams', extended classic agent-based models by introducing a competing 'negative eater' population opposing the primary generator agents. The interaction and emergent chaos as the two populations fought and consumed territory generated dynamic, organic boundary swatches. Seeding these simulations with raw infrastructure data produced the animated textures that directly informed the surface topographies of the post-Hague second series of Ungrounding models.",
-      "CRAFTSMANSHIP & MODEL FABRICATION: Worked closely with Brad Samuels (Art Direction & Mentor) and Basar Girit at Situ Studio to translate generative 2D algorithm swatches into intricate physical landscape models, developing complex surface topographies, milled textures, and Photoshop presentation graphics.",
-      "UNGROUNDING ARCHITECTURE: Visualized the political and physical forces shaping settlement patterns in the Psagot region, creating high-resolution presentation boards, vector field maps, and physical model fabrications to communicate complex spatial narratives.",
-    ],
-    points: [
-      "Extended 'Turtles, Termites, and Traffic Jams' agent models in Processing (.pde) with competing 'negative eater' populations.",
-      "Collaborated with mentor Brad Samuels & Basar Girit (Situ Studio) as primary craftsman for topography & texture model development.",
-      "Produced presentation boards, vector force fields, procedural GIFs, and physical models for spatial narrative research.",
-    ],
-    details: [
-      "Processing (Java)",
-      "Agent-Based Modeling",
-      "Rhino 3D / CNC",
-      "Brad Samuels & Basar Girit",
-      "Terrain Texturing",
-      "Data Visualization",
-      "Physical Model Craft",
-    ],
-    metrics: [
-      { label: "Collaboration", value: "Situ Studio (Brad Samuels, Basar Girit)" },
-      { label: "Software", value: "Custom Processing (.pde) Engine" },
-      { label: "Medium", value: "Generative Code & Physical Topography" },
-    ],
-    notation: {
-      systemArchitecture:
-        "Infrastructure Data -> Competing Dual-Agent Processing Swatches -> CNC & Hand-Crafted Topography",
-      keyInnovation:
-        "Emergent dual-population agent dynamics (generators vs. negative-eaters) translated into 3D physical landscape topographies",
-      impact:
-        "Engineered tangible computational physical models communicating complex spatial narratives.",
-    },
-  },
-  {
-    slug: "situ-3d-textures",
-    name: "Surface Texture & 3D Computational Modeling",
-    client: "Situ Studio",
-    type: "Computational Design & Digital Fabrication",
-    period: "2008 – 2010",
-    galleryId: "situ-textures",
-    summary:
-      "Developed algorithmic workflows in Rhino, Processing, and custom code to translate 2D image gradients, Perlin noise fields, and agent-based sphere-packing simulations into physical 3D CNC-milled surface textures.",
-    fullDescription: [
-      "BACKGROUND & PEDAGOGY: Directly inspired and enabled by studio coursework at Pratt Institute with Alisa Andrasek (Biothing) and Gil Akos (Mode Lab), who introduced foundational concepts of generative computational design and emergent systems. Under the mentorship of Brad Samuels at Situ Studio, surface texturing evolved into a central meta-theme across multiple architectural and research initiatives.",
-      "METHOD 1 - DUAL-POPULATION AGENT PROCEDURAL TEXTURES: Inspired by Mitchel Resnick's work on emergent systems ('Turtles, Termites, and Traffic Jams'), engineered self-organizing agent algorithms in Processing. By introducing competing 'negative eater' agents that fought the primary territory generators, the resulting population dynamics created emergent, chaotic boundary textures that were sampled and mapped into physical surface topographies.",
-      "METHOD 2 - HEIGHTFIELD DISPLACEMENT & PERLIN NOISE: Built workflows converting pixel depth maps into multi-layered 3D spatial modulations, alongside custom 3D Perlin noise implementations applied directly across NURBS surfaces and complex meshes.",
-      "METHOD 3 - SPHERE PACKING & INSTANCED GEOMETRY: Created sphere-packing algorithms to instance physical geometry across terrain meshes with variable scaling, density controls, and environmental vector responses.",
-    ],
-    points: [
-      "Engineered 3D surface texturing algorithms for physical CNC digital fabrication.",
-      "Rooted in computational design studio training at Pratt Institute under Alisa Andrasek & Gil Akos.",
-      "Created multi-layered heightfield image displacement workflows in Rhino.",
-      "Developed 3D procedural Perlin noise field functions for complex NURBS geometry.",
-      "Programmed sphere-packing algorithms for instanced 3D terrain & rip-rap modeling.",
-    ],
-    details: [
-      "Situ Studio",
-      "Alisa Andrasek & Gil Akos (Pratt)",
-      "Computational Design",
-      "Rhino 3D",
-      "Grasshopper",
-      "Processing (Java)",
-      "Perlin Noise",
-      "Sphere Packing",
-      "CNC Fabrication",
-    ],
-    metrics: [
-      { label: "Pedagogy", value: "Pratt Institute (Alisa Andrasek, Gil Akos)" },
-      { label: "Methods", value: "Heightfields, Perlin Noise, Sphere Packing" },
-      { label: "Output", value: "3D CNC Toolpaths & Physical Models" },
-      { label: "Application", value: "Architectural & Landscape Surfaces" },
-    ],
-    notation: {
-      systemArchitecture:
-        "2D Gradients / Procedural Algorithms -> 3D Volumetric Mesh -> CNC Milling Toolpaths",
-      keyInnovation:
-        "Translating algorithmic noise and packing simulations directly into buildable physical surface geometry",
-      impact:
-        "Established the core digital fabrication texturing toolkit used across Situ Studio projects.",
-    },
-  },
-  {
-    slug: "situ-citysol",
-    sortYear: 2007.3,
-    name: "CitySol Festival Pavilion",
-    client: "Situ Studio / Solar One",
-    type: "Architectural Fabrication",
-    period: "2007",
-    galleryId: "citysol",
-    summary:
-      "Fabricated modular stage pavilions and solar canopy structures for CitySol, a solar-powered summer arts and music festival on the East River.",
-    fullDescription: [
-      "Collaborated with Situ Studio to design and build temporary architectural installations for the CitySol festival hosted by Solar One.",
-      "Fabricated complex modular components for the main stage pavilions and solar array canopies using digital fabrication techniques.",
-      "Ensured the structures were easy to assemble on-site while withstanding wind loads along the NYC waterfront.",
-    ],
-    points: [
-      "Fabricated modular architectural components for a public music festival.",
-      "Integrated structural mounting for solar panel arrays.",
-      "Utilized digital fabrication for rapid temporary deployment.",
-    ],
-    details: [
-      "Situ Studio",
-      "Digital Fabrication",
-      "Temporary Architecture",
-      "Solar Integration",
-    ],
-    metrics: [
-      { label: "Event", value: "CitySol Arts & Music Festival" },
-      { label: "Location", value: "Stuyvesant Cove Park, NYC" },
-      { label: "Role", value: "Fabrication & Assembly" },
-    ],
-    notation: {
-      systemArchitecture:
-        "Digital Model -> CNC Fabrication -> On-Site Modular Assembly",
-      keyInnovation: "Rapid deployment of temporary structural canopies",
-      impact:
-        "Provided the physical infrastructure for NYC's premier solar-powered festival.",
-    },
-  },
-  {
     slug: "pratt-venetian-vagabond",
-    sortYear: 2008.0,
-    sortYear: 2011.1,
+
     categories: ["software-computation", "architecture"],
     name: "Venetian Vagabond: Aquatic Agent Swarms",
     client: "Pratt Institute (Studio under Alisa Andrasek)",
@@ -682,51 +583,46 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "pratt-sierra-studio",
-    sortYear: 2007.1,
-    sortYear: 2010.2,
-    categories: ["architecture", "software-computation"],
-    name: "Pratt Studio: Form & Scripting",
-    client: "Pratt Institute (Studio under Maria Sierra)",
-    type: "Architectural Design & Algorithmic Form",
-    period: "2006 – 2007",
-    galleryId: "pratt-sierra-studio",
+    slug: "situ-citysol",
+    name: "CitySol Festival Pavilion",
+    client: "Situ Studio / Solar One",
+    type: "Architectural Fabrication",
+    period: "2007",
+    galleryId: "citysol",
     summary:
-      "Explored algorithmic script generation, complex spatial form-finding, and detailed architectural drawings during graduate studies at Pratt under Maria Sierra.",
+      "Fabricated modular stage pavilions and solar canopy structures for CitySol, a solar-powered summer arts and music festival on the East River.",
     fullDescription: [
-      "COMPUTATIONAL FORM-FINDING: Investigated advanced geometric scripting techniques to generate non-standard architectural forms and spatial enclosures.",
-      "ARCHITECTURAL DRAWING SETS: Produced detailed digital elevation drawings, plan sections, and aerial site mappings investigating structural curvature and material continuity.",
-      "PARAMETRIC SCRIPT DEVELOPMENT: Developed custom scripts linking mathematical surfaces with site-specific environmental boundaries.",
+      "Collaborated with Situ Studio to design and build temporary architectural installations for the CitySol festival hosted by Solar One.",
+      "Fabricated complex modular components for the main stage pavilions and solar array canopies using digital fabrication techniques.",
+      "Ensured the structures were easy to assemble on-site while withstanding wind loads along the NYC waterfront.",
     ],
     points: [
-      "Developed custom algorithmic scripts for complex architectural form-finding.",
-      "Produced detailed architectural elevation drawings and site plan mappings.",
-      "Studied structural curvature and parametric enclosures under Maria Sierra.",
+      "Fabricated modular architectural components for a public music festival.",
+      "Integrated structural mounting for solar panel arrays.",
+      "Utilized digital fabrication for rapid temporary deployment.",
     ],
     details: [
-      "Architectural Design",
-      "Rhino 3D",
-      "Algorithmic Scripting",
-      "Site Mapping",
-      "Pratt Institute",
+      "Situ Studio",
+      "Digital Fabrication",
+      "Temporary Architecture",
+      "Solar Integration",
     ],
     metrics: [
-      { label: "Studio Professor", value: "Maria Sierra" },
-      { label: "Institution", value: "Pratt Institute M.Arch" },
-      { label: "Focus", value: "Algorithmic Form & Architectural Drawing" },
+      { label: "Event", value: "CitySol Arts & Music Festival" },
+      { label: "Location", value: "Stuyvesant Cove Park, NYC" },
+      { label: "Role", value: "Fabrication & Assembly" },
     ],
     notation: {
       systemArchitecture:
-        "Algorithmic Scripting -> 3D Surface Geometry -> Architectural Drawing Set",
-      keyInnovation: "Integrating computational code into formal architectural studio drawings",
+        "Digital Model -> CNC Fabrication -> On-Site Modular Assembly",
+      keyInnovation: "Rapid deployment of temporary structural canopies",
       impact:
-        "Advanced algorithmic spatial modeling methodologies in graduate architecture design.",
+        "Provided the physical infrastructure for NYC's premier solar-powered festival.",
     },
   },
   {
     slug: "pratt-film-study",
-    sortYear: 2007.2,
-    sortYear: 2010.1,
+
     categories: ["architecture"],
     name: "Cinematic Spatial Analysis",
     client: "Pratt Institute (Class under Maria Sierra)",
@@ -766,9 +662,49 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "pratt-sierra-studio",
+
+    categories: ["architecture", "software-computation"],
+    name: "Pratt Studio: Form & Scripting",
+    client: "Pratt Institute (Studio under Maria Sierra)",
+    type: "Architectural Design & Algorithmic Form",
+    period: "2006 – 2007",
+    galleryId: "pratt-sierra-studio",
+    summary:
+      "Explored algorithmic script generation, complex spatial form-finding, and detailed architectural drawings during graduate studies at Pratt under Maria Sierra.",
+    fullDescription: [
+      "COMPUTATIONAL FORM-FINDING: Investigated advanced geometric scripting techniques to generate non-standard architectural forms and spatial enclosures.",
+      "ARCHITECTURAL DRAWING SETS: Produced detailed digital elevation drawings, plan sections, and aerial site mappings investigating structural curvature and material continuity.",
+      "PARAMETRIC SCRIPT DEVELOPMENT: Developed custom scripts linking mathematical surfaces with site-specific environmental boundaries.",
+    ],
+    points: [
+      "Developed custom algorithmic scripts for complex architectural form-finding.",
+      "Produced detailed architectural elevation drawings and site plan mappings.",
+      "Studied structural curvature and parametric enclosures under Maria Sierra.",
+    ],
+    details: [
+      "Architectural Design",
+      "Rhino 3D",
+      "Algorithmic Scripting",
+      "Site Mapping",
+      "Pratt Institute",
+    ],
+    metrics: [
+      { label: "Studio Professor", value: "Maria Sierra" },
+      { label: "Institution", value: "Pratt Institute M.Arch" },
+      { label: "Focus", value: "Algorithmic Form & Architectural Drawing" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Algorithmic Scripting -> 3D Surface Geometry -> Architectural Drawing Set",
+      keyInnovation: "Integrating computational code into formal architectural studio drawings",
+      impact:
+        "Advanced algorithmic spatial modeling methodologies in graduate architecture design.",
+    },
+  },
+  {
     slug: "vbbc-calibration-channel",
-    sortYear: 2014.0,
-    sortYear: 2014,
+
     categories: ["scientific-research", "building-science", "architecture"],
     name: "Calibration Channel (Mounds State Park)",
     client: "Virginia B. Ball Center / Ball State University",
@@ -817,55 +753,5 @@ export const projects: Project[] = [
       impact:
         "Featured in Architectural Design (AD) and constructed a permanent public installation in Mounds State Park.",
     },
-  },
-  {
-    slug: "black-oak-pierced-slab-shelf",
-    sortYear: 2015.0,
-    sortYear: 2015,
-    categories: ["fabrication"],
-    name: "Black Oak Pierced Slab Shelving System",
-    client: "Personal Furniture Design / Fabricated in Brooklyn",
-    type: "Digital Woodworking, CNC Milling & Custom Welding",
-    period: "2014–2015",
-    galleryId: "black-oak-pierced-slab-shelf",
-    summary:
-      "Designed, CNC-milled, and hand-fabricated a massive 6-slab black oak media unit featuring inverted pyramid pockets pierced by compound-angle steel legs, finished with raw tung oil and custom welded footings.",
-    fullDescription: [
-      "PENNSYLVANIA BLACK OAK SLABS: Sourced 6 to 7 thick, heavy black oak slabs from Matthew Schaffer (acquired from an Amish mill near Oil City, PA). Prepped the lumber by registering a straight reference edge on each board to maximize usable width while preserving raw, unrefined edges and natural iron-stain weathering.",
-      "CNC-MILLED INVERTED PYRAMID POCKETS: Wrote 3D surface toolpaths (mechC_rough_375.sbp, mechC_finish_250_passB.sbp, mechB_finish_250.sbp) for 3-axis ShopBot CNC milling. Engineered compound-angle inverted pyramid pocket holes directly into the oak slabs to receive angled structural steel legs, creating a rigid 'pierced slab' structural joint.",
-      "INTEGRATED MEDIA NOOK & WELDED LEGS: Formed an asymmetrical structural lower-left nook sized specifically for a television. Self-taught TIG/MIG steel welding to fabricate custom heavy steel feet to stabilize the compound-angle leg assembly.",
-      "IMPERFECTIONISM & RAW FINISH: Finished minimalistically with a rich coating of natural tung oil. Preserved rough-sawn front edges, natural iron-reaction black streaks, and roughly cut end-grain sides as an embrace of imperfectionism in physical craft. Designed as a fully modular, disassemblable structure so large it barely cleared the doorway upon moving.",
-    ],
-    points: [
-      "CNC-milled compound-angle inverted pyramid pocket holes into thick Pennsylvania black oak slabs.",
-      "Designed asymmetrical lower-left media nook for television housing.",
-      "Learned steel welding to fabricate custom ground feet for compound-angle leg assemblies.",
-      "Engineered fully disassemblable modular joint architecture for large-scale architectural furniture.",
-      "Finished with natural tung oil, preserving rough-sawn edges and dark iron-stain weathering.",
-    ],
-    details: [
-      "Amish Mill Black Oak (PA)",
-      "Matthew Schaffer Sourcing",
-      "Rhino 3D CAD (.3dm)",
-      "ShopBot CNC Router",
-      "VCarve Toolpath Design",
-      "Compound Angle Pockets",
-      "Steel Welding & Fabrication",
-      "Tung Oil Finish",
-      "Modular Disassembly",
-    ],
-    metrics: [
-      { label: "Material", value: "PA Black Oak & Steel Tube" },
-      { label: "Machining", value: "3-Axis ShopBot CNC Milling" },
-      { label: "Joint Type", value: "Inverted Pyramid Pierced Pockets" },
-    ],
-    notation: {
-      systemArchitecture:
-        "Slab Registration -> VCarve 3D Pockets -> ShopBot CNC Toolpath -> Steel Tube Assembly -> Welded Footings",
-      keyInnovation:
-        "Engineered CNC-milled 3D inverted pyramid pockets receiving compound-angle steel legs through solid thick oak slabs",
-      impact:
-        "Created a massive, modular, disassemblable architectural media console bridging computational joinery with raw physical craftsmanship.",
-    },
-  },
+  }
 ];
