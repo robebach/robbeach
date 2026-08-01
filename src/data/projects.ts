@@ -23,6 +23,7 @@ export interface Project {
   type: string;
   period?: string;
   sortYear?: number;
+  sortYear?: number;
   categories?: CategoryKey[];
   link?: string;
   linkText?: string;
@@ -40,6 +41,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "rheia-engineering",
+    sortYear: 2026.0,
     sortYear: 2026,
     categories: ["building-science", "software-computation", "scientific-research"],
     name: "Rheia HVAC Engineering & Systems Architecture",
@@ -87,6 +89,7 @@ export const projects: Project[] = [
   },
   {
     slug: "viva-logger-terrarium",
+    sortYear: 2024.0,
     sortYear: 2024,
     categories: ["software-computation", "scientific-research"],
     name: "Automated Vivarium & Hardware Controller",
@@ -129,6 +132,7 @@ export const projects: Project[] = [
   },
   {
     slug: "space-filling-structures",
+    sortYear: 2025.0,
     sortYear: 2025,
     categories: ["software-computation", "fabrication"],
     name: "Generative Space-Filling Structures & Modular Furniture",
@@ -175,6 +179,7 @@ export const projects: Project[] = [
   },
   {
     slug: "shope-residence",
+    sortYear: 2019.0,
     sortYear: 2019,
     categories: ["architecture", "building-science", "fabrication"],
     name: "The Shope Residence",
@@ -222,6 +227,7 @@ export const projects: Project[] = [
   {
     slug: "wood-texture-panels",
     sortYear: 2013.3,
+    sortYear: 2013.3,
     categories: ["fabrication", "software-computation"],
     name: "Parametric Wood Texture Panels",
     client: "Personal Project",
@@ -266,6 +272,7 @@ export const projects: Project[] = [
   },
   {
     slug: "textured-picture-frame",
+    sortYear: 2012.9,
     sortYear: 2013.2,
     categories: ["fabrication", "software-computation"],
     name: "Parametric Wave Frame Generator",
@@ -312,6 +319,7 @@ export const projects: Project[] = [
   },
   {
     slug: "transitional-objects",
+    sortYear: 2012.0,
     sortYear: 2012.3,
     categories: ["fabrication", "architecture"],
     name: "Alyson Shotz: Transitional Objects",
@@ -358,6 +366,7 @@ export const projects: Project[] = [
   },
   {
     slug: "trezona-fossil",
+    sortYear: 2010.5,
     sortYear: 2010.3,
     categories: ["scientific-research", "software-computation"],
     name: "3D Fossil Reconstruction (Nature Geoscience)",
@@ -402,6 +411,7 @@ export const projects: Project[] = [
   },
   {
     slug: "guggenheim-flw",
+    sortYear: 2009.5,
     name: "Frank Lloyd Wright: From Within Outward",
     client: "Situ Studio (for Solomon R. Guggenheim Museum)",
     type: "Exhibition Modeling & Digital Fabrication",
@@ -447,6 +457,7 @@ export const projects: Project[] = [
   },
   {
     slug: "scifi-flatpack",
+    sortYear: 2009.1,
     name: "Sci-Fi Flatpack Structures",
     client: "Situ Studio",
     type: "Conceptual Architecture",
@@ -577,6 +588,7 @@ export const projects: Project[] = [
   },
   {
     slug: "situ-citysol",
+    sortYear: 2007.3,
     name: "CitySol Festival Pavilion",
     client: "Situ Studio / Solar One",
     type: "Architectural Fabrication",
@@ -615,6 +627,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pratt-venetian-vagabond",
+    sortYear: 2008.0,
     sortYear: 2011.1,
     categories: ["software-computation", "architecture"],
     name: "Venetian Vagabond: Aquatic Agent Swarms",
@@ -665,6 +678,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pratt-sierra-studio",
+    sortYear: 2007.1,
     sortYear: 2010.2,
     categories: ["architecture", "software-computation"],
     name: "Pratt Studio: Form & Scripting",
@@ -706,6 +720,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pratt-film-study",
+    sortYear: 2007.2,
     sortYear: 2010.1,
     categories: ["architecture"],
     name: "Cinematic Spatial Analysis",
@@ -747,6 +762,7 @@ export const projects: Project[] = [
   },
   {
     slug: "vbbc-calibration-channel",
+    sortYear: 2014.0,
     sortYear: 2014,
     categories: ["scientific-research", "building-science", "architecture"],
     name: "Calibration Channel (Mounds State Park)",
@@ -799,6 +815,7 @@ export const projects: Project[] = [
   },
   {
     slug: "black-oak-pierced-slab-shelf",
+    sortYear: 2015.0,
     sortYear: 2015,
     categories: ["fabrication"],
     name: "Black Oak Pierced Slab Shelving System",

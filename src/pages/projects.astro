@@ -22,10 +22,21 @@ function getFirstGalleryImage(galleryId?: string): ImageMetadata | null {
 	return matchingKey ? allGalleryImages[matchingKey].default : null;
 }
 
-// Auto-sort projects by date (newest first based on sortYear)
+function getSortValue(p: (typeof projects)[0]): number {
+	if (typeof p.sortYear === "number") return p.sortYear;
+	if (!p.period) return 0;
+	if (/present|ongoing/i.test(p.period)) return 9999;
+	const years = p.period.match(/\b\d{4}\b/g);
+	if (years && years.length > 0) {
+		return Math.max(...years.map(Number));
+	}
+	return 0;
+}
+
+// Auto-sort projects by date (newest first)
 const sortedProjects = projects
 	.filter((p) => !p.hidden)
-	.sort((a, b) => (b.sortYear ?? 0) - (a.sortYear ?? 0));
+	.sort((a, b) => getSortValue(b) - getSortValue(a));
 ---
 
 <SiteLayout title={pageTitle} description={pageDescription} active="projects">
