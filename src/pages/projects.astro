@@ -22,23 +22,14 @@ function getFirstGalleryImage(galleryId?: string): ImageMetadata | null {
 	return matchingKey ? allGalleryImages[matchingKey].default : null;
 }
 
-// Auto-sort projects by date (most recent year first) as default
+// Auto-sort projects by date (newest first based on sortYear)
 const sortedProjects = projects
 	.filter((p) => !p.hidden)
 	.sort((a, b) => (b.sortYear ?? 0) - (a.sortYear ?? 0));
-
-const categories = [
-	{ id: "all", label: "All Work" },
-	{ id: "building-science", label: "Building Science" },
-	{ id: "software-computation", label: "Software & Computation" },
-	{ id: "fabrication", label: "Digital Fabrication" },
-	{ id: "architecture", label: "Architecture" },
-	{ id: "scientific-research", label: "Scientific Research" },
-];
 ---
 
 <SiteLayout title={pageTitle} description={pageDescription} active="projects">
-	<header class="projects-header content-measure mb-4">
+	<header class="projects-header content-measure mb-5">
 		<p class="section-label">Selected Work</p>
 		<h1 class="projects-title">
 			Software, hardware, science,<br />architecture.
@@ -50,53 +41,13 @@ const categories = [
 		</p>
 	</header>
 
-	<!-- Filter & Sort Controls -->
-	<section class="controls-section mb-4" aria-label="Project filter and sort controls">
-		<div class="controls-wrapper">
-			<div class="filter-chips-container" role="tablist" aria-label="Filter projects by discipline">
-				{
-					categories.map((cat) => (
-						<button
-							class={`filter-chip ${cat.id === "all" ? "active" : ""}`}
-							data-category={cat.id}
-							role="tab"
-							aria-selected={cat.id === "all" ? "true" : "false"}
-						>
-							{cat.label}
-						</button>
-					))
-				}
-			</div>
-
-			<div class="sort-control-container">
-				<label for="project-sort" class="sort-label">Sort by:</label>
-				<div class="select-wrapper">
-					<select id="project-sort" class="sort-select" aria-label="Sort projects">
-						<option value="recent">Most Recent (Default)</option>
-						<option value="oldest">Oldest First</option>
-						<option value="name">Alphabetical (A–Z)</option>
-					</select>
-					<span class="select-arrow" aria-hidden="true">▾</span>
-				</div>
-			</div>
-		</div>
-		<div class="active-count-bar">
-			<span id="project-count" class="project-count-text">Showing {sortedProjects.length} projects</span>
-		</div>
-	</section>
-
 	<section aria-label="Project list">
-		<ol class="project-list" id="project-list" role="list">
+		<ol class="project-list" role="list">
 			{
 				sortedProjects.map((project, i) => {
 					const thumbImg = getFirstGalleryImage(project.galleryId);
 					return (
-						<li
-							class="project-item"
-							data-categories={JSON.stringify(project.categories ?? [])}
-							data-sort-year={project.sortYear ?? 0}
-							data-name={project.name.toLowerCase()}
-						>
+						<li class="project-item">
 							<a
 								class="project-link"
 								href={`/projects/${project.slug}`}
@@ -142,104 +93,6 @@ const categories = [
 	</section>
 </SiteLayout>
 
-<script>
-	function setupProjectFilters() {
-		const filterChips = document.querySelectorAll<HTMLButtonElement>(".filter-chip");
-		const sortSelect = document.querySelector<HTMLSelectElement>("#project-sort");
-		const projectList = document.querySelector<HTMLOListElement>("#project-list");
-		const projectCount = document.querySelector<HTMLSpanElement>("#project-count");
-
-		if (!projectList) return;
-
-		let currentCategory = "all";
-		let currentSort = "recent";
-
-		function updateList() {
-			const items = Array.from(projectList.querySelectorAll<HTMLLIElement>(".project-item"));
-
-			// 1. Filter items
-			let visibleItems = items.filter((item) => {
-				if (currentCategory === "all") return true;
-				try {
-					const cats: string[] = JSON.parse(item.dataset.categories || "[]");
-					return cats.includes(currentCategory);
-				} catch {
-					return true;
-				}
-			});
-
-			// Hide non-matching items, show matching items
-			items.forEach((item) => {
-				if (visibleItems.includes(item)) {
-					item.style.display = "";
-				} else {
-					item.style.display = "none";
-				}
-			});
-
-			// 2. Sort visible items
-			visibleItems.sort((a, b) => {
-				const yearA = parseFloat(a.dataset.sortYear || "0");
-				const yearB = parseFloat(b.dataset.sortYear || "0");
-				const nameA = a.dataset.name || "";
-				const nameB = b.dataset.name || "";
-
-				if (currentSort === "recent") {
-					return yearB - yearA;
-				} else if (currentSort === "oldest") {
-					return yearA - yearB;
-				} else if (currentSort === "name") {
-					return nameA.localeCompare(nameB);
-				}
-				return 0;
-			});
-
-			// Re-append in new order
-			visibleItems.forEach((item, index) => {
-				projectList.appendChild(item);
-				// Update visible index number (01, 02, 03...)
-				const indexEl = item.querySelector<HTMLSpanElement>(".project-index");
-				if (indexEl) {
-					indexEl.textContent = String(index + 1).padStart(2, "0");
-				}
-			});
-
-			// 3. Update count label
-			if (projectCount) {
-				const catLabel = currentCategory === "all" ? "" : ` in ${currentCategory.replace("-", " ")}`;
-				projectCount.textContent = `Showing ${visibleItems.length} project${visibleItems.length === 1 ? "" : "s"}${catLabel}`;
-			}
-		}
-
-		// Chip click handlers
-		filterChips.forEach((chip) => {
-			chip.addEventListener("click", () => {
-				filterChips.forEach((c) => {
-					c.classList.remove("active");
-					c.setAttribute("aria-selected", "false");
-				});
-				chip.classList.add("active");
-				chip.setAttribute("aria-selected", "true");
-				currentCategory = chip.dataset.category || "all";
-				updateList();
-			});
-		});
-
-		// Sort select change handler
-		if (sortSelect) {
-			sortSelect.addEventListener("change", (e) => {
-				const target = e.target as HTMLSelectElement;
-				currentSort = target.value;
-				updateList();
-			});
-		}
-	}
-
-	// Initialize on page load and Astro view transitions
-	setupProjectFilters();
-	document.addEventListener("astro:page-load", setupProjectFilters);
-</script>
-
 <style>
 	.section-label {
 		font-family: var(--font-mono);
@@ -267,122 +120,12 @@ const categories = [
 		margin: 0;
 	}
 
-	/* ─── Controls Section ───────────────────────────────────── */
-	.controls-section {
-		border-top: 1px solid var(--rule);
-		border-bottom: 1px solid var(--rule);
-		padding: 1.25rem 0 0.85rem;
-		margin-top: 2rem;
-	}
-
-	.controls-wrapper {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
-	}
-
-	.filter-chips-container {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		align-items: center;
-	}
-
-	.filter-chip {
-		font-family: var(--font-mono);
-		font-size: 0.75rem;
-		font-weight: 500;
-		letter-spacing: 0.03em;
-		padding: 0.4rem 0.85rem;
-		border-radius: 9999px;
-		background: transparent;
-		color: var(--ink-2);
-		border: 1px solid var(--rule);
-		cursor: pointer;
-		transition: all 0.15s ease;
-		white-space: nowrap;
-	}
-
-	.filter-chip:hover {
-		color: var(--ink);
-		border-color: var(--ink-3);
-		background: var(--surface-2);
-	}
-
-	.filter-chip.active {
-		background: var(--ink);
-		color: var(--bg);
-		border-color: var(--ink);
-	}
-
-	/* Sort dropdown */
-	.sort-control-container {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		font-family: var(--font-mono);
-		font-size: 0.75rem;
-	}
-
-	.sort-label {
-		color: var(--ink-3);
-		letter-spacing: 0.04em;
-	}
-
-	.select-wrapper {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-	}
-
-	.sort-select {
-		appearance: none;
-		-webkit-appearance: none;
-		font-family: var(--font-mono);
-		font-size: 0.75rem;
-		font-weight: 500;
-		color: var(--ink);
-		background: var(--surface);
-		border: 1px solid var(--rule);
-		border-radius: 6px;
-		padding: 0.4rem 1.8rem 0.4rem 0.75rem;
-		cursor: pointer;
-		outline: none;
-		transition: border-color 0.15s ease;
-	}
-
-	.sort-select:hover,
-	.sort-select:focus {
-		border-color: var(--ink-3);
-	}
-
-	.select-arrow {
-		position: absolute;
-		right: 0.6rem;
-		pointer-events: none;
-		font-size: 0.65rem;
-		color: var(--ink-3);
-	}
-
-	.active-count-bar {
-		margin-top: 0.85rem;
-	}
-
-	.project-count-text {
-		font-family: var(--font-mono);
-		font-size: 0.7rem;
-		color: var(--ink-3);
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-	}
-
 	/* ─── Project list ───────────────────────────────────────── */
 	.project-list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		border-top: 1px solid var(--rule);
 	}
 
 	.project-item {
