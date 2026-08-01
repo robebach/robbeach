@@ -1,3 +1,10 @@
+export type CategoryKey =
+  | "building-science"
+  | "software-computation"
+  | "fabrication"
+  | "architecture"
+  | "scientific-research";
+
 export interface ProjectMetric {
   label: string;
   value: string;
@@ -15,6 +22,8 @@ export interface Project {
   client: string;
   type: string;
   period?: string;
+  sortYear?: number;
+  categories?: CategoryKey[];
   link?: string;
   linkText?: string;
   galleryId?: string;
@@ -31,6 +40,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "rheia-engineering",
+    sortYear: 2026,
+    categories: ["building-science", "software-computation", "scientific-research"],
     name: "Rheia HVAC Engineering & Systems Architecture",
     client: "Rheia, LLC",
     type: "Software, Hardware & Controls Engineering",
@@ -76,6 +87,8 @@ export const projects: Project[] = [
   },
   {
     slug: "viva-logger-terrarium",
+    sortYear: 2024,
+    categories: ["software-computation", "scientific-research"],
     name: "Automated Vivarium & Hardware Controller",
     client: "Personal Project",
     type: "Hardware Engineering & IoT",
@@ -116,6 +129,8 @@ export const projects: Project[] = [
   },
   {
     slug: "space-filling-structures",
+    sortYear: 2025,
+    categories: ["software-computation", "fabrication"],
     name: "Generative Space-Filling Structures & Modular Furniture",
     client: "Personal Passion Project",
     type: "Generative Software & Modular Hardware R&D",
@@ -160,6 +175,8 @@ export const projects: Project[] = [
   },
   {
     slug: "shope-residence",
+    sortYear: 2019,
+    categories: ["architecture", "building-science", "fabrication"],
     name: "The Shope Residence",
     client: "John & Shelly Shope",
     type: "Residential Architectural Design",
@@ -204,6 +221,8 @@ export const projects: Project[] = [
   },
   {
     slug: "wood-texture-panels",
+    sortYear: 2013.3,
+    categories: ["fabrication", "software-computation"],
     name: "Parametric Wood Texture Panels",
     client: "Personal Project",
     type: "Digital Fabrication & Woodworking R&D",
@@ -247,6 +266,8 @@ export const projects: Project[] = [
   },
   {
     slug: "textured-picture-frame",
+    sortYear: 2013.2,
+    categories: ["fabrication", "software-computation"],
     name: "Parametric Wave Frame Generator",
     client: "Situ Studio R&D / Personal Project",
     type: "Parametric Modeling & CNC Fabrication",
@@ -291,6 +312,8 @@ export const projects: Project[] = [
   },
   {
     slug: "transitional-objects",
+    sortYear: 2012.3,
+    categories: ["fabrication", "architecture"],
     name: "Alyson Shotz: Transitional Objects",
     client: "Alyson Shotz / Situ Studio",
     type: "3D Design & Parametric Modeling",
@@ -335,6 +358,8 @@ export const projects: Project[] = [
   },
   {
     slug: "trezona-fossil",
+    sortYear: 2010.3,
+    categories: ["scientific-research", "software-computation"],
     name: "3D Fossil Reconstruction (Nature Geoscience)",
     client: "Adam Maloof / Princeton University",
     type: "3D Reconstruction & Earth Science",
@@ -590,6 +615,8 @@ export const projects: Project[] = [
   },
   {
     slug: "pratt-venetian-vagabond",
+    sortYear: 2011.1,
+    categories: ["software-computation", "architecture"],
     name: "Venetian Vagabond: Aquatic Agent Swarms",
     client: "Pratt Institute (Studio under Alisa Andrasek)",
     type: "Computational Architecture & Swarm Simulation",
@@ -638,6 +665,8 @@ export const projects: Project[] = [
   },
   {
     slug: "pratt-sierra-studio",
+    sortYear: 2010.2,
+    categories: ["architecture", "software-computation"],
     name: "Pratt Studio: Form & Scripting",
     client: "Pratt Institute (Studio under Maria Sierra)",
     type: "Architectural Design & Algorithmic Form",
@@ -677,6 +706,8 @@ export const projects: Project[] = [
   },
   {
     slug: "pratt-film-study",
+    sortYear: 2010.1,
+    categories: ["architecture"],
     name: "Cinematic Spatial Analysis",
     client: "Pratt Institute (Class under Maria Sierra)",
     type: "Cinematic Architecture & Motion Analysis",
@@ -716,6 +747,8 @@ export const projects: Project[] = [
   },
   {
     slug: "vbbc-calibration-channel",
+    sortYear: 2014,
+    categories: ["scientific-research", "building-science", "architecture"],
     name: "Calibration Channel (Mounds State Park)",
     client: "Virginia B. Ball Center / Ball State University",
     type: "Digital Fabrication & Landscape Installation",
@@ -766,6 +799,8 @@ export const projects: Project[] = [
   },
   {
     slug: "black-oak-pierced-slab-shelf",
+    sortYear: 2015,
+    categories: ["fabrication"],
     name: "Black Oak Pierced Slab Shelving System",
     client: "Personal Furniture Design / Fabricated in Brooklyn",
     type: "Digital Woodworking, CNC Milling & Custom Welding",
