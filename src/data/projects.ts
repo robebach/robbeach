@@ -789,6 +789,7 @@ export const projects: Project[] = [
     details: [
       "Amish Mill Black Oak (PA)",
       "Matthew Schaffer Sourcing",
+      "Rhino 3D CAD (.3dm)",
       "ShopBot CNC Router",
       "VCarve Toolpath Design",
       "Compound Angle Pockets",
