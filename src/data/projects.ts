@@ -132,7 +132,6 @@ export const projects: Project[] = [
   },
   {
     slug: "space-filling-structures",
-    sortYear: 2025.0,
     sortYear: 2025,
     categories: ["software-computation", "fabrication"],
     name: "Generative Space-Filling Structures & Modular Furniture",
@@ -141,40 +140,43 @@ export const projects: Project[] = [
     period: "2018 – Present",
     galleryId: "space-filling-structures",
     summary:
-      "An ongoing personal R&D passion project exploring generative algorithms in Python to calculate 3D space-filling structural networks, custom 3D-printed nodal joints, and stock tube assemblies for furniture, fixtures, and sculpture.",
+      "An ongoing personal R&D passion project exploring generative algorithms in Python to calculate non-intersecting 3D space-filling cylindrical tube networks, integrated structural cross-bracing, custom nodal joints, and physical prototyping workflows.",
     fullDescription: [
-      "GENERATIVE SPACE-FILLING ALGORITHMS: Developed custom Python simulation engines (make_net.py, log_gen.py) in Rhino to calculate 3D space-filling vector networks. The algorithm uses attractor fields, branching level logic, and collision-avoidance proximity functions to populate volume envelopes with expressive structural webs.",
-      "CUSTOM 3D-PRINTED NODAL JOINTS: The software automatically evaluates complex multi-branch intersections, generating custom 3D-printable nodal joint geometry (.stl) with shoulder tabs, wall thicknesses, and angle tolerances tailored for off-the-shelf stock tubing.",
-      "FURNITURE & SCULPTURAL MANIFESTATIONS: Applied the computational system to ergonomic furniture design (such as lounge chairs and table bases), lighting fixtures, and large-scale room-filling sculptures. The long-term vision is to commercialize the software engine as a platform for custom spatial furniture and sculptural installations.",
+      "COLLISION-FREE CYLINDRICAL FILL ALGORITHM: Developed custom Python simulation engines (make_net.py, log_gen.py) in Rhino to calculate 3D space-filling vector networks. The algorithm evaluates true 3D cylindrical geometry rather than line vectors, filling defined spatial envelopes with non-intersecting tube segments based on a specified diameter. Segment lengths can be strictly constrained—allowing the system to fill volumes using entirely uniform single-length and single-diameter stock tubing for simplified manufacturing.",
+      "INTEGRATED STRUCTURAL CROSS-BRACING: Implemented a secondary cross-bracing pass that generates reinforcing connections after primary growth strands fill the spatial volume. Cross-braces can be configured with different tube diameters and restricted length bounds (e.g., short proximity connections) to maximize structural stiffness without visual clutter. Future software expansion includes integrating physics and finite-element stability simulations.",
+      "NODAL CONNECTOR GEOMETRY & LASER-CUT RESEARCH: Designed multi-branch nodal connectors (.stl) that dynamically adapt geometry based on the end-conditions of incoming structural bars. Explored alternative laser-cut joint configurations—noting their intricate geometric complexity compared to 3D additive printing.",
+      "PROTOTYPING EVOLUTION & ROADMAP: After an earlier full-scale 3D-printed assembly prototype failed due to joint fit tolerances, refined the connector geometry and assembly sequence. Current prototyping roadmap includes constructing a high-density prototype out of drinking straws to physically evaluate high-density network assembly at low cost, with long-term aspirations for premium physical manifestations in copper tubing or glass rods.",
     ],
     points: [
-      "Authored Python generative space-filling simulation engines in Rhino 3D.",
-      "Programmed automated 3D-printable STL joint generation for stock tubing assemblies.",
-      "Mapped ergonomic envelopes and structural loads to drive variable branching density.",
-      "Ongoing passion project bridging computational design, 3D printing, and modular furniture.",
+      "Authored Python generative engines calculating non-intersecting 3D cylindrical tube fills with uniform length/diameter constraints.",
+      "Implemented secondary cross-bracing pass with length bounds for structural stiffness and future physics stability testing.",
+      "Engineered adaptive multi-branch nodal joints (.stl) responding to bar end-conditions and explored laser-cut joint geometry.",
+      "Refined prototyping roadmap from early assembly learnings toward high-density straw models and premium copper/glass assemblies.",
     ],
     details: [
       "Personal R&D",
       "Python",
       "Rhino 3D",
       "RhinoCommon",
-      "Generative Algorithms",
-      "3D Printing (STL)",
+      "Collision-Free Cylinder Fill",
+      "Integrated Cross-Bracing",
+      "3D-Printed Nodal Joints",
+      "Laser-Cut Joint Research",
       "Modular Furniture",
       "Space-Filling Networks",
     ],
     metrics: [
       { label: "Status", value: "Active Personal Passion Project" },
       { label: "Software", value: "Custom Python Generative Engine" },
-      { label: "Hardware", value: "3D-Printed Nodal Joints + Stock Tubing" },
+      { label: "Hardware", value: "Adaptive Nodal Joints + Uniform Stock Tubing" },
     ],
     notation: {
       systemArchitecture:
-        "Ergonomic Envelopes / Attractors -> Python Space-Filling Engine -> 3D Printed Joint STL -> Tube Assembly",
+        "Spatial Volume / Attractors -> Collision-Free Cylinder Engine -> Cross-Bracing Pass -> Adaptive Nodal STL -> Tube Assembly",
       keyInnovation:
-        "Automating custom 3D-printed nodal connectors for arbitrary space-filling tube networks",
+        "Collision-free 3D cylindrical volume filling combined with secondary structural cross-bracing and adaptive nodal joints",
       impact:
-        "Created a scalable design-to-production platform for custom parametric furniture and sculpture.",
+        "Created a scalable design-to-production platform for custom parametric furniture, lighting, and architectural sculpture.",
     },
   },
   {
