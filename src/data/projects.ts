@@ -764,4 +764,50 @@ export const projects: Project[] = [
         "Featured in Architectural Design (AD) and constructed a permanent public installation in Mounds State Park.",
     },
   },
+  {
+    slug: "black-oak-pierced-slab-shelf",
+    name: "Black Oak Pierced Slab Shelving System",
+    client: "Personal Furniture Design / Fabricated in Brooklyn",
+    type: "Digital Woodworking, CNC Milling & Custom Welding",
+    period: "2014–2015",
+    galleryId: "black-oak-pierced-slab-shelf",
+    summary:
+      "Designed, CNC-milled, and hand-fabricated a massive 6-slab black oak media unit featuring inverted pyramid pockets pierced by compound-angle steel legs, finished with raw tung oil and custom welded footings.",
+    fullDescription: [
+      "PENNSYLVANIA BLACK OAK SLABS: Sourced 6 to 7 thick, heavy black oak slabs from Matthew Schaffer (acquired from an Amish mill near Oil City, PA). Prepped the lumber by registering a straight reference edge on each board to maximize usable width while preserving raw, unrefined edges and natural iron-stain weathering.",
+      "CNC-MILLED INVERTED PYRAMID POCKETS: Wrote 3D surface toolpaths (mechC_rough_375.sbp, mechC_finish_250_passB.sbp, mechB_finish_250.sbp) for 3-axis ShopBot CNC milling. Engineered compound-angle inverted pyramid pocket holes directly into the oak slabs to receive angled structural steel legs, creating a rigid 'pierced slab' structural joint.",
+      "INTEGRATED MEDIA NOOK & WELDED LEGS: Formed an asymmetrical structural lower-left nook sized specifically for a television. Self-taught TIG/MIG steel welding to fabricate custom heavy steel feet to stabilize the compound-angle leg assembly.",
+      "IMPERFECTIONISM & RAW FINISH: Finished minimalistically with a rich coating of natural tung oil. Preserved rough-sawn front edges, natural iron-reaction black streaks, and roughly cut end-grain sides as an embrace of imperfectionism in physical craft. Designed as a fully modular, disassemblable structure so large it barely cleared the doorway upon moving.",
+    ],
+    points: [
+      "CNC-milled compound-angle inverted pyramid pocket holes into thick Pennsylvania black oak slabs.",
+      "Designed asymmetrical lower-left media nook for television housing.",
+      "Learned steel welding to fabricate custom ground feet for compound-angle leg assemblies.",
+      "Engineered fully disassemblable modular joint architecture for large-scale architectural furniture.",
+      "Finished with natural tung oil, preserving rough-sawn edges and dark iron-stain weathering.",
+    ],
+    details: [
+      "Amish Mill Black Oak (PA)",
+      "Matthew Schaffer Sourcing",
+      "ShopBot CNC Router",
+      "VCarve Toolpath Design",
+      "Compound Angle Pockets",
+      "Steel Welding & Fabrication",
+      "Tung Oil Finish",
+      "Modular Disassembly",
+    ],
+    metrics: [
+      { label: "Material", value: "PA Black Oak & Steel Tube" },
+      { label: "Machining", value: "3-Axis ShopBot CNC Milling" },
+      { label: "Joint Type", value: "Inverted Pyramid Pierced Pockets" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Slab Registration -> VCarve 3D Pockets -> ShopBot CNC Toolpath -> Steel Tube Assembly -> Welded Footings",
+      keyInnovation:
+        "Engineered CNC-milled 3D inverted pyramid pockets receiving compound-angle steel legs through solid thick oak slabs",
+      impact:
+        "Created a massive, modular, disassemblable architectural media console bridging computational joinery with raw physical craftsmanship.",
+    },
+  },
 ];
