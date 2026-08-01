@@ -140,15 +140,17 @@ export const projects: Project[] = [
     period: "2018 – Present",
     galleryId: "space-filling-structures",
     summary:
-      "An ongoing personal R&D passion project exploring generative algorithms in Python to calculate non-intersecting 3D space-filling cylindrical tube networks, integrated structural cross-bracing, custom nodal joints, and physical prototyping workflows.",
+      "An ongoing personal R&D passion project exploring generative algorithms in Python to calculate non-intersecting 3D space-filling cylindrical tube networks, guaranteed physical assemblability, integrated structural cross-bracing, custom nodal joints, and physical prototyping workflows.",
     fullDescription: [
       "COLLISION-FREE CYLINDRICAL FILL ALGORITHM: Developed custom Python simulation engines (make_net.py, log_gen.py) in Rhino to calculate 3D space-filling vector networks. The algorithm evaluates true 3D cylindrical geometry rather than line vectors, filling defined spatial envelopes with non-intersecting tube segments based on a specified diameter. Segment lengths can be strictly constrained—allowing the system to fill volumes using entirely uniform single-length and single-diameter stock tubing for simplified manufacturing.",
+      "GUARANTEED PHYSICAL ASSEMBLABILITY (KEY INNOVATION): A core architectural insight of the engine is that growing the structure directionally into the volume envelope guarantees physical constructability. Traditional complex 3D space-frames often suffer from geometric entrapment, where interior elements cannot be physically inserted into a fully enclosed lattice. Because this simulation grows iteratively outward from seed attractors into empty spatial volume, the generated structure inherently encodes a monotonic physical assembly sequence—ensuring every strut and node can always be installed step-by-step without topological interference.",
       "INTEGRATED STRUCTURAL CROSS-BRACING: Implemented a secondary cross-bracing pass that generates reinforcing connections after primary growth strands fill the spatial volume. Cross-braces can be configured with different tube diameters and restricted length bounds (e.g., short proximity connections) to maximize structural stiffness without visual clutter. Future software expansion includes integrating physics and finite-element stability simulations.",
       "NODAL CONNECTOR GEOMETRY & LASER-CUT RESEARCH: Designed multi-branch nodal connectors (.stl) that dynamically adapt geometry based on the end-conditions of incoming structural bars. Explored alternative laser-cut joint configurations—noting their intricate geometric complexity compared to 3D additive printing.",
       "PROTOTYPING EVOLUTION & ROADMAP: After an earlier full-scale 3D-printed assembly prototype failed due to joint fit tolerances, refined the connector geometry and assembly sequence. Current prototyping roadmap includes constructing a high-density prototype out of drinking straws to physically evaluate high-density network assembly at low cost, with long-term aspirations for premium physical manifestations in copper tubing or glass rods.",
     ],
     points: [
       "Authored Python generative engines calculating non-intersecting 3D cylindrical tube fills with uniform length/diameter constraints.",
+      "Discovered key algorithmic innovation: growing structures directionally into spatial volumes guarantees a monotonic physical assembly order, eliminating element entrapment.",
       "Implemented secondary cross-bracing pass with length bounds for structural stiffness and future physics stability testing.",
       "Engineered adaptive multi-branch nodal joints (.stl) responding to bar end-conditions and explored laser-cut joint geometry.",
       "Refined prototyping roadmap from early assembly learnings toward high-density straw models and premium copper/glass assemblies.",
@@ -159,6 +161,7 @@ export const projects: Project[] = [
       "Rhino 3D",
       "RhinoCommon",
       "Collision-Free Cylinder Fill",
+      "Directional Growth Assemblability",
       "Integrated Cross-Bracing",
       "3D-Printed Nodal Joints",
       "Laser-Cut Joint Research",
@@ -172,9 +175,9 @@ export const projects: Project[] = [
     ],
     notation: {
       systemArchitecture:
-        "Spatial Volume / Attractors -> Collision-Free Cylinder Engine -> Cross-Bracing Pass -> Adaptive Nodal STL -> Tube Assembly",
+        "Spatial Volume / Attractors -> Collision-Free Cylinder Engine -> Cross-Bracing Pass -> Adaptive Nodal STL -> Monotonic Assembly",
       keyInnovation:
-        "Collision-free 3D cylindrical volume filling combined with secondary structural cross-bracing and adaptive nodal joints",
+        "Guaranteed physical assemblability via directional volume growth, eliminating geometric entrapment in complex 3D space-frames",
       impact:
         "Created a scalable design-to-production platform for custom parametric furniture, lighting, and architectural sculpture.",
     },
