@@ -142,34 +142,34 @@ export const projects: Project[] = [
     period: "Ongoing",
     galleryId: "viva-logger-terrarium",
     summary:
-      "Designed and built an automated environmental controller for a terrarium using Raspberry Pi, LabJack DAQ sensors, and custom Python software.",
+      "Designed and built an automated environmental controller using a Raspberry Pi, LabJack DAQ sensors, and custom Python software—built specifically to manage microclimate conditions for our pet gecko here in Phoenix.",
     fullDescription: [
-      "Engineered a fully automated control system for a live vivarium environment to maintain precise temperature, humidity, and lighting cycles.",
-      "Wrote custom Python software (open-sourced as viva-logger) running on a Raspberry Pi to interface with a LabJack data acquisition device.",
-      "Wired and integrated physical sensors, relays, and environmental hardware to create a closed-loop feedback system.",
+      "GECKO MICROCLIMATE AUTOMATION: We live in Phoenix with a house full of pets—including a pet gecko, which is the direct reason this project exists. Phoenix gets hot, but vivariums need carefully controlled temperature and humidity gradients to keep microclimates stable and safe.",
+      "LABJACK DAQ & RASPBERRY PI STACK: Hooked a Raspberry Pi up to a LabJack T4 data acquisition unit to read high-precision environmental sensors and drive physical relays for heating elements, humidity control, and lighting cycles.",
+      "OPEN-SOURCE CONTROL SOFTWARE (viva-logger): Wrote custom Python software (open-sourced as viva-logger) to log continuous sensor telemetry, run closed-loop feedback control loops, and manage microclimate automation.",
     ],
     points: [
-      "Built custom IoT hardware stack using Raspberry Pi and LabJack.",
-      "Programmed Python feedback loops for temperature and humidity control.",
-      "Open-sourced the underlying control software architecture on GitHub.",
+      "Built custom IoT hardware controller using Raspberry Pi and LabJack DAQ.",
+      "Programmed Python feedback loops for terrarium microclimate automation.",
+      "Created to automate real-time environmental management for our family pet gecko.",
     ],
     details: [
       "Hardware Engineering",
       "IoT",
       "Raspberry Pi",
       "LabJack DAQ",
-      "Python",
+      "Python viva-logger",
     ],
     metrics: [
-      { label: "Hardware", value: "Raspberry Pi + LabJack" },
+      { label: "Hardware", value: "Raspberry Pi + LabJack T4" },
       { label: "Software", value: "Python viva-logger" },
-      { label: "Application", value: "Environmental Automation" },
+      { label: "Origin", value: "Gecko Terrarium Automation" },
     ],
     notation: {
       systemArchitecture:
-        "Sensors -> LabJack -> Raspberry Pi -> Python Logic -> Relays",
+        "Sensors -> LabJack DAQ -> Raspberry Pi -> Python Logic -> Relays",
       keyInnovation:
-        "High-precision laboratory hardware applied to personal terrarium automation",
+        "Laboratory-grade DAQ hardware and Python feedback loops applied to home terrarium climate control",
     },
   },
   {
@@ -725,16 +725,16 @@ export const projects: Project[] = [
     period: "2007",
     galleryId: "pratt-film-study",
     summary:
-      "Investigated temporal spatial narratives, camera movement, and filmic perspective sequencing in an architectural film seminar led by Maria Sierra.",
+      "Filmic spatial analysis and video studies produced for a Pratt seminar under Maria Sierra, capturing spatial camera movement and temporal sequence edits.",
     fullDescription: [
-      "TEMPORAL SPATIAL MAPPING: Studied the intersection of filmic sequences, spatial perspective, and camera movement to map architectural experience over time.",
-      "FIELD OF VIEW SEQUENCING: Analyzed perspective depth, focal lengths, and camera cones across varying spatial distances (far, close, extreme close-up).",
-      "DIGITAL ANIMATION & AFTER EFFECTS: Produced short filmic animation studies evaluating movement across landscapes and architectural spatial boundaries.",
+      "CINEMATIC SPATIAL STUDY: Created for a Pratt seminar under Maria Sierra, investigating how camera movement, focal cuts, and spatial sequencing shape architectural experience over time.",
+      "THE PREFERRED CUT (Beach_4.mov): Dug up early video drafts and the preferred final cut (Beach_4.mov) set to music—capturing the raw, sketchy ideas, camera pacing, and spatial sequence cuts at original speed.",
+      "FULL-SEQUENCE FILM LOOP: Converted the 3-minute video cut into a 48-second GIF loop for the top of the gallery so all shot transitions and spatial passes play directly in the browser.",
     ],
     points: [
       "Investigated camera motion, focal lengths, and spatial perspective sequences.",
-      "Analyzed temporal architectural narrative under Maria Sierra.",
-      "Created digital animations and field-of-view spatial diagrams.",
+      "Analyzed temporal architectural narrative in Maria Sierra's Pratt seminar.",
+      "Archived the preferred video draft (Beach_4.mov) alongside 12 sequential spatial analysis stills.",
     ],
     details: [
       "Cinematic Architecture",
@@ -742,10 +742,11 @@ export const projects: Project[] = [
       "After Effects",
       "Spatial Sequencing",
       "Pratt Institute",
+      "Beach_4.mov Cut",
     ],
     metrics: [
       { label: "Course Instructor", value: "Maria Sierra" },
-      { label: "Medium", value: "Digital Film & After Effects" },
+      { label: "Video Cut", value: "Beach_4.mov (3-minute cut)" },
       { label: "Focus", value: "Temporal Spatial Analysis" },
     ],
     notation: {
