@@ -129,6 +129,7 @@ export const projects: Project[] = [
     client: "IBACOS / U.S. Department of Energy (Building America)",
     type: "CFD Simulation & Building Science R&D",
     period: "2012 – 2014",
+    galleryId: "cfd-junction-box-research",
     summary:
       "Conducted 3D CFD airflow simulations under Rich Lange to model pressure drop, turbulence, and velocity fields in flex duct junction boxes—establishing the fluid dynamics foundation for Rheia.",
     fullDescription: [
