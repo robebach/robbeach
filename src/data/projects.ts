@@ -327,7 +327,7 @@ export const projects: Project[] = [
     fullDescription: [
       "PARAMETRIC SINE-WAVE GENERATOR: Authored parametric Grasshopper scripts (frame_011_rkb.gh, frame_sine_2pt_rkb.gh) in Rhino to calculate fluid 3D sine-wave surface relief along 4-sided mitered frame geometry.",
       "SITU STUDIO R&D & PERSONAL EVOLUTION: Originally initiated as a digital design exploration with Brad Samuels at Situ Studio, then expanded independently into a complete parametric frame generation toolkit with adjustable wave frequencies, depths, and miter joint corner matching.",
-      "CNC MILLING TOOLPATH OPTIMIZATION: Structured the 3D surface geometry to ensure seamless toolpath motion for 3-axis CNC milling, eliminating undercuts and maintaining continuous texture flow around 45-degree corner miters.",
+      "CNC MILLING TOOLPATH OPTIMIZATION: Structured the 3D surface geometry to ensure smooth toolpath motion for 3-axis CNC milling, eliminating undercuts and maintaining continuous texture flow around 45-degree corner miters.",
     ],
     points: [
       "Wrote custom Grasshopper scripts to generate continuous 3D sine-wave surface textures on picture frames.",
