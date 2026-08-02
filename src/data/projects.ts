@@ -37,50 +37,130 @@ export interface Project {
 // Sorted newest → oldest
 export const projects: Project[] = [
   {
-    slug: "rheia-engineering",
-
-    categories: ["building-science", "software-computation", "scientific-research"],
-    name: "Rheia HVAC Engineering & Systems Architecture",
+    slug: "rheia-software-engine",
+    categories: ["software-computation", "building-science"],
+    name: "Rheia Design Engine & Field Data Telemetry Platform",
     client: "Rheia, LLC",
-    type: "Software, Hardware & Controls Engineering",
+    type: "Domain-Driven Calculation Engine & Field Data Platform",
     period: "2017 – Present",
-    galleryId: "rheia-engineering",
+    galleryId: "rheia-software",
     summary:
-      "Architected the calculation engines, field analytics pipelines, automated control algorithms, and patented hardware powering Rheia's residential HVAC platform across 25,000+ homes.",
+      "Architected the calculation engines, automated damper control algorithms, and field data pipelines powering Rheia Manage and Rheia Verify across 25,000+ homes.",
     fullDescription: [
-      "SOFTWARE ENGINE (Rheia Verify & Manage): Architected the calculation engines that consume Manual J heating and cooling load models to calculate required airflows, pressure drops, and duct sizing for over 25,000 home builds.",
-      "DATA PIPELINES & CONTROLS: Constructed Python data pipelines and automated quality checks to analyze field installation records, pressure signatures, and sensor telemetries. Developed automated dynamic balancing control logic that translates duct pressure physics into live room-by-room damper adjustments.",
-      "PATENTED HARDWARE: Led hardware development and mechanical sealing design for Rheia's air distribution system. Co-inventor on US Utility Patent 12,298,028 B2 covering flexible duct connection fittings and ferrule assemblies.",
-      "SYSTEM ORIGINS & DOE RESEARCH: Traced back to early splitter box CFD airflow modeling studies with Rich Lange and a plug-and-play HVAC system evaluation co-developed with Andrew Poerschke at IBACOS. Merged systems-level engineering with simple space conditioning, creating the DOE-funded research foundation that evolved into Rheia.",
+      "DOMAIN-DRIVEN CALCULATION ENGINE: Architected the core calculation engine in Python and TypeScript that ingests Manual J heating and cooling load models to simulate duct pressure drops, airflow velocities, and acoustic constraints across over 25,000 production homes.",
+      "AUTOMATED DAMPER CONTROLS & BALANCING: Developed dynamic balancing control algorithms that translate duct pressure physics into live room-by-room damper adjustments, turning manual balancing into automated, verifiable system commissioning.",
+      "FIELD DATA PIPELINES & ANALYTICS: Built data processing pipelines (rheia-data) to analyze field installation records, pressure telemetries, and system performance metrics at scale for national homebuilders.",
     ],
     points: [
-      "Built duct distribution simulation engines and automated Python pipelines for field verification metrics.",
-      "Designed pressure-compensated control algorithms for motorized room dampers.",
-      "Co-invented patented twist-and-lock duct ferrule assembly (US 12,298,028 B2).",
-      "Co-developed early plug-and-play HVAC system evaluations with Andrew Poerschke for the U.S. Department of Energy.",
-      "Learned advanced CFD airflow modeling under Rich Lange on early HVAC splitter box studies.",
+      "Architected domain-driven calculation engines converting Manual J loads into duct sizing and airflow models.",
+      "Developed automated dynamic balancing control logic for motorized room dampers.",
+      "Built Python data pipelines to analyze field telemetry, installer logs, and pressure signatures across 25,000+ homes.",
     ],
     details: [
-      "Software Architecture",
+      "Domain-Driven Engine",
       "Python / TypeScript",
-      "Data Pipelines",
-      "HVAC Controls",
-      "Mechanical Design",
-      "CFD Airflow Modeling",
-      "Patent US12298028B2",
+      "Calculation Engines",
+      "Manual J Integration",
+      "Pydantic Data Schemas",
+      "Automated Damper Controls",
+      "Field Telemetry Pipelines",
     ],
     metrics: [
-      { label: "Install Base", value: "25,000+ Homes Modeled & Built" },
-      { label: "IP", value: "1 US Utility Patent" },
-      { label: "Research", value: "1 DOE Building America Report" },
+      { label: "Scale", value: "25,000+ Homes Modeled & Verified" },
+      { label: "Platform", value: "Rheia Manage & Rheia Verify" },
+      { label: "Stack", value: "Python / TypeScript / Data Pipelines" },
     ],
     notation: {
       systemArchitecture:
-        "Manual J Inputs -> Simulation Engine -> Patented Hardware -> Field Telemetry",
+        "Manual J Inputs -> Python Domain Engine -> Pydantic Models -> Field Telemetry & Balancing",
       keyInnovation:
-        "Integrated software simulation, patented hardware, and field verification",
+        "Domain-driven calculation engine translating room heat loads directly into automated duct sizing and dynamic damper balancing",
       impact:
-        "Streamlined engineered HVAC duct design and verification at national scale.",
+        "Automated engineered HVAC design and field verification at national scale across 25,000+ homes.",
+    },
+  },
+  {
+    slug: "rheia-hardware-system",
+    categories: ["building-science", "fabrication"],
+    name: "Rheia Component Architecture & Twist-Lock Fittings",
+    client: "Rheia, LLC",
+    type: "Mechanical Product Design & Patented Hardware",
+    period: "2017 – Present",
+    galleryId: "rheia-components",
+    summary:
+      "Led product design and mechanical development for Rheia's patented twist-and-lock duct fittings, central distribution manifolds, and self-sealing component architecture.",
+    fullDescription: [
+      "PATENTED COMPONENT ARCHITECTURE: Led hardware design for Rheia's home-run flexible duct system. Co-inventor on US Utility Patents 12,298,028 B2 and 10,962,241 B2 covering flexible duct connection fittings, ferrule assemblies, and modular distribution manifolds.",
+      "TWIST-AND-LOCK SELF-SEALING FITTINGS: Engineered snap-in, twist-and-lock ferrule connectors that lock 3-inch and 4-inch flexible ducts into takeoff manifolds and boot diffusers without duct tape, mastic, or manual metal crimping on construction sites.",
+      "MANUFACTURING & PRESSURE TESTING: Directed physical prototyping, lab pressure testing, and injection molding tool development to ensure zero-leakage seals and repeatable installation in high-volume production homebuilding.",
+    ],
+    points: [
+      "Co-inventor on 2 US Utility Patents (US 12,298,028 B2 & US 10,962,241 B2) for duct fittings and ferrule assemblies.",
+      "Engineered self-sealing twist-and-lock ferrule connectors eliminating mastic, tape, and crimping.",
+      "Designed central takeoff manifolds, 90-degree elbows, and ceiling/floor boot diffusers for injection molding.",
+    ],
+    details: [
+      "Mechanical Product Design",
+      "Patent US12298028B2",
+      "Patent US10962241B2",
+      "Twist-and-Lock Fittings",
+      "Ferrule Assemblies",
+      "Injection Molding",
+      "Lab Pressure Testing",
+    ],
+    metrics: [
+      { label: "Patents", value: "2 US Utility Patents" },
+      { label: "System Type", value: "Home-Run Flex Duct Architecture" },
+      { label: "Installation Impact", value: "Tape-Free & Mastic-Free Assembly" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Ductwork -> Twist-Lock Ferrule -> Takeoff Manifold -> Self-Sealing Junction",
+      keyInnovation:
+        "Patented twist-and-lock ferrule mechanism creating zero-leakage mechanical seals without tape or mastic",
+      impact:
+        "Streamlined physical HVAC duct assembly in residential construction.",
+    },
+  },
+  {
+    slug: "cfd-junction-box-research",
+    categories: ["building-science", "scientific-research"],
+    name: "CFD Junction Box & Airflow Dynamics Research",
+    client: "IBACOS / U.S. Department of Energy (Building America)",
+    type: "CFD Simulation & Building Science R&D",
+    period: "2012 – 2014",
+    summary:
+      "Conducted 3D CFD airflow simulations under Rich Lange to model pressure drop, turbulence, and velocity fields in flex duct junction boxes—establishing the fluid dynamics foundation for Rheia.",
+    fullDescription: [
+      "CFD AIRFLOW SIMULATION: Executed 3D Computational Fluid Dynamics (CFD) modeling under Rich Lange to evaluate airflow distribution and pressure losses inside residential HVAC flex duct junction boxes.",
+      "SYSTEMIC IMBALANCE & TURBULENCE DISCOVERY: Revealed how internal turbulence, uneven entrance velocities, and uncalibrated branch geometries caused severe airflow imbalances across home runs—proving that traditional junction boxes were a primary bottleneck in residential HVAC performance.",
+      "DOE PUBLICATION & FOUNDATIONAL IMPACT: Published findings in a U.S. Department of Energy Building America report ('Computational Fluid Dynamics Analysis of Flexible Duct Junction Box Design', Dec 2013). This research established the fluid dynamics principles that directly inspired Rheia's central manifold and twist-and-lock duct system.",
+    ],
+    points: [
+      "Modeled 3D CFD fluid dynamics and pressure drop profiles in residential junction boxes under Rich Lange.",
+      "Discovered systemic airflow turbulence and branch starvation mechanisms in standard flex duct headers.",
+      "Co-authored U.S. Department of Energy Building America report (Dec 2013).",
+    ],
+    details: [
+      "CFD Airflow Simulation",
+      "Fluid Dynamics",
+      "Airflow Turbulence Modeling",
+      "Junction Box Geometry",
+      "DOE Building America",
+      "IBACOS R&D",
+    ],
+    metrics: [
+      { label: "Report", value: "DOE Building America (Dec 2013)" },
+      { label: "Lead Mentor", value: "Rich Lange" },
+      { label: "Methodology", value: "3D CFD Fluid Dynamics Simulation" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Junction Box CAD -> 3D CFD Simulation Mesh -> Velocity/Pressure Gradients -> Manifold Redesign",
+      keyInnovation:
+        "Applied 3D CFD fluid dynamics modeling to diagnose systemic airflow turbulence in residential flex duct headers",
+      impact:
+        "Provided the research foundation that led to Rheia's engineered manifold and twist-lock duct system.",
     },
   },
   {
