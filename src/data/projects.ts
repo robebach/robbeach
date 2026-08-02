@@ -349,6 +349,49 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "autoclad-drone-retrofit-proposal",
+    categories: ["software-computation", "building-science", "fabrication", "architecture"],
+    name: "AutoClad: Automated Drone Scanning & Deep Energy Retrofit System",
+    client: "IBACOS / Carnegie Mellon University (CMU)",
+    type: "Unfunded Grant Proposal & Advanced R&D Concept",
+    period: "2015 – 2016",
+    summary:
+      "Co-authored a joint proposal with Carnegie Mellon University for AutoClad—an automated system using drone photogrammetry, digital geometry defeaturing, and custom CNC panel fabrication for cost-effective exterior deep energy retrofits.",
+    fullDescription: [
+      "CMU COLLABORATION & PROPOSAL CONCEPT: Co-authored a joint research proposal with Carnegie Mellon University (CMU) at IBACOS for AutoClad—an automated system designed to streamline deep energy retrofits on existing building envelopes.",
+      "AUTONOMOUS DRONE SCANNING & DIGITAL DEFEATURING: Proposed using autonomous drone photogrammetry and LIDAR to capture high-density 3D spatial scans of existing building facades. Developed computational workflows to digitally 'defeature' the scanned point-cloud geometry—filtering out complex architectural trim, windows, and irregularities into clean spatial mounting surfaces.",
+      "CUSTOM CNC PANEL FABRICATION & EXTERIOR CLADDING: Designed a parametric panelization framework where custom insulated wall panels would be digitally generated, CNC-cut to match the scanned building's exact real-world dimensions, and mounted as a cost-effective exterior thermal shell.",
+    ],
+    points: [
+      "Co-developed joint CMU & IBACOS research proposal for automated deep energy building retrofits.",
+      "Conceived AutoClad workflow: drone photogrammetry scanning -> point-cloud digital defeaturing -> custom CNC panel fabrication.",
+      "Engineered parametric panelization logic to fit real-world irregular building envelope geometry.",
+    ],
+    details: [
+      "Unfunded R&D Proposal",
+      "Carnegie Mellon (CMU)",
+      "Drone Photogrammetry",
+      "Point-Cloud Defeaturing",
+      "Computational Geometry",
+      "CNC Panel Fabrication",
+      "Deep Energy Retrofit",
+      "Exterior Cladding",
+    ],
+    metrics: [
+      { label: "Proposal", value: "Joint IBACOS & CMU Research Proposal" },
+      { label: "Product Concept", value: "AutoClad Retrofit System" },
+      { label: "Methodology", value: "Drone Scan -> Defeature -> CNC Cladding" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Drone Photogrammetry -> Point-Cloud Defeaturing -> Parametric Panel Mesh -> CNC Panel Cutting -> Exterior Retrofit",
+      keyInnovation:
+        "Automating deep energy exterior retrofits by coupling drone scanning, digital geometry defeaturing, and custom CNC panelization",
+      impact:
+        "Pioneered a cost-effective computational workflow for upgrading existing building envelope energy performance.",
+    },
+  },
+  {
     slug: "wood-texture-panels",
 
     categories: ["fabrication", "software-computation"],
