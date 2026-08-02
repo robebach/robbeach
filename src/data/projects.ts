@@ -350,6 +350,7 @@ export const projects: Project[] = [
   },
   {
     slug: "autoclad-drone-retrofit-proposal",
+    hidden: true,
     categories: ["software-computation", "building-science", "fabrication", "architecture"],
     name: "AutoClad: Automated Drone Scanning & Deep Energy Retrofit System",
     client: "IBACOS / Carnegie Mellon University (CMU)",
