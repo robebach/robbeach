@@ -533,6 +533,101 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "computational-landscape",
+
+    categories: ["software-computation", "architecture"],
+    name: "Computational Landscape: Psagot & Ungrounding",
+    client: "Situ Studio",
+    type: "Computational Architecture & Model Craft",
+    period: "2008 – 2011",
+    galleryId: "ungrounding",
+    summary:
+      "Developed generative Processing algorithms, terrain textures, and physical topography models for Situ Studio's 'Ungrounding' and Psagot territorial analysis projects.",
+    fullDescription: [
+      "COMPUTATIONAL PATTERN GENERATION: Developed custom Processing (Java) algorithms to create evolving pattern swatches, simulating topological forces, road networks, footprint growth, and deconstructing landform dynamics across contested geographies.",
+      "COMPETING AGENT-BASED SIMULATION: Inspired by Mitchel Resnick's 'Turtles, Termites, and Traffic Jams', extended classic agent-based models by introducing a competing 'negative eater' population opposing the primary generator agents. The interaction and emergent chaos as the two populations fought and consumed territory generated dynamic, organic boundary swatches. Seeding these simulations with raw infrastructure data produced the animated textures that directly informed the surface topographies of the post-Hague second series of Ungrounding models.",
+      "CRAFTSMANSHIP & MODEL FABRICATION: Worked closely with Brad Samuels (Art Direction & Mentor) and Basar Girit at Situ Studio to translate generative 2D algorithm swatches into intricate physical landscape models, developing complex surface topographies, milled textures, and Photoshop presentation graphics.",
+      "UNGROUNDING ARCHITECTURE: Visualized the political and physical forces shaping settlement patterns in the Psagot region, creating high-resolution presentation boards, vector field maps, and physical model fabrications to communicate complex spatial narratives.",
+    ],
+    points: [
+      "Extended 'Turtles, Termites, and Traffic Jams' agent models in Processing (.pde) with competing 'negative eater' populations.",
+      "Collaborated with mentor Brad Samuels & Basar Girit (Situ Studio) as primary craftsman for topography & texture model development.",
+      "Produced presentation boards, vector force fields, procedural GIFs, and physical models for spatial narrative research.",
+    ],
+    details: [
+      "Processing (Java)",
+      "Agent-Based Modeling",
+      "Rhino 3D / CNC",
+      "Brad Samuels & Basar Girit",
+      "Terrain Texturing",
+      "Data Visualization",
+      "Physical Model Craft",
+    ],
+    metrics: [
+      { label: "Collaboration", value: "Situ Studio (Brad Samuels, Basar Girit)" },
+      { label: "Software", value: "Custom Processing (.pde) Engine" },
+      { label: "Medium", value: "Generative Code & Physical Topography" },
+    ],
+    notation: {
+      systemArchitecture:
+        "Infrastructure Data -> Competing Dual-Agent Processing Swatches -> CNC & Hand-Crafted Topography",
+      keyInnovation:
+        "Emergent dual-population agent dynamics (generators vs. negative-eaters) translated into 3D physical landscape topographies",
+      impact:
+        "Engineered tangible computational physical models communicating complex spatial narratives.",
+    },
+  },
+  {
+    slug: "situ-3d-textures",
+
+    categories: ["fabrication", "software-computation"],
+    name: "Surface Texture & 3D Computational Modeling",
+    client: "Situ Studio",
+    type: "Computational Design & Digital Fabrication",
+    period: "2008 – 2010",
+    galleryId: "situ-textures",
+    summary:
+      "Developed algorithmic workflows in Rhino, Processing, and custom code to translate 2D image gradients, Perlin noise fields, and agent-based sphere-packing simulations into physical 3D CNC-milled surface textures.",
+    fullDescription: [
+      "BACKGROUND & PEDAGOGY: Directly inspired and enabled by studio coursework at Pratt Institute with Alisa Andrasek (Biothing) and Gil Akos (Mode Lab), who introduced foundational concepts of generative computational design and emergent systems. Under the mentorship of Brad Samuels at Situ Studio, surface texturing evolved into a central meta-theme across multiple architectural and research initiatives.",
+      "METHOD 1 - DUAL-POPULATION AGENT PROCEDURAL TEXTURES: Inspired by Mitchel Resnick's work on emergent systems ('Turtles, Termites, and Traffic Jams'), engineered self-organizing agent algorithms in Processing. By introducing competing 'negative eater' agents that fought the primary territory generators, the resulting population dynamics created emergent, chaotic boundary textures that were sampled and mapped into physical surface topographies.",
+      "METHOD 2 - HEIGHTFIELD DISPLACEMENT & PERLIN NOISE: Built workflows converting pixel depth maps into multi-layered 3D spatial modulations, alongside custom 3D Perlin noise implementations applied directly across NURBS surfaces and complex meshes.",
+      "METHOD 3 - SPHERE PACKING & INSTANCED GEOMETRY: Created sphere-packing algorithms to instance physical geometry across terrain meshes with variable scaling, density controls, and environmental vector responses.",
+    ],
+    points: [
+      "Engineered 3D surface texturing algorithms for physical CNC digital fabrication.",
+      "Rooted in computational design studio training at Pratt Institute under Alisa Andrasek & Gil Akos.",
+      "Created multi-layered heightfield image displacement workflows in Rhino.",
+      "Developed 3D procedural Perlin noise field functions for complex NURBS geometry.",
+      "Programmed sphere-packing algorithms for instanced 3D terrain & rip-rap modeling.",
+    ],
+    details: [
+      "Situ Studio",
+      "Alisa Andrasek & Gil Akos (Pratt)",
+      "Computational Design",
+      "Rhino 3D",
+      "Grasshopper",
+      "Processing (Java)",
+      "Perlin Noise",
+      "Sphere Packing",
+      "CNC Fabrication",
+    ],
+    metrics: [
+      { label: "Pedagogy", value: "Pratt Institute (Alisa Andrasek, Gil Akos)" },
+      { label: "Methods", value: "Heightfields, Perlin Noise, Sphere Packing" },
+      { label: "Output", value: "3D CNC Toolpaths & Physical Models" },
+      { label: "Application", value: "Architectural & Landscape Surfaces" },
+    ],
+    notation: {
+      systemArchitecture:
+        "2D Gradients / Procedural Algorithms -> 3D Volumetric Mesh -> CNC Milling Toolpaths",
+      keyInnovation:
+        "Translating algorithmic noise and packing simulations directly into buildable physical surface geometry",
+      impact:
+        "Established the core digital fabrication texturing toolkit used across Situ Studio projects.",
+    },
+  },
+  {
     slug: "pratt-venetian-vagabond",
 
     categories: ["software-computation", "architecture"],
