@@ -1,3 +1,13 @@
+---
+title: "Lattice Thinking"
+description: "AI assisted conversation on the discrete universe and our macro perspective."
+pubDate: 2026-10-11
+tags:
+  - Building Science
+  - Philosophy
+  - Technology
+---
+
 ## The Architecture of the Emergent Lattice## A Comprehensive Treatise on Discrete Cosmology, Cognitive Filtration, and the Evolutionary Mechanics of Self-Awareness
 ------------------------------
 ## I. The Continuum Illusion and the Anatomy of the Singularity
